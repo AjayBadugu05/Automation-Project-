@@ -918,6 +918,7 @@ class DoraEnterpriseApp {
                 <div style="font-size: 0.68rem; color: var(--text-tertiary); text-transform: uppercase;">Accepted</div>
               </div>
               <div style="display: flex; gap: 6px;">
+                <button class="apple-btn-glass" style="background: rgba(0, 113, 227, 0.12); color: var(--apple-blue); font-weight: 700; border: 1px solid rgba(0, 113, 227, 0.3);" onclick="doraApp.pushToAllPlatforms('${camp.id}')" title="Push this rule to all 10 connected platforms">🚀 Push to All</button>
                 <button class="apple-btn-glass" onclick="doraApp.toggleCampaignStatus('${camp.id}', '${camp.status}')">
                   ${camp.status === 'active' ? '⏸️ Pause' : '▶️ Resume'}
                 </button>
@@ -956,6 +957,34 @@ class DoraEnterpriseApp {
       }
     } catch (err) {
       this.showToast('Failed to update status', 'error');
+    }
+  }
+
+  async pushToAllPlatforms(id) {
+    try {
+      this.showToast('Deploying rule across all 10 connected platforms...', 'info');
+      const res = await fetch(`/api/campaigns/${id}/push-to-all`, { method: 'POST' }).then(r => r.json());
+      if (res.success) {
+        this.showToast(`🚀 Successfully pushed rule to all ${res.pushedCount} other connected platforms!`, 'success');
+        this.refreshAllData(true);
+      } else {
+        this.showToast(res.error || 'Failed to push rule to all platforms', 'error');
+      }
+    } catch (err) {
+      this.showToast('Push to all error: ' + err.message, 'error');
+    }
+  }
+
+  async pushAllRulesToAllPlatforms() {
+    try {
+      this.showToast('Omnichannel sync: Pushing all active rules across entire social ecosystem...', 'info');
+      const res = await fetch('/api/campaigns/push-all-omni', { method: 'POST' }).then(r => r.json());
+      if (res.success) {
+        this.showToast(`🚀 Omnichannel sync complete! Pushed ${res.totalPushed} rules across all platforms.`, 'success');
+        this.refreshAllData(true);
+      }
+    } catch (err) {
+      this.showToast('Bulk push error: ' + err.message, 'error');
     }
   }
 

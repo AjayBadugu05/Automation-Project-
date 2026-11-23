@@ -262,7 +262,10 @@
             </h2>
             <p>Direct comment triggers, priority precedence routing, and personalized private DM delivery workflows.</p>
           </div>
-          <button class="apple-btn-glass" onclick="doraApp.openCampaignModal()">+ New Rule</button>
+          <div style="display: flex; gap: 8px;">
+            <button class="apple-btn-glass" style="background: rgba(0, 113, 227, 0.12); color: var(--apple-blue); border: 1px solid rgba(0, 113, 227, 0.3); font-weight: 700;" onclick="doraApp.pushAllRulesToAllPlatforms()">🚀 Push to All Platforms</button>
+            <button class="apple-btn-glass" onclick="doraApp.openCampaignModal()">+ New Rule</button>
+          </div>
         </div>
 
         <div id="overviewCampaignsContainer">
@@ -938,12 +941,17 @@
           <div class="apple-form-group">
             <label class="apple-form-label">Platform Target</label>
             <select class="apple-form-control" id="modalCampPlatform">
-              <option value="instagram">Instagram (Reels, Posts & Stories)</option>
+              <option value="all">🌟 All Connected Platforms (Push to All: IG, FB, Threads, YouTube, X, LinkedIn, Reddit, Quora, Medium, Dev.to)</option>
+              <option value="instagram" selected>Instagram (Reels, Posts & Stories)</option>
               <option value="facebook">Facebook (Page Posts & Messenger)</option>
               <option value="threads">Threads (Posts & Replies)</option>
               <option value="youtube">YouTube (Comments)</option>
               <option value="twitter">X / Twitter (Mentions & DMs)</option>
               <option value="linkedin">LinkedIn (Company Page)</option>
+              <option value="reddit">Reddit (Subreddit Posts & Comments)</option>
+              <option value="quora">Quora (Answers & Spaces)</option>
+              <option value="medium">Medium (Articles & Responses)</option>
+              <option value="devto">Dev.to (Dev Community Posts)</option>
             </select>
           </div>
 

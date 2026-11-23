@@ -218,6 +218,23 @@ app.post('/api/campaigns', (req, res) => {
     stats: { commentsReceived: 0, dmsSent: 0, acceptedByMeta: 0, clicks: 0, conversionRate: '0.0%' }
   };
 
+  if (platform === 'all') {
+    const allPlatforms = ['instagram', 'facebook', 'threads', 'youtube', 'twitter', 'linkedin', 'reddit', 'quora', 'medium', 'devto'];
+    const createdList = [];
+    allPlatforms.forEach(plat => {
+      const campCopy = {
+        ...newCampaign,
+        id: 'camp_' + plat + '_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6),
+        platform: plat,
+        name: `${name.trim()} [${plat.toUpperCase()}]`
+      };
+      db.saveCampaign(campCopy);
+      createdList.push(campCopy);
+    });
+    db.addAuditLog(role, `Pushed Rule to All Platforms: ${name.trim()}`, `Omnichannel replication across 10 networks`);
+    return res.status(201).json({ success: true, campaign: createdList[0], pushedCount: createdList.length, allCampaigns: createdList });
+  }
+
   db.saveCampaign(newCampaign);
   db.addAuditLog(role, `Created Rule: ${newCampaign.name}`, `Version 1 saved with status ${newCampaign.status}`);
   res.status(201).json({ success: true, campaign: newCampaign });
@@ -277,6 +294,83 @@ app.patch('/api/campaigns/:id/status', (req, res) => {
 app.delete('/api/campaigns/:id', (req, res) => {
   db.deleteCampaign(req.params.id);
   res.json({ success: true });
+});
+
+// -------------------------------------------------------------
+// PUSH TO ALL OMNICHANNEL PLATFORMS API
+// -------------------------------------------------------------
+app.post('/api/campaigns/:id/push-to-all', (req, res) => {
+  const source = db.getCampaign(req.params.id);
+  if (!source) return res.status(404).json({ success: false, error: 'Campaign not found' });
+  const allPlatforms = ['instagram', 'facebook', 'threads', 'youtube', 'twitter', 'linkedin', 'reddit', 'quora', 'medium', 'devto'];
+  const created = [];
+  const role = db.getCurrentUserRole();
+  allPlatforms.forEach(plat => {
+    if (plat === source.platform) return;
+    const replicated = {
+      ...source,
+      id: 'camp_' + plat + '_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6),
+      platform: plat,
+      name: `${source.name.replace(/\[\w+\]$/, '').trim()} [${plat.toUpperCase()}]`,
+      version: 1,
+      versionHistory: [{ version: 1, modifiedBy: role, changeSummary: `Pushed from ${source.platform} to ${plat}`, timestamp: new Date().toISOString() }],
+      stats: { commentsReceived: 0, dmsSent: 0, acceptedByMeta: 0, clicks: 0, conversionRate: '0.0%' }
+    };
+    db.saveCampaign(replicated);
+    created.push(replicated);
+  });
+  db.addAuditLog(role, `Pushed Rule to All Platforms: ${source.name}`, `Replicated across ${created.length} channels`);
+  res.json({ success: true, pushedCount: created.length, campaigns: created });
+});
+
+app.post('/api/campaigns/push-all-omni', (req, res) => {
+  const currentCampaigns = db.getCampaigns();
+  const allPlatforms = ['instagram', 'facebook', 'threads', 'youtube', 'twitter', 'linkedin', 'reddit', 'quora', 'medium', 'devto'];
+  const role = db.getCurrentUserRole();
+  let totalPushed = 0;
+
+  currentCampaigns.forEach(source => {
+    allPlatforms.forEach(plat => {
+      const alreadyHas = db.getCampaigns().some(c => c.platform === plat && c.name.includes(source.name.slice(0, 15)));
+      if (!alreadyHas) {
+        const replicated = {
+          ...source,
+          id: 'camp_' + plat + '_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6),
+          platform: plat,
+          name: `${source.name.replace(/\[\w+\]$/, '').trim()} [${plat.toUpperCase()}]`,
+          version: 1,
+          stats: { commentsReceived: 0, dmsSent: 0, acceptedByMeta: 0, clicks: 0, conversionRate: '0.0%' }
+        };
+        db.saveCampaign(replicated);
+        totalPushed++;
+      }
+    });
+  });
+
+  db.addAuditLog(role, 'Bulk Push to All Platforms Executed', `Pushed ${totalPushed} rules across connected ecosystem`);
+  res.json({ success: true, totalPushed, campaigns: db.getCampaigns() });
+});
+
+app.post('/api/inbox/broadcast', (req, res) => {
+  const { message, platform = 'all', link = '' } = req.body;
+  const inbox = db.getInbox();
+  let count = 0;
+  const now = new Date().toISOString();
+  inbox.forEach(thread => {
+    if (platform !== 'all' && thread.platform !== platform) return;
+    if (thread.isBotMuted) return;
+    thread.messages.push({
+      id: 'msg_bc_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6),
+      sender: 'bot',
+      text: (message || 'Important update: ') + (link ? ` ${link}` : ''),
+      timestamp: now,
+      status: 'delivered'
+    });
+    count++;
+  });
+  db.saveData();
+  db.addAuditLog(db.getCurrentUserRole(), 'Broadcast Pushed to All', `Dispatched broadcast to ${count} recipient threads`);
+  res.json({ success: true, count, message: `Pushed broadcast message to ${count} recipient contacts across ${platform === 'all' ? 'all platforms' : platform}.` });
 });
 
 // -------------------------------------------------------------
