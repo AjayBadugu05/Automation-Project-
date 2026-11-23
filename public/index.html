@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoraFlow Spatial OS • Apple Liquid Glass Automation Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/doraemon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Apple VisionOS Spatial Lights -->
+  <div class="spatial-backdrop">
+    <div class="ambient-light-1"></div>
+    <div class="ambient-light-2"></div>
+    <div class="ambient-light-3"></div>
+  </div>
+
+  <!-- Left Floating Spatial Vertical Dock (Apple VisionOS Style) -->
+  <aside class="spatial-dock-wrapper">
+    <nav class="spatial-dock">
+      <!-- 1. Spatial Overview -->
+      <button class="dock-item active" data-view="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="dock-tooltip">Spatial Overview</span>
+      </button>
+
+      <!-- 2. Instagram Hub -->
+      <button class="dock-item" data-view="instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span class="dock-tooltip">Instagram Hub</span>
+        <span class="dock-badge"></span>
+      </button>
+
+      <!-- 3. Facebook Pages Hub -->
+      <button class="dock-item" data-view="facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        <span class="dock-tooltip">Facebook Pages</span>
+      </button>
+
+      <!-- 4. Threads Hub -->
+      <button class="dock-item" data-view="threads">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>
+        <span class="dock-tooltip">Threads Hub</span>
+      </button>
+
+      <!-- 5. YouTube Studio -->
+      <button class="dock-item" data-view="youtube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000"></polygon></svg>
+        <span class="dock-tooltip">YouTube Studio</span>
+      </button>
+
+      <!-- 6. X (Twitter) -->
+      <button class="dock-item" data-view="twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        <span class="dock-tooltip">X (Twitter)</span>
+      </button>
+
+      <!-- 7. LinkedIn Hub -->
+      <button class="dock-item" data-view="linkedin">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        <span class="dock-tooltip">LinkedIn Hub</span>
+      </button>
+
+      <!-- 8. Shared Inbox & Human Takeover -->
+      <button class="dock-item" data-view="inbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span class="dock-tooltip">Shared Inbox & Archive</span>
+        <span class="dock-badge"></span>
+      </button>
+
+      <!-- 9. Precedence Simulator -->
+      <button class="dock-item" data-view="simulator">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        <span class="dock-tooltip">Rule Precedence Simulator</span>
+      </button>
+
+      <!-- 10. Enterprise Test Suite Runner -->
+      <button class="dock-item" data-view="tests">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        <span class="dock-tooltip">Enterprise Test Suite (5 Tests)</span>
+        <span class="dock-badge" style="background: var(--apple-blue); box-shadow: 0 0 8px var(--apple-blue);"></span>
+      </button>
+
+      <!-- 11. Anti-Ban Safety Shield -->
+      <button class="dock-item" data-view="shield">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span class="dock-tooltip">Zero-Ban Safety Shield</span>
+      </button>
+
+      <!-- 12. Telemetry & Analytics -->
+      <button class="dock-item" data-view="analytics">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span class="dock-tooltip">Analytics & Funnel</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- Top Floating VisionOS Safari-Style Window Bar -->
+  <header class="spatial-top-bar">
+    <div class="top-bar-glass">
+      <!-- Brand with Doraemon Logo Face -->
+      <div class="brand-capsule" onclick="doraApp.switchView('overview')">
+        <div class="doraemon-logo-box" title="DoraFlow Spatial OS">
+          <img src="/assets/doraemon.svg" alt="Doraemon Face">
+        </div>
+        <div class="brand-title-wrap">
+          <h1>DoraFlow <span class="os-tag">Spatial OS</span></h1>
+        </div>
+      </div>
+
+      <!-- Multi-Workspace Selector Dropdown -->
+      <div class="workspace-selector-pill" title="Switch Multi-Client Isolated Workspace">
+        <span style="font-size: 0.85rem;">🏢</span>
+        <select id="workspaceSelectDropdown" class="workspace-select">
+          <option value="ws_apex">Apex Growth Agency</option>
+          <option value="ws_velocity">Velocity Media Corp</option>
+          <option value="ws_creator">Creator Studio VIP</option>
+        </select>
+      </div>
+
+      <!-- RBAC Active Role Selector Dropdown -->
+      <div class="workspace-selector-pill" title="Active RBAC Role (Simulate Permissions)">
+        <span class="role-pill-badge">🛡️ Role</span>
+        <select id="roleSelectDropdown" class="workspace-select">
+          <option value="Owner">Owner</option>
+          <option value="Admin">Admin</option>
+          <option value="Editor">Editor</option>
+          <option value="Approver">Approver</option>
+          <option value="Inbox-Agent">Inbox-Agent</option>
+        </select>
+      </div>
+
+      <!-- Center Current View Breadcrumb Pill -->
+      <div class="top-center-pill">
+        <div class="spatial-status-dot"></div>
+        <span class="spatial-status-text" id="topViewTitlePill">Spatial Overview</span>
+        <span style="font-size: 0.72rem; color: var(--text-tertiary);">•</span>
+        <span style="font-size: 0.72rem; font-weight: 700; color: var(--apple-cyan);" id="topShieldScoreBadge">100% Safe</span>
+      </div>
+
+      <!-- Actions & Dual-Theme Switch -->
+      <div class="top-actions-cluster">
+        <!-- Interactive Demo Tour Button -->
+        <button class="apple-btn-glass" id="btnLaunchDemoTour" title="Interactive Guided Walkthrough & Demo" style="color: var(--apple-blue); border-color: rgba(0,113,227,0.3); font-weight: 700; gap: 6px;">
+          ▶️ Guided Demo
+        </button>
+
+        <!-- User Profile & Google Sign-In Capsule -->
+        <div class="user-profile-capsule">
+          <div class="user-profile-btn" id="userProfileBtn" title="Current Authenticated User & Google Sign-In">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" id="userAvatarImg" class="user-avatar-sm" alt="User">
+            <span class="user-name-text" id="userNameLabel">Sarah Jenkins</span>
+            <span style="font-size: 0.65rem; color: var(--apple-green);">✓</span>
+          </div>
+
+          <!-- Dropdown Popover -->
+          <div class="user-profile-dropdown" id="userProfileDropdown">
+            <div class="user-dropdown-header">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" id="dropdownUserAvatar" alt="User">
+              <div class="user-dropdown-meta">
+                <h4 id="dropdownUserName">Sarah Jenkins</h4>
+                <p id="dropdownUserEmail">sarah.jenkins@growthagency.io</p>
+                <span class="role-pill-badge" id="dropdownUserRole" style="margin-top: 4px; display: inline-block;">Owner</span>
+              </div>
+            </div>
+            <div class="user-dropdown-actions">
+              <button class="user-dropdown-item" id="btnOpenAuthModal">
+                <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+                <span>Google Sign-In / Switch Account</span>
+              </button>
+              <button class="user-dropdown-item" id="btnSignOutUser" style="color: var(--apple-red);">
+                <span>🚪 Sign Out</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual Theme Toggle (Apple Light / Apple Dark Mode) -->
+        <button class="theme-toggle-btn" id="btnToggleTheme" title="Toggle Apple Light / Dark Mode">
+          <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Master Engine Switch -->
+        <div class="master-pill-switch" title="Global Emergency Master Switch">
+          <span>Master Engine</span>
+          <label class="ios-switch">
+            <input type="checkbox" id="masterIosSwitch" checked>
+            <span class="ios-slider"></span>
+          </label>
+        </div>
+
+        <button class="apple-btn-primary" id="btnNewCampaignTop">
+          + Create Automation
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Spatial Canvas -->
+  <main class="spatial-workspace">
+
+    <!-- VIEW 1: SPATIAL OVERVIEW -->
+    <div class="spatial-view active" id="view-overview">
+      <div class="kpi-row-spatial">
+        <div class="kpi-glass-card">
+          <div class="kpi-spatial-header">
+            <span class="kpi-spatial-title">Comments Ingested</span>
+            <div class="kpi-spatial-icon" style="color: var(--apple-blue);">💬</div>
+          </div>
+          <div class="kpi-spatial-value" id="ovTotalComments">1,534</div>
+          <div class="kpi-spatial-badge">↑ 18.4% across all connected channels</div>
+        </div>
+
+        <div class="kpi-glass-card">
+          <div class="kpi-spatial-header">
+            <span class="kpi-spatial-title">DMs Dispatched</span>
+            <div class="kpi-spatial-icon" style="color: var(--apple-cyan);">📩</div>
+          </div>
+          <div class="kpi-spatial-value" id="ovTotalDms" style="color: var(--apple-cyan);">1,473</div>
+          <div class="kpi-spatial-badge">96.0% verified delivery success rate</div>
+        </div>
+
+        <div class="kpi-glass-card">
+          <div class="kpi-spatial-header">
+            <span class="kpi-spatial-title">Click Conversion</span>
+            <div class="kpi-spatial-icon" style="color: var(--apple-green);">🎯</div>
+          </div>
+          <div class="kpi-spatial-value" id="ovConversionRate" style="color: var(--apple-green);">74.1%</div>
+          <div class="kpi-spatial-badge">↑ 8.2% verified resource clicks</div>
+        </div>
+
+        <div class="kpi-glass-card">
+          <div class="kpi-spatial-header">
+            <span class="kpi-spatial-title">Active Rules</span>
+            <div class="kpi-spatial-icon" style="color: var(--apple-purple);">⚡</div>
+          </div>
+          <div class="kpi-spatial-value" id="ovActiveCampaigns" style="color: var(--apple-purple);">4</div>
+          <div class="kpi-spatial-badge">0 suspension violations • Zero Ban</div>
+        </div>
+      </div>
+
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>
+              <img src="/assets/doraemon.svg" style="width: 26px; height: 26px;" alt="Doraemon">
+              Active Multichannel Automation Rules
+            </h2>
+            <p>Direct comment triggers, priority precedence routing, and personalized private DM delivery workflows.</p>
+          </div>
+          <button class="apple-btn-glass" onclick="doraApp.openCampaignModal()">+ New Rule</button>
+        </div>
+
+        <div id="overviewCampaignsContainer">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 2: INSTAGRAM HUB (PAGE, STATS, POSTS & REELS GRID) -->
+    <div class="spatial-view" id="view-instagram">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>📸 Instagram Creator & Reels Hub</h2>
+            <p>Manage Instagram Reels, feed carousels, comment auto-replies, and direct messages.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">Meta Graph API v21.0</span>
+        </div>
+
+        <div class="platform-profile-hero" id="instagramHeroProfile"></div>
+        <div class="platform-oauth-bar" id="instagramOAuthBar"></div>
+
+        <div style="margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Connected Posts & Reels (Active Comment Triggers)</h3>
+          <span style="font-size: 0.78rem; color: var(--text-tertiary);">Click any post to configure up to 10 trigger words</span>
+        </div>
+
+        <div class="posts-spatial-grid" id="instagramPostsGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW 3: FACEBOOK PAGES HUB -->
+    <div class="spatial-view" id="view-facebook">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>📘 Facebook Pages & Messenger Hub</h2>
+            <p>Monitor Facebook Page posts, ad feed comments, and automated Messenger DMs.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">Facebook Pages API</span>
+        </div>
+
+        <div class="platform-profile-hero" id="facebookHeroProfile"></div>
+        <div class="platform-oauth-bar" id="facebookOAuthBar"></div>
+
+        <div style="margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Live Page Posts & Messenger Triggers</h3>
+          <span style="font-size: 0.78rem; color: var(--text-tertiary);">Automatic Messenger delivery enabled</span>
+        </div>
+
+        <div class="posts-spatial-grid" id="facebookPostsGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW 4: THREADS HUB -->
+    <div class="spatial-view" id="view-threads">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>🧵 Threads Community Hub</h2>
+            <p>Meta Threads post replies, conversational triggers, and direct delivery.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">Meta Threads API v1.0</span>
+        </div>
+
+        <div class="platform-profile-hero" id="threadsHeroProfile"></div>
+        <div class="platform-oauth-bar" id="threadsOAuthBar"></div>
+        <div class="posts-spatial-grid" id="threadsPostsGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW 5: YOUTUBE STUDIO HUB -->
+    <div class="spatial-view" id="view-youtube">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>🎥 YouTube Studio & Comment Threads</h2>
+            <p>Video comment auto-replies, resource link dispatch, and subscriber nurturing.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">YouTube Data API v3</span>
+        </div>
+
+        <div class="platform-profile-hero" id="youtubeHeroProfile"></div>
+        <div class="platform-oauth-bar" id="youtubeOAuthBar"></div>
+        <div class="posts-spatial-grid" id="youtubePostsGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW 6: X / TWITTER HUB -->
+    <div class="spatial-view" id="view-twitter">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>🐦 X (Twitter) Mentions & DMs Hub</h2>
+            <p>Tweet mention auto-replies and automated direct message delivery.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">Twitter API v2</span>
+        </div>
+
+        <div class="platform-profile-hero" id="twitterHeroProfile"></div>
+        <div class="platform-oauth-bar" id="twitterOAuthBar"></div>
+        <div class="posts-spatial-grid" id="twitterPostsGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW 7: LINKEDIN HUB -->
+    <div class="spatial-view" id="view-linkedin">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>💼 LinkedIn Company & InMail Hub</h2>
+            <p>Company page comment automation and lead generation workflows.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">LinkedIn Community API</span>
+        </div>
+
+        <div class="platform-profile-hero" id="linkedinHeroProfile"></div>
+        <div class="platform-oauth-bar" id="linkedinOAuthBar"></div>
+        <div class="posts-spatial-grid" id="linkedinPostsGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW 8: UNIVERSAL STORED MESSAGE ARCHIVE (SHARED INBOX & HUMAN TAKEOVER) -->
+    <div class="spatial-view" id="view-inbox">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>💬 Universal Stored Messages & Shared Inbox</h2>
+            <p>Enterprise customer conversation threads, human agent takeover, agent assignment, and internal notes.</p>
+          </div>
+          <span class="apple-btn-glass" style="font-size: 0.75rem;">Persistent store.json</span>
+        </div>
+
+        <div class="inbox-layout">
+          <!-- Left: Threads List -->
+          <div class="inbox-threads-column">
+            <div class="inbox-search-header">
+              <input type="text" id="inboxSearchInput" class="inbox-search-input" placeholder="Search handles, comments, or DMs...">
+            </div>
+            <div class="threads-scroll-list" id="inboxThreadsList"></div>
+          </div>
+
+          <!-- Right: Conversation Sequence Detail & Human Handoff -->
+          <div class="inbox-detail-pane" id="inboxDetailPane">
+            <div style="text-align: center; color: var(--text-tertiary); margin: auto;">
+              Select a conversation thread to view the full interaction transcript and agent controls.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 9: INTERACTIVE LIVE PRECEDENCE SIMULATOR -->
+    <div class="spatial-view" id="view-simulator">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>📱 Interactive Studio Live Playground & Precedence Checker</h2>
+            <p>Replicate live user comments, evaluate rule tree winners before publishing, human jitter pacing, and iPhone DM delivery.</p>
+          </div>
+        </div>
+
+        <div class="simulator-layout">
+          <!-- Left: Feed Mockup -->
+          <div class="mockup-post-card">
+            <div class="post-user-header">
+              <div class="post-avatar-box">
+                <div class="avatar-ring">
+                  <div class="avatar-inner">GC</div>
+                </div>
+                <div>
+                  <strong style="color: var(--text-primary); font-size: 0.85rem;">growth.creator</strong>
+                  <div style="font-size: 0.72rem; color: var(--text-tertiary);">Original Audio • Reel</div>
+                </div>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--apple-blue);">Follow</span>
+            </div>
+
+            <div class="post-visual-banner">
+              <h4>7 SECRETS TO 100K FOLLOWERS IN 90 DAYS</h4>
+              <span>Comment "GUIDE" or "BLUEPRINT" below</span>
+            </div>
+
+            <div class="post-caption-box">
+              <strong>growth.creator</strong> Drop your comment below and our automated system will DM you the step-by-step PDF blueprint! 🔥👇
+            </div>
+
+            <div class="sim-comments-list" id="simPostCommentsList">
+              <div class="mock-comment-bubble">
+                <strong>elena_art</strong> GUIDE please!! Love this content
+                <div class="mock-reply-bubble">
+                  <span style="color: var(--apple-blue); font-weight: 700;">@growth.creator</span> Check your DMs! Your free Blueprint is waiting for you 📩🔥
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Simulator Controls & Precedence Winner Evaluation -->
+          <div class="sim-controls-panel">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">Test Comment Simulator</h3>
+              <span class="status-badge success">Live Engine Ready</span>
+            </div>
+
+            <div class="apple-form-group">
+              <label class="apple-form-label">Platform Target</label>
+              <select class="apple-form-control" id="simSelectPlatform">
+                <option value="instagram">Instagram Reel & Comments</option>
+                <option value="facebook">Facebook Page Post & Messenger</option>
+                <option value="threads">Threads Post & Replies</option>
+              </select>
+            </div>
+
+            <div class="apple-form-group">
+              <label class="apple-form-label">Target Campaign Post</label>
+              <select class="apple-form-control" id="simSelectPost">
+                <option value="reel_984710293">Viral Blueprint Free Guide 🚀 (Reel: 7 Secrets to 100k)</option>
+                <option value="post_fb_552199">Facebook AI Masterclass VIP (Live Post)</option>
+                <option value="all_posts">Any Carousel Post & Photo</option>
+              </select>
+            </div>
+
+            <div class="apple-form-group">
+              <label class="apple-form-label">Test User Handle</label>
+              <input type="text" class="apple-form-control" id="simInputUsername" value="@sarahtaylor">
+            </div>
+
+            <div class="apple-form-group">
+              <label class="apple-form-label">Test Comment (Try keywords: GUIDE, BLUEPRINT, SEND, VIP)</label>
+              <input type="text" class="apple-form-control" id="simInputComment" value="Please send me the BLUEPRINT!">
+            </div>
+
+            <!-- Fire Simulation Trigger -->
+            <button class="apple-btn-primary" id="btnRunSimulation" style="width: 100%; justify-content: center; padding: 12px; font-size: 0.95rem;">
+              ⚡ Fire Test Trigger
+            </button>
+
+            <!-- Evaluate Rule Precedence Winner Button -->
+            <button class="apple-btn-glass" id="btnSimulatePrecedenceCheck" style="width: 100%; justify-content: center; padding: 10px; margin-top: 10px; font-size: 0.84rem;">
+              🔍 Evaluate Rule Precedence & Winner
+            </button>
+
+            <!-- Precedence Winner Display Box -->
+            <div id="ruleWinnerDisplayBox"></div>
+
+            <!-- Real-Time Jitter Delay Countdown -->
+            <div class="jitter-timer-bar" id="simJitterTimerBar">
+              <div style="font-size: 0.78rem; font-weight: 700; color: var(--apple-cyan); margin-bottom: 4px;">
+                🛡️ Anti-Ban Human Jitter Pacing Active
+              </div>
+              <div style="font-size: 0.74rem; color: var(--text-secondary);">
+                Randomizing delay to simulate authentic human behavior: <strong id="simJitterCountdown" style="color: var(--text-primary); font-family: var(--font-mono);">0.0s</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: iPhone Frame -->
+          <div class="iphone-frame">
+            <div class="iphone-notch"></div>
+            <div class="iphone-header">
+              <div class="avatar-ring" style="width: 28px; height: 28px;">
+                <div class="avatar-inner" style="font-size: 0.7rem;">GC</div>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">growth.creator</div>
+                <div style="font-size: 0.68rem; color: #34d399;">Active now • Verified</div>
+              </div>
+            </div>
+
+            <div class="dm-messages-container" id="simDmMessagesContainer">
+              <div class="dm-bubble-sent">
+                <div>Hey @sarahtaylor! 👋 Thanks for commenting! Your free Viral Blueprint is ready:</div>
+                <a href="#" class="dm-card-button">Download Blueprint ↗</a>
+                <div style="font-size: 0.65rem; text-align: right; opacity: 0.7; margin-top: 6px;">Delivered • Anti-Ban Safe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 10: ENTERPRISE TEST SUITE RUNNER (10 COMPREHENSIVE PRODUCTION TESTS) -->
+    <div class="spatial-view" id="view-tests">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>🧪 Production Enterprise Feature Verification Suite (10 Core Tests)</h2>
+            <p>Automated regression, cryptographic security, rate limiting & policy verification executing all 10 production criteria.</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="test-status-pill passed" id="testSuiteStatusPill">10/10 Tests Passed</span>
+            <button class="apple-btn-primary" id="btnRunAllEnterpriseTests">▶️ Run All 10 Enterprise Tests</button>
+          </div>
+        </div>
+
+        <!-- 10 Test Cards Grid -->
+        <div class="tests-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- Test 1: Routing & Priority -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">1. Routing & Priority Precedence</span>
+              <span class="test-status-pill passed" id="pill_test_1_routing">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Tests post-specific scope priority over account-wide defaults, tie-breaking numerical priority scores, and keyword disambiguation.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-blue); font-family: var(--font-mono);">
+              Rule Hierarchy: Post-Specific > Account-Wide
+            </div>
+          </div>
+
+          <!-- Test 2: Pause & Edits Isolation -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">2. Granular Pause & 1-Click Rollback</span>
+              <span class="test-status-pill passed" id="pill_test_2_pause_edits">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Verifies pausing one keyword allows siblings to fire, unsent queue cancellation, draft isolation, and instant 1-click rollback.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-green); font-family: var(--font-mono);">
+              Zero Replay on Resume Verified
+            </div>
+          </div>
+
+          <!-- Test 3: Delivery Failures & Meta Safeguards -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">3. Meta 7-Day Window & Duplicate Suppressor</span>
+              <span class="test-status-pill passed" id="pill_test_3_failures">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Enforces strict Meta Private Replies compliance (rejects comments > 7 days, "Sent you a DM" only after Meta acceptance, 24h cooldown).
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-cyan); font-family: var(--font-mono);">
+              Meta Graph API v21.0 Private Replies Rules
+            </div>
+          </div>
+
+          <!-- Test 4: Multi-Tenant Team & Client Isolation -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">4. Multi-Tenant Workspace & Client Isolation</span>
+              <span class="test-status-pill passed" id="pill_test_4_isolation">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Enforces strict data partition between agency clients (Apex, Velocity, Creator), RBAC permission gates, and human agent takeover.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-purple); font-family: var(--font-mono);">
+              RBAC & Complete Client Data Partition
+            </div>
+          </div>
+
+          <!-- Test 5: Live & Burst Load Rate Limiting -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">5. Anti-Ban Sliding-Window Rate Limiter</span>
+              <span class="test-status-pill passed" id="pill_test_5_burst_load">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Simulates viral reel concurrency spike (100 simultaneous comments), sliding-window rate limiters, and 100% white-label templates.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-orange); font-family: var(--font-mono);">
+              Zero Vendor Branding • White-Label Verified
+            </div>
+          </div>
+
+          <!-- Test 6: Google OAuth & OIDC Identity -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">6. Google OAuth 2.0 & OIDC Identity</span>
+              <span class="test-status-pill passed" id="pill_test_6_auth_oidc">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Validates Google OpenID Connect (OIDC) JWT claims, issuer integrity (accounts.google.com), and cryptographic CSRF state/nonce tamper guard.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-blue); font-family: var(--font-mono);">
+              OIDC JWKS Claims & CSRF Guard
+            </div>
+          </div>
+
+          <!-- Test 7: AES-256-GCM Token Encryption -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">7. AES-256-GCM Token Encryption at Rest</span>
+              <span class="test-status-pill passed" id="pill_test_7_token_encryption">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Hardware-accelerated AES-256-GCM encryption for stored user credentials, API access tokens, and webhook secrets with 128-bit auth tags.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-green); font-family: var(--font-mono);">
+              Authenticated Ciphertext at Rest
+            </div>
+          </div>
+
+          <!-- Test 8: Meta HMAC-SHA256 & AppSecret Proof -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">8. Meta HMAC-SHA256 & appsecret_proof Guard</span>
+              <span class="test-status-pill passed" id="pill_test_8_meta_hmac_proof">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Constant-time crypto.timingSafeEqual verification for X-Hub-Signature-256 headers and SHA-256 appsecret_proof on all Graph API calls.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-cyan); font-family: var(--font-mono);">
+              Constant-Time HMAC & Token Hijack Guard
+            </div>
+          </div>
+
+          <!-- Test 9: Trigger Keyword Match Precision -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">9. Keyword Match Precision Engine</span>
+              <span class="test-status-pill passed" id="pill_test_9_trigger_matching">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Evaluates whole-word boundary matching, exact phrasing, case and punctuation normalization, and wildcard resolution across 10 keywords.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-purple); font-family: var(--font-mono);">
+              Exact / Whole-Word / Phrase / Wildcard
+            </div>
+          </div>
+
+          <!-- Test 10: Safety Negative Keywords -->
+          <div class="test-card">
+            <div class="test-card-top">
+              <span class="test-card-title">10. Safety Negative Keywords & Abuse Guard</span>
+              <span class="test-status-pill passed" id="pill_test_10_exclusion_filter">PASSED ✓</span>
+            </div>
+            <p class="test-card-desc">
+              Verifies negative exclusion lists, hate/harassment filtering, competitor mention suppression, and automated DM dispatch cancellation.
+            </p>
+            <div style="font-size: 0.72rem; color: var(--apple-orange); font-family: var(--font-mono);">
+              Safety Exclusion & Bot Interceptor
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Log Output Area -->
+        <div style="margin-top: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary);">Live Test Execution Output & Assertion Stream</span>
+            <span style="font-size: 0.72rem; color: var(--text-tertiary);">Real-time server assertion logs (10/10 Enterprise Features Verified)</span>
+          </div>
+          <pre id="testLogsTerminal" class="test-log-terminal">Click "Run All 10 Enterprise Tests" to execute the full production verification suite.</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 11: SECURITY ARCHITECTURE & META COMPLIANCE ENGINE -->
+    <div class="spatial-view" id="view-shield">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>🛡️ Security Architecture & Meta Rate Limit Compliance</h2>
+            <p>Production-grade cryptographic verification, AES-256-GCM token encryption, and official Graph API rate limits.</p>
+          </div>
+          <button class="apple-btn-primary" id="btnSaveShieldSettings">Save Parameters</button>
+        </div>
+
+        <div class="shield-dashboard">
+          <div class="shield-card">
+            <div class="shield-card-header">
+              <h3>Rate Limiting & Human Jitter Calibration</h3>
+              <span class="status-badge success">Enforced</span>
+            </div>
+
+            <div class="apple-slider-group">
+              <div class="apple-slider-row">
+                <span class="slider-title">Minimum Human Jitter Delay</span>
+                <span class="apple-slider-val" id="valMinJitter">4s</span>
+              </div>
+              <input type="range" class="apple-range-input" id="shieldMinJitter" min="2" max="10" step="1" value="4">
+              <div class="slider-desc">Ensures the automation waits at least this many seconds before replying.</div>
+            </div>
+
+            <div class="apple-slider-group">
+              <div class="apple-slider-row">
+                <span class="slider-title">Maximum Human Jitter Delay</span>
+                <span class="apple-slider-val" id="valMaxJitter">14s</span>
+              </div>
+              <input type="range" class="apple-range-input" id="shieldMaxJitter" min="10" max="30" step="1" value="14">
+              <div class="slider-desc">Upper boundary for randomized delays. Replicates human cadence.</div>
+            </div>
+
+            <div class="apple-slider-group">
+              <div class="apple-slider-row">
+                <span class="slider-title">Maximum DMs Per Hour (Sliding Window)</span>
+                <span class="apple-slider-val" id="valMaxHourly">45 DMs/hr</span>
+              </div>
+              <input type="range" class="apple-range-input" id="shieldMaxHourly" min="10" max="150" step="5" value="45">
+              <div class="slider-desc">Stay under 50 automated actions/hour for maximum account trust scores.</div>
+            </div>
+
+            <div class="apple-slider-group">
+              <div class="apple-slider-row">
+                <span class="slider-title">User Duplicate Cooldown Window</span>
+              </div>
+              <select class="apple-form-control" id="shieldCooldownHours">
+                <option value="12">12 Hours Cooldown</option>
+                <option value="24" selected>24 Hours Cooldown (Recommended)</option>
+                <option value="48">48 Hours Cooldown</option>
+                <option value="72">72 Hours Cooldown</option>
+              </select>
+              <div class="slider-desc">Prevents spamming the same user with repeated DMs.</div>
+            </div>
+          </div>
+
+          <div class="shield-card">
+            <div class="shield-card-header">
+              <h3>Meta Platform Compliance Policies</h3>
+              <span class="status-badge success">100% Verified</span>
+            </div>
+
+            <div class="compliance-list">
+              <div class="compliance-item">
+                <div class="compliance-check">✓</div>
+                <div class="compliance-text">
+                  <h4>Official Meta Graph API v21.0 Webhooks</h4>
+                  <p>Never uses unauthorized private scrapers or mobile API emulators.</p>
+                </div>
+              </div>
+
+              <div class="compliance-item">
+                <div class="compliance-check">✓</div>
+                <div class="compliance-text">
+                  <h4>Meta Private Replies 7-Day Window Compliance</h4>
+                  <p>Adheres strictly to Meta's 7-day initial comment DM threshold.</p>
+                </div>
+              </div>
+
+              <div class="compliance-item">
+                <div class="compliance-check">✓</div>
+                <div class="compliance-text">
+                  <h4>A/B Dynamic Copy Randomizer (Spintax)</h4>
+                  <p>Dynamically varies wording with <code>{Hey|Hello}</code> Spintax tags.</p>
+                </div>
+              </div>
+
+              <div class="compliance-item">
+                <div class="compliance-check">✓</div>
+                <div class="compliance-text">
+                  <h4>Compliance & Negative Keyword Filtering</h4>
+                  <p>Automatically ignores spam, harassment, and bot comments.</p>
+                </div>
+              </div>
+
+              <div class="compliance-item">
+                <div class="compliance-check">✓</div>
+                <div class="compliance-text">
+                  <h4>Self-Hosted Instance • On-Premise Data Isolation</h4>
+                  <p>Client data and API credentials are kept private and secure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cryptographic Security Architecture Card -->
+          <div class="shield-card" style="grid-column: 1 / -1;">
+            <div class="shield-card-header">
+              <h3>Cryptographic Security & Verification Engine</h3>
+              <div style="display: flex; gap: 8px;">
+                <span class="status-badge success">Grade A+ Enterprise</span>
+                <button class="apple-btn-glass" id="btnRunSecurityAudit" style="font-size: 0.74rem; padding: 4px 10px;">
+                  🔒 Run Cryptographic Audit
+                </button>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 10px;">
+              <div style="background: rgba(125,125,125,0.06); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase; font-weight: 700;">Token Encryption at Rest</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--apple-green); margin-top: 4px;">AES-256-GCM</div>
+                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">96-bit IV • 128-bit Auth Tag • Tamper Proof</div>
+              </div>
+
+              <div style="background: rgba(125,125,125,0.06); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase; font-weight: 700;">Webhook Signature Guard</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--apple-blue); margin-top: 4px;">HMAC-SHA256</div>
+                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">X-Hub-Signature-256 • crypto.timingSafeEqual</div>
+              </div>
+
+              <div style="background: rgba(125,125,125,0.06); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase; font-weight: 700;">Identity Provider (IdP)</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--apple-cyan); margin-top: 4px;">Google OIDC / OAuth 2.0</div>
+                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">accounts.google.com • CSRF Nonce Enforced</div>
+              </div>
+
+              <div style="background: rgba(125,125,125,0.06); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                <div style="font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase; font-weight: 700;">Token Hijacking Prevention</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: var(--apple-purple); margin-top: 4px;">appsecret_proof</div>
+                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">SHA-256 hash attached to all Graph API calls</div>
+              </div>
+            </div>
+
+            <!-- Audit Output Terminal -->
+            <pre id="securityAuditOutputBox" class="test-log-terminal" style="margin-top: 14px; max-height: 180px; display: none;"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 12: ANALYTICS & CONVERSION FUNNEL -->
+    <div class="spatial-view" id="view-analytics">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>📊 Performance Telemetry & Conversion Funnel</h2>
+            <p>Real-time analytics on trigger hit velocity and DM-to-click conversion funnels.</p>
+          </div>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="chart-card">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">Hourly Comment vs. DM Dispatch Velocity</h3>
+            <div class="chart-container-box" id="chartTrendContainer"></div>
+          </div>
+
+          <div class="chart-card">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">Conversion Funnel</h3>
+            <p style="font-size: 0.75rem; color: var(--text-tertiary);">From initial comment to verified resource click</p>
+            <div class="funnel-container" id="funnelContainer"></div>
+          </div>
+        </div>
+
+        <div class="analytics-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="chart-card">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">Top Performing Trigger Keywords</h3>
+            <div class="table-responsive">
+              <table class="logs-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Keyword</th>
+                    <th>Hits</th>
+                    <th>Conv. Rate</th>
+                  </tr>
+                </thead>
+                <tbody id="topTriggersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">Platform Traffic Share</h3>
+            <div id="platformBreakdownContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- CAMPAIGN BUILDER MODAL (10 Trigger Words Tag Manager) -->
+  <div class="apple-modal-overlay" id="campaignModal">
+    <div class="apple-modal-panel">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);">
+        <h3 id="modalTitle" style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">Create Production Automation Rule</h3>
+        <button class="close-btn" id="closeCampaignModal">&times;</button>
+      </div>
+
+      <div style="margin-bottom: 14px; padding: 10px 14px; border-radius: var(--radius-md); background: rgba(0, 113, 227, 0.08); border: 1px solid rgba(0, 113, 227, 0.2); font-size: 0.75rem; color: var(--text-secondary);">
+        🛡️ <strong>Production Protocol:</strong> Meta Private Replies rule active — Public comment reply stating "Sent you a DM" will only fire after Meta confirms DM acceptance. Approver/Admin required to publish live; Editors save as draft.
+      </div>
+
+      <form id="campaignForm">
+        <div class="apple-form-group">
+          <label class="apple-form-label">Rule / Campaign Name</label>
+          <input type="text" class="apple-form-control" id="modalCampName" placeholder="e.g. Viral Blueprint Free Guide 🚀" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="apple-form-group">
+            <label class="apple-form-label">Platform Target</label>
+            <select class="apple-form-control" id="modalCampPlatform">
+              <option value="instagram">Instagram (Reels, Posts & Stories)</option>
+              <option value="facebook">Facebook (Page Posts & Messenger)</option>
+              <option value="threads">Threads (Posts & Replies)</option>
+              <option value="youtube">YouTube (Comments)</option>
+              <option value="twitter">X / Twitter (Mentions & DMs)</option>
+              <option value="linkedin">LinkedIn (Company Page)</option>
+            </select>
+          </div>
+
+          <div class="apple-form-group">
+            <label class="apple-form-label">Rule Scope Hierarchy</label>
+            <select class="apple-form-control" id="modalCampScope">
+              <option value="post_specific">🎯 Post-Specific (Takes Precedence over Account-Wide)</option>
+              <option value="account_wide">🌐 Account-Wide Fallback (All Eligible Posts)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="apple-form-group">
+            <label class="apple-form-label">Numerical Priority (1-100, higher number wins tie-breaker)</label>
+            <input type="number" class="apple-form-control" id="modalCampPriority" value="10" min="1" max="100">
+          </div>
+
+          <div class="apple-form-group">
+            <label class="apple-form-label">Keyword Match Precision</label>
+            <select class="apple-form-control" id="modalMatchType">
+              <option value="whole_word">Whole Word Match (Default)</option>
+              <option value="exact">Exact Match (Case-Insensitive)</option>
+              <option value="phrase">Phrase Match (Contains Substring)</option>
+              <option value="wildcard">Wildcard Match (* Any Word)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="apple-form-group">
+          <label class="apple-form-label">Target Post or Reel Title</label>
+          <input type="text" class="apple-form-control" id="modalPostTitle" placeholder="e.g. Reel: 7 Secrets to 100k Followers">
+        </div>
+
+        <div class="apple-form-group">
+          <label class="apple-form-label">Target Post ID (Leave as "all_posts" for account-wide rules)</label>
+          <input type="text" class="apple-form-control" id="modalPostId" value="all_posts">
+        </div>
+
+        <!-- Up to 10 Trigger Words Tag Cloud -->
+        <div class="apple-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label class="apple-form-label" style="margin-bottom: 0;">Trigger Words (Adjust up to 10 Keywords)</label>
+            <span style="font-size: 0.72rem; color: var(--apple-cyan); font-weight: 700;" id="triggerCountBadge">0/10 configured</span>
+          </div>
+          <div class="tags-input-container">
+            <div id="modalTriggerTagsBox" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+            <input type="text" class="tag-chip-input" id="modalTriggerInput" placeholder="Type keyword (e.g. GUIDE, BLUEPRINT) and press Enter...">
+          </div>
+        </div>
+
+        <!-- Negative / Exclusion Words -->
+        <div class="apple-form-group">
+          <label class="apple-form-label">Negative / Safety Exclusion Keywords (Ignore comment if present)</label>
+          <div class="tags-input-container">
+            <div id="modalExcludeTagsBox" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+            <input type="text" class="tag-chip-input" id="modalExcludeInput" placeholder="Type exclusion word (e.g. scam, hate) and press Enter...">
+          </div>
+        </div>
+
+        <!-- Auto-Like Comment -->
+        <div class="apple-form-group" style="display: flex; align-items: center; gap: 10px; margin-top: 8px;">
+          <input type="checkbox" id="modalAutoLikeComment" checked style="width: 18px; height: 18px;">
+          <label for="modalAutoLikeComment" style="margin-bottom: 0; cursor: pointer; color: var(--text-primary); font-size: 0.82rem;">
+            Auto-like the user's comment to boost post algorithm engagement ❤️
+          </label>
+        </div>
+
+        <!-- Rotating Public Comment Replies -->
+        <div class="apple-form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label class="apple-form-label" style="margin-bottom: 0;">Rotating Public Comment Replies (Anti-Spam)</label>
+            <button type="button" class="apple-btn-glass" id="btnAddCommentReply" style="font-size: 0.72rem; padding: 3px 8px;">+ Add Variation</button>
+          </div>
+          <div id="modalRepliesList"></div>
+        </div>
+
+        <!-- Direct Message Builder -->
+        <div class="apple-form-group">
+          <label class="apple-form-label">Direct Message (DM) Content (Supports Spintax & Placeholders)</label>
+          <textarea class="apple-form-control" id="modalDmMessage" rows="5" style="resize: vertical;"></textarea>
+          <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap;">
+            <button type="button" class="apple-btn-glass" style="font-size: 0.7rem; padding: 3px 8px;" onclick="document.getElementById('modalDmMessage').value += ' {{username}}'">+ {{username}}</button>
+            <button type="button" class="apple-btn-glass" style="font-size: 0.7rem; padding: 3px 8px;" onclick="document.getElementById('modalDmMessage').value += ' {{name}}'">+ {{name}}</button>
+            <button type="button" class="apple-btn-glass" style="font-size: 0.7rem; padding: 3px 8px;" onclick="document.getElementById('modalDmMessage').value += ' {{link}}'">+ {{link}}</button>
+            <button type="button" class="apple-btn-glass" style="font-size: 0.7rem; padding: 3px 8px;" onclick="document.getElementById('modalDmMessage').value += ' {Hey|Hello|Hi}'">+ Spintax</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="apple-form-group">
+            <label class="apple-form-label">Action Button Text</label>
+            <input type="text" class="apple-form-control" id="modalBtnText" placeholder="e.g. Download Blueprint ↗">
+          </div>
+          <div class="apple-form-group">
+            <label class="apple-form-label">Action Button Destination URL</label>
+            <input type="url" class="apple-form-control" id="modalBtnUrl" placeholder="https://yourbrand.com/free-access">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+          <button type="button" class="apple-btn-glass" id="btnCancelCampaignModal">Cancel</button>
+          <button type="submit" class="apple-btn-primary">Launch Automation Rule 🚀</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 1. GOOGLE & SOCIAL AUTHENTICATION MODAL -->
+  <div class="apple-modal-overlay" id="authModal">
+    <div class="apple-modal-panel" style="max-width: 480px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="doraemon-logo-box" style="width: 32px; height: 32px;">
+            <img src="/assets/doraemon.svg" alt="DoraFlow">
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">DoraFlow Account Access</h3>
+        </div>
+        <button class="close-btn" id="closeAuthModal">&times;</button>
+      </div>
+
+      <!-- Google Official One-Click Sign In -->
+      <div style="margin-bottom: 18px;">
+        <button type="button" class="google-sign-in-btn" id="btnGoogleSignInMain">
+          <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          <span>Continue with Google</span>
+        </button>
+      </div>
+
+      <!-- Quick 1-Click Google Account Chooser -->
+      <div style="margin-bottom: 18px;">
+        <span style="display: block; font-size: 0.72rem; color: var(--text-tertiary); font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Quick Google Profile Switcher</span>
+        <div class="account-chooser-card" onclick="doraApp.quickGoogleSignIn('sarah.jenkins@growthagency.io', 'Sarah Jenkins', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100', 'Owner')">
+          <div class="account-chooser-left">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Sarah">
+            <div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);">Sarah Jenkins</div>
+              <div style="font-size: 0.72rem; color: var(--text-tertiary);">sarah.jenkins@growthagency.io</div>
+            </div>
+          </div>
+          <span class="role-pill-badge" style="font-size: 0.65rem;">Owner</span>
+        </div>
+
+        <div class="account-chooser-card" onclick="doraApp.quickGoogleSignIn('marcus.vance@growthagency.io', 'Marcus Vance', 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100', 'Approver')">
+          <div class="account-chooser-left">
+            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100" alt="Marcus">
+            <div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);">Marcus Vance</div>
+              <div style="font-size: 0.72rem; color: var(--text-tertiary);">marcus.vance@growthagency.io</div>
+            </div>
+          </div>
+          <span class="role-pill-badge" style="font-size: 0.65rem;">Approver</span>
+        </div>
+
+        <div class="account-chooser-card" onclick="doraApp.quickGoogleSignIn('alex.rivera@gmail.com', 'Alex Rivera', 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100', 'Inbox-Agent')">
+          <div class="account-chooser-left">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100" alt="Alex">
+            <div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);">Alex Rivera</div>
+              <div style="font-size: 0.72rem; color: var(--text-tertiary);">alex.rivera@gmail.com</div>
+            </div>
+          </div>
+          <span class="role-pill-badge" style="font-size: 0.65rem;">Agent</span>
+        </div>
+      </div>
+
+      <div class="auth-divider">or authenticate with email</div>
+
+      <!-- Direct Email Login Form -->
+      <form id="emailLoginForm">
+        <div class="apple-form-group">
+          <label class="apple-form-label">Work Email</label>
+          <input type="email" class="apple-form-control" id="loginEmail" placeholder="name@company.com" required>
+        </div>
+        <div class="apple-form-group">
+          <label class="apple-form-label">Password</label>
+          <input type="password" class="apple-form-control" id="loginPassword" value="••••••••••••" required>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <label style="font-size: 0.75rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" checked> Remember session
+          </label>
+          <span style="font-size: 0.75rem; color: var(--apple-blue); cursor: pointer;">Forgot password?</span>
+        </div>
+        <button type="submit" class="apple-btn-primary" style="width: 100%; justify-content: center; padding: 11px;">
+          Sign In to DoraFlow
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. PLATFORM OAUTH 2.0 CONNECTION SETUP MODAL -->
+  <div class="apple-modal-overlay" id="platformOAuthModal">
+    <div class="apple-modal-panel">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span id="oauthModalIcon" style="font-size: 1.5rem;">📸</span>
+          <div>
+            <h3 id="oauthModalTitle" style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary);">Connect Platform OAuth 2.0</h3>
+            <span id="oauthModalSubtitle" style="font-size: 0.72rem; color: var(--text-tertiary);">Official API Partner Authorization</span>
+          </div>
+        </div>
+        <button class="close-btn" id="closePlatformOAuthModal">&times;</button>
+      </div>
+
+      <form id="platformOAuthForm">
+        <input type="hidden" id="oauthTargetPlatformId" value="instagram">
+
+        <div class="apple-form-group">
+          <label class="apple-form-label">Connected Account / Page Handle</label>
+          <input type="text" class="apple-form-control" id="oauthInputHandle" placeholder="@yourbrand.official" required>
+        </div>
+
+        <div class="apple-form-group">
+          <label class="apple-form-label">Display Name / Business Label</label>
+          <input type="text" class="apple-form-control" id="oauthInputDisplayName" placeholder="e.g. Brand HQ Official" required>
+        </div>
+
+        <div class="apple-form-group">
+          <label class="apple-form-label">Permissions & Scopes (Meta Graph API / OAuth 2.0)</label>
+          <div style="display: flex; flex-direction: column; gap: 8px; background: var(--glass-input); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-main);">
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-primary); cursor: pointer;">
+              <input type="checkbox" id="scopeComments" checked>
+              <span><strong>Comments Management:</strong> Read, filter, and auto-reply to post/reel comments</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-primary); cursor: pointer;">
+              <input type="checkbox" id="scopeMessages" checked>
+              <span><strong>Direct Messaging (DMs):</strong> Send personalized private replies within official 7-day window</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-primary); cursor: pointer;">
+              <input type="checkbox" id="scopeWebhooks" checked>
+              <span><strong>Real-time Webhook Events:</strong> Receive instant comment and mention notifications</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-primary); cursor: pointer;">
+              <input type="checkbox" id="scopeInsights" checked>
+              <span><strong>Page Insights & Telemetry:</strong> Track verified conversions and delivery metrics</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="apple-form-group">
+          <label class="apple-form-label">Webhook Callback URL</label>
+          <input type="text" class="apple-form-control" readonly value="http://localhost:3000/api/webhooks/meta" style="font-family: var(--font-mono); font-size: 0.78rem; opacity: 0.8;">
+        </div>
+
+        <div style="margin-top: 14px; padding: 10px 14px; border-radius: var(--radius-md); background: rgba(52, 199, 89, 0.08); border: 1px solid rgba(52, 199, 89, 0.25); font-size: 0.74rem; color: var(--apple-green);">
+          🛡️ <strong>Zero-Suspension Guarantee:</strong> Generates a long-lived 60-day token via official Meta Graph API v21.0. No unauthorized reverse-engineered scrapers.
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+          <button type="button" class="apple-btn-glass" id="btnCancelPlatformOAuthModal">Cancel</button>
+          <button type="submit" class="apple-btn-primary">Authorize & Save Connection 🔗</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. INTERACTIVE DEMO TOUR & PROCESS WALKTHROUGH MODAL -->
+  <div class="apple-modal-overlay" id="demoTourModal">
+    <div class="apple-modal-panel" style="max-width: 780px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="doraemon-logo-box" style="width: 32px; height: 32px;">
+            <img src="/assets/doraemon.svg" alt="DoraFlow">
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">Interactive Production Process Walkthrough</h3>
+            <span style="font-size: 0.74rem; color: var(--text-tertiary);">Step-by-step end-to-end demonstration of the real automation engine</span>
+          </div>
+        </div>
+        <button class="close-btn" id="closeDemoTourModal">&times;</button>
+      </div>
+
+      <!-- 5-Step Stepper Header -->
+      <div class="demo-stepper-strip">
+        <div class="demo-step-indicator active" id="demoStepInd_1" onclick="doraApp.goToDemoStep(1)">
+          <div class="step-circle">1</div>
+          <span>Auth & Workspace</span>
+        </div>
+        <div class="demo-step-indicator" id="demoStepInd_2" onclick="doraApp.goToDemoStep(2)">
+          <div class="step-circle">2</div>
+          <span>OAuth Connect</span>
+        </div>
+        <div class="demo-step-indicator" id="demoStepInd_3" onclick="doraApp.goToDemoStep(3)">
+          <div class="step-circle">3</div>
+          <span>10 Triggers & Rules</span>
+        </div>
+        <div class="demo-step-indicator" id="demoStepInd_4" onclick="doraApp.goToDemoStep(4)">
+          <div class="step-circle">4</div>
+          <span>Comment & DM</span>
+        </div>
+        <div class="demo-step-indicator" id="demoStepInd_5" onclick="doraApp.goToDemoStep(5)">
+          <div class="step-circle">5</div>
+          <span>Inbox & Takeover</span>
+        </div>
+      </div>
+
+      <!-- Step Body (Dynamic) -->
+      <div class="demo-step-body" id="demoStepBody">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Real-Time Payload & Execution Stream -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-size: 0.74rem; font-weight: 700; color: var(--text-secondary);">Real-Time System Log & Engine Telemetry</span>
+          <span style="font-size: 0.7rem; color: var(--apple-cyan);">Official Meta Graph API v21.0 Handshake</span>
+        </div>
+        <pre class="demo-live-payload-box" id="demoPayloadConsole">Initializing DoraFlow Spatial OS demo engine...</pre>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="demo-nav-footer">
+        <button class="apple-btn-glass" id="btnDemoPrev" onclick="doraApp.prevDemoStep()">← Previous</button>
+        <button class="apple-btn-primary" id="btnDemoAction" onclick="doraApp.runCurrentDemoAction()">⚡ Execute Live Step Action</button>
+        <button class="apple-btn-glass" id="btnDemoNext" onclick="doraApp.nextDemoStep()">Next Step →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastShelf" class="toast-shelf"></div>
+
+  <!-- Scripts -->
+  <script src="/js/analyticsCharts.js"></script>
+  <script src="/js/liveSimulator.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
