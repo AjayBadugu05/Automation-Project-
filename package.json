@@ -1,0 +1,19 @@
+{
+  "name": "nexusflow-dm-automation",
+  "version": "1.0.0",
+  "description": "Zero-Ban Omnichannel DM & Comment Automation Studio for Instagram, Facebook, and Beyond",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "echo \"Ready\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  }
+}
