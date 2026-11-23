@@ -431,6 +431,546 @@
   },
   "campaigns": [
     {
+      "id": "camp_devto_1795459438575_832n",
+      "name": "Viral Blueprint Free Guide 🚀 [DEVTO]",
+      "platform": "devto",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to devto",
+          "timestamp": "2026-11-23T18:43:58.575Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_medium_1795459438536_r2ik",
+      "name": "Viral Blueprint Free Guide 🚀 [MEDIUM]",
+      "platform": "medium",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to medium",
+          "timestamp": "2026-11-23T18:43:58.537Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_quora_1795459438527_ofgy",
+      "name": "Viral Blueprint Free Guide 🚀 [QUORA]",
+      "platform": "quora",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to quora",
+          "timestamp": "2026-11-23T18:43:58.527Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_reddit_1795459438519_dzch",
+      "name": "Viral Blueprint Free Guide 🚀 [REDDIT]",
+      "platform": "reddit",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to reddit",
+          "timestamp": "2026-11-23T18:43:58.519Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_linkedin_1795459438493_tepu",
+      "name": "Viral Blueprint Free Guide 🚀 [LINKEDIN]",
+      "platform": "linkedin",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to linkedin",
+          "timestamp": "2026-11-23T18:43:58.495Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_twitter_1795459438478_zd7v",
+      "name": "Viral Blueprint Free Guide 🚀 [TWITTER]",
+      "platform": "twitter",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to twitter",
+          "timestamp": "2026-11-23T18:43:58.478Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_youtube_1795459438460_rbjr",
+      "name": "Viral Blueprint Free Guide 🚀 [YOUTUBE]",
+      "platform": "youtube",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to youtube",
+          "timestamp": "2026-11-23T18:43:58.460Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_threads_1795459438431_c3dm",
+      "name": "Viral Blueprint Free Guide 🚀 [THREADS]",
+      "platform": "threads",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to threads",
+          "timestamp": "2026-11-23T18:43:58.432Z"
+        }
+      ],
+      "version": 1
+    },
+    {
+      "id": "camp_facebook_1795459438400_qjxx",
+      "name": "Viral Blueprint Free Guide 🚀 [FACEBOOK]",
+      "platform": "facebook",
+      "status": "active",
+      "targetPostId": "reel_984710293",
+      "targetPostTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "matchMode": "any_trigger",
+      "caseSensitive": false,
+      "triggerWords": [
+        "GUIDE",
+        "BLUEPRINT",
+        "SEND",
+        "FREE",
+        "GROWTH",
+        "START",
+        "INFO",
+        "LINK",
+        "YES",
+        "ACCESS"
+      ],
+      "excludeWords": [
+        "scam",
+        "bot",
+        "fake",
+        "hate",
+        "unfollow"
+      ],
+      "autoLikeComment": true,
+      "commentReplies": [
+        "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+        "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+        "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+        "Delivered to your direct messages! Let’s crush your growth this year 📈"
+      ],
+      "dmMessage": "Hey {{username}}! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref={{username}}\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "actionButtonText": "Download Blueprint",
+      "actionButtonUrl": "https://growthblueprint.io/free-access",
+      "stats": {
+        "commentsReceived": 0,
+        "dmsSent": 0,
+        "acceptedByMeta": 0,
+        "clicks": 0,
+        "conversionRate": "0.0%"
+      },
+      "createdAt": "2026-11-20T10:00:00Z",
+      "workspaceId": "ws_apex",
+      "scope": "post_specific",
+      "priority": 10,
+      "matchType": "whole_word",
+      "versionHistory": [
+        {
+          "version": 1,
+          "modifiedBy": "Owner",
+          "changeSummary": "Pushed from instagram to facebook",
+          "timestamp": "2026-11-23T18:43:58.408Z"
+        }
+      ],
+      "version": 1
+    },
+    {
       "id": "camp_ig_reel_blueprint",
       "name": "Viral Blueprint Free Guide 🚀",
       "platform": "instagram",
@@ -469,12 +1009,12 @@
       "actionButtonText": "Download Blueprint",
       "actionButtonUrl": "https://growthblueprint.io/free-access",
       "stats": {
-        "commentsReceived": 945,
+        "commentsReceived": 958,
         "triggersMatched": 826,
-        "dmsSent": 914,
+        "dmsSent": 927,
         "clicks": 588,
         "conversionRate": "96.4%",
-        "acceptedByMeta": 91
+        "acceptedByMeta": 104
       },
       "createdAt": "2026-11-20T10:00:00Z",
       "workspaceId": "ws_apex",
@@ -530,12 +1070,12 @@
       "actionButtonText": "Claim Free Ticket",
       "actionButtonUrl": "https://masterclass.nexus.io/vip-access",
       "stats": {
-        "commentsReceived": 520,
+        "commentsReceived": 521,
         "triggersMatched": 499,
-        "dmsSent": 502,
+        "dmsSent": 503,
         "clicks": 379,
         "conversionRate": "96.5%",
-        "acceptedByMeta": 7
+        "acceptedByMeta": 8
       },
       "createdAt": "2026-11-21T14:30:00Z",
       "workspaceId": "ws_apex",
@@ -1081,9 +1621,407 @@
     "burst_u_6_1795457595520": "2026-11-23T18:13:15.520Z",
     "burst_u_7_1795457595537": "2026-11-23T18:13:15.538Z",
     "burst_u_8_1795457595555": "2026-11-23T18:13:15.556Z",
-    "burst_u_9_1795457595577": "2026-11-23T18:13:15.577Z"
+    "burst_u_9_1795457595577": "2026-11-23T18:13:15.577Z",
+    "route_test_user_1_1795459470910": "2026-11-23T18:44:30.929Z",
+    "route_test_user_2_1795459470962": "2026-11-23T18:44:30.963Z",
+    "route_test_user_3_1795459470998": "2026-11-23T18:44:30.999Z",
+    "fixed_dup_user_1795459471071": "2026-11-23T18:44:31.074Z",
+    "burst_u_0_1795459471128": "2026-11-23T18:44:31.129Z",
+    "burst_u_1_1795459471166": "2026-11-23T18:44:31.169Z",
+    "burst_u_2_1795459471211": "2026-11-23T18:44:31.212Z",
+    "burst_u_3_1795459471258": "2026-11-23T18:44:31.262Z",
+    "burst_u_4_1795459471307": "2026-11-23T18:44:31.312Z",
+    "burst_u_5_1795459471339": "2026-11-23T18:44:31.341Z",
+    "burst_u_6_1795459471377": "2026-11-23T18:44:31.377Z",
+    "burst_u_7_1795459471416": "2026-11-23T18:44:31.418Z",
+    "burst_u_8_1795459471462": "2026-11-23T18:44:31.462Z",
+    "burst_u_9_1795459471497": "2026-11-23T18:44:31.497Z"
   },
   "storedArchive": [
+    {
+      "id": "msg_1795459471516",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_9",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 9",
+      "commentCreatedAt": "2026-11-23T18:44:31.497Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 8.34,
+      "publicReply": "Delivered to your direct messages! Let’s crush your growth this year 📈",
+      "dmMessage": "Hey @burst_usr_9! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_9\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.516Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471485",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_8",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 8",
+      "commentCreatedAt": "2026-11-23T18:44:31.462Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 9.17,
+      "publicReply": "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+      "dmMessage": "Hey @burst_usr_8! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_8\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.485Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471454",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_7",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 7",
+      "commentCreatedAt": "2026-11-23T18:44:31.416Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 6.13,
+      "publicReply": "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+      "dmMessage": "Hey @burst_usr_7! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_7\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.454Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471394",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_6",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 6",
+      "commentCreatedAt": "2026-11-23T18:44:31.377Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 10.95,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_6! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_6\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.394Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471370",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_5",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 5",
+      "commentCreatedAt": "2026-11-23T18:44:31.339Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 12.04,
+      "publicReply": "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+      "dmMessage": "Hey @burst_usr_5! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_5\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.371Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471330",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_4",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 4",
+      "commentCreatedAt": "2026-11-23T18:44:31.307Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 6.91,
+      "publicReply": "Sent you the complete breakdown in DM! Check requests if not seen 🙌",
+      "dmMessage": "Hey @burst_usr_4! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_4\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.330Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471281",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_3",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 3",
+      "commentCreatedAt": "2026-11-23T18:44:31.258Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 6,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_3! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_3\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.281Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471239",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_2",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 2",
+      "commentCreatedAt": "2026-11-23T18:44:31.212Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 5.24,
+      "publicReply": "Delivered to your direct messages! Let’s crush your growth this year 📈",
+      "dmMessage": "Hey @burst_usr_2! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_2\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.239Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471200",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_1",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 1",
+      "commentCreatedAt": "2026-11-23T18:44:31.166Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 5.76,
+      "publicReply": "Delivered to your direct messages! Let’s crush your growth this year 📈",
+      "dmMessage": "Hey @burst_usr_1! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_1\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.200Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471153",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_0",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 0",
+      "commentCreatedAt": "2026-11-23T18:44:31.128Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 8.15,
+      "publicReply": "Delivered to your direct messages! Let’s crush your growth this year 📈",
+      "dmMessage": "Hey @burst_usr_0! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@burst_usr_0\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.154Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_takeover_test_1795459471110",
+      "workspaceId": "ws_apex",
+      "userHandle": "@agent_client_1795459471110",
+      "humanTakeoverActive": true
+    },
+    {
+      "id": "msg_1795459471093",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@fixed_dup_user",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT",
+      "commentCreatedAt": "2026-11-23T18:44:31.071Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 4.93,
+      "publicReply": "Delivered to your direct messages! Let’s crush your growth this year 📈",
+      "dmMessage": "Hey @fixed_dup_user! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@fixed_dup_user\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.094Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459471026",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_3",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "GUIDE and BLUEPRINT and SEND all together!",
+      "commentCreatedAt": "2026-11-23T18:44:30.998Z",
+      "matchedTrigger": "GUIDE",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 7.08,
+      "publicReply": "Delivered to your direct messages! Let’s crush your growth this year 📈",
+      "dmMessage": "Hey @router_user_3! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@router_user_3\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:31.026Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459470988",
+      "workspaceId": "ws_apex",
+      "platform": "facebook",
+      "postId": "post_fb_552199",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_2",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "VIP ticket please",
+      "commentCreatedAt": "2026-11-23T18:44:30.962Z",
+      "matchedTrigger": "VIP",
+      "winningRuleName": "Facebook AI Automation Masterclass VIP (post_specific • Priority 10)",
+      "jitterSeconds": 12.47,
+      "publicReply": "Check your Messenger inbox! Your VIP ticket has been delivered 🎟️",
+      "dmMessage": "Hello Valued User! 🌟\n\nHere is your private VIP pass to the AI Automation Masterclass happening this Thursday:\n\n🎟️ Ticket: https://masterclass.nexus.io/vip-access?uid=@router_user_2\n\nMake sure to add it to your calendar. See you live!",
+      "buttonText": "Claim Free Ticket",
+      "buttonUrl": "https://masterclass.nexus.io/vip-access",
+      "timestamp": "2026-11-23T18:44:30.988Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795459470948",
+      "workspaceId": "ws_apex",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_1",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "SEND me the guide",
+      "commentCreatedAt": "2026-11-23T18:44:30.911Z",
+      "matchedTrigger": "GUIDE",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 12.08,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @router_user_1! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@router_user_1\n\nInside you'll find:\n✓ The exact 3-step hook formula\n✓ High-retention audio templates\n✓ DM automation framework\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-23T18:44:30.948Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Automated Lead"
+      ],
+      "internalNotes": []
+    },
     {
       "id": "msg_1795457595588",
       "workspaceId": "ws_apex",
@@ -3934,6 +4872,20 @@
   "currentWorkspaceId": "ws_apex",
   "currentUserRole": "Owner",
   "auditLogs": [
+    {
+      "id": "aud_1795459471040",
+      "timestamp": "2026-11-23T18:44:31.040Z",
+      "author": "Marcus (Approver)",
+      "action": "Rollback Rule: Viral Blueprint Free Guide 🚀",
+      "details": "Rolled back to Version 1"
+    },
+    {
+      "id": "aud_1795459438583",
+      "timestamp": "2026-11-23T18:43:58.583Z",
+      "author": "Owner",
+      "action": "Pushed Rule to All Platforms: Viral Blueprint Free Guide 🚀",
+      "details": "Replicated across 9 channels"
+    },
     {
       "id": "aud_1795457595364",
       "timestamp": "2026-11-23T18:13:15.364Z",

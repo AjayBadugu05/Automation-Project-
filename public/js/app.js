@@ -982,6 +982,8 @@ class DoraEnterpriseApp {
       if (res.success) {
         this.showToast(`🚀 Omnichannel sync complete! Pushed ${res.totalPushed} rules across all platforms.`, 'success');
         this.refreshAllData(true);
+      } else {
+        this.showToast(res.error || 'Failed to push rules across platforms', 'error');
       }
     } catch (err) {
       this.showToast('Bulk push error: ' + err.message, 'error');
