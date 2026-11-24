@@ -19,6 +19,18 @@ app.use(express.urlencoded({ extended: true }));
 // Serve frontend static assets
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+// Health check endpoint for latency ping meters and uptime monitors
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'DoraFlow Enterprise Spatial Studio',
+    version: '21.0.0',
+    metaCompliant: true,
+    uptime: Math.round(process.uptime()),
+    timestamp: new Date().toISOString()
+  });
+});
+
 // -------------------------------------------------------------
 // 0. WORKSPACES & RBAC API
 // -------------------------------------------------------------
