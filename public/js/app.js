@@ -157,18 +157,13 @@ class DoraEnterpriseApp {
     const labelEl = document.getElementById('topViewTitlePill');
     if (labelEl) {
       const names = {
-        overview: 'Spatial Overview',
-        instagram: 'Instagram Creator Hub',
-        facebook: 'Facebook Pages & Messenger',
-        threads: 'Threads Hub',
-        youtube: 'YouTube Studio',
-        twitter: 'X / Twitter Hub',
-        linkedin: 'LinkedIn Hub',
-        inbox: 'Shared Inbox & Human Takeover',
-        simulator: 'Rule Precedence Simulator',
-        tests: 'Enterprise Test Suite Runner (5 Tests)',
-        shield: 'Zero-Ban Anti-Suspension Shield',
-        analytics: 'Performance Analytics & Funnels'
+        overview: 'Automations & Flows',
+        inbox: 'Live Chat & Shared Inbox',
+        contacts: 'Audience & Contacts CRM',
+        simulator: 'Interactive Flow Simulator',
+        setup: 'Meta API & Free Setup Guide',
+        shield: 'Zero-Ban Safety Shield & Audit',
+        tests: 'Enterprise Test Suite Runner'
       };
       labelEl.innerText = names[viewId] || 'DoraFlow Studio';
     }
@@ -181,24 +176,18 @@ class DoraEnterpriseApp {
       case 'overview':
         this.renderOverview();
         break;
-      case 'instagram':
-      case 'facebook':
-      case 'threads':
-      case 'youtube':
-      case 'twitter':
-      case 'linkedin':
-        this.renderPlatformPage(this.currentView);
-        break;
       case 'inbox':
         this.renderInbox();
         break;
+      case 'contacts':
+        this.renderContacts();
+        break;
+      case 'simulator':
+        break;
+      case 'setup':
+        break;
       case 'shield':
         this.renderShieldSettings();
-        break;
-      case 'analytics':
-        if (window.analyticsRenderer && this.analytics) {
-          window.analyticsRenderer.renderAll(this.analytics);
-        }
         break;
     }
   }
@@ -263,6 +252,21 @@ class DoraEnterpriseApp {
     const btnNewCamp = document.getElementById('btnNewCampaignTop');
     if (btnNewCamp) {
       btnNewCamp.addEventListener('click', () => this.openCampaignModal());
+    }
+
+    const btnClear = document.getElementById('btnClearWorkspace');
+    if (btnClear) {
+      btnClear.addEventListener('click', () => this.clearAllData());
+    }
+
+    const btnSamples = document.getElementById('btnLoadSamples');
+    if (btnSamples) {
+      btnSamples.addEventListener('click', () => this.loadSampleTemplates());
+    }
+
+    const btnGuide = document.getElementById('btnOpenSetupGuide');
+    if (btnGuide) {
+      btnGuide.addEventListener('click', () => this.switchView('setup'));
     }
   }
 
@@ -850,12 +854,15 @@ class DoraEnterpriseApp {
     const kpiRate = document.getElementById('ovConversionRate');
     const kpiActive = document.getElementById('ovActiveCampaigns');
 
-    if (this.analytics) {
-      if (kpiComments) kpiComments.innerText = (this.analytics.totalComments || 0).toLocaleString();
-      if (kpiDms) kpiDms.innerText = (this.analytics.totalDmsSent || 0).toLocaleString();
-      if (kpiRate) kpiRate.innerText = this.analytics.overallConversion || '0.0%';
-      if (kpiActive) kpiActive.innerText = this.analytics.shieldHealth?.activeCampaigns || 0;
-    }
+    const totalDms = this.campaigns.reduce((sum, c) => sum + (c.stats?.dmsSent || 0), 0);
+    const totalComments = this.campaigns.reduce((sum, c) => sum + (c.stats?.commentsReceived || 0), 0);
+    const activeCount = this.campaigns.filter(c => c.status === 'active').length;
+    const convRate = totalComments > 0 ? ((totalDms / totalComments) * 100).toFixed(1) + '%' : '0.0%';
+
+    if (kpiComments) kpiComments.innerText = totalComments.toLocaleString();
+    if (kpiDms) kpiDms.innerText = totalDms.toLocaleString();
+    if (kpiRate) kpiRate.innerText = convRate;
+    if (kpiActive) kpiActive.innerText = activeCount;
 
     this.renderCampaignCards();
   }
@@ -866,8 +873,14 @@ class DoraEnterpriseApp {
 
     if (this.campaigns.length === 0) {
       container.innerHTML = `
-        <div style="text-align: center; padding: 40px; color: var(--text-tertiary);">
-          No automation rules in this workspace. Click "+ Create Automation" to launch your first rule.
+        <div class="empty-state-card">
+          <div class="empty-state-icon">⚡</div>
+          <h3 class="empty-state-title">No Automation Rules Created Yet</h3>
+          <p class="empty-state-desc">You are running 100% clean. Create your first rule to automatically reply to comments and send direct messages with your links on Instagram and Facebook.</p>
+          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 14px;">
+            <button class="apple-btn-primary" onclick="doraApp.openCampaignModal()">+ Create Your First Automation</button>
+            <button class="apple-btn-glass" onclick="doraApp.loadSampleTemplates()">✨ Load Sample Rule</button>
+          </div>
         </div>
       `;
       return;
@@ -903,7 +916,7 @@ class DoraEnterpriseApp {
                 <div style="font-size: 0.76rem; color: var(--text-tertiary); margin-top: 3px;">
                   Target: <strong>${this.escapeHtml(camp.targetPostTitle || camp.targetPostId)}</strong> • 
                   Match: <strong>${camp.matchType || 'whole_word'}</strong> • 
-                  v${camp.version || 1} (Approved: ${camp.lastApprovedBy || 'Marcus Vance'})
+                  v${camp.version || 1}
                 </div>
               </div>
             </div>
@@ -918,12 +931,13 @@ class DoraEnterpriseApp {
                 <div style="font-size: 0.68rem; color: var(--text-tertiary); text-transform: uppercase;">Accepted</div>
               </div>
               <div style="display: flex; gap: 6px;">
+                <button class="apple-btn-glass" onclick="doraApp.openInSimulator('${camp.id}')" title="Test in interactive live simulator">🧪 Test</button>
                 <button class="apple-btn-glass" style="background: rgba(0, 113, 227, 0.12); color: var(--apple-blue); font-weight: 700; border: 1px solid rgba(0, 113, 227, 0.3);" onclick="doraApp.pushToAllPlatforms('${camp.id}')" title="Push this rule to all 10 connected platforms">🚀 Push to All</button>
                 <button class="apple-btn-glass" onclick="doraApp.toggleCampaignStatus('${camp.id}', '${camp.status}')">
                   ${camp.status === 'active' ? '⏸️ Pause' : '▶️ Resume'}
                 </button>
                 <button class="apple-btn-glass" onclick="doraApp.openCampaignModal('${camp.id}')">✏️ Edit</button>
-                <button class="apple-btn-glass" onclick="doraApp.rollbackVersionPrompt('${camp.id}')" title="1-Click Rollback">🔄 Rollback</button>
+                <button class="apple-btn-glass" style="color: var(--apple-red); border-color: rgba(239, 68, 68, 0.25);" onclick="doraApp.deleteCampaign('${camp.id}')">🗑️ Delete</button>
               </div>
             </div>
           </div>
@@ -1012,6 +1026,150 @@ class DoraEnterpriseApp {
       }
     })
     .catch(err => this.showToast('Rollback error: ' + err.message, 'error'));
+  }
+
+  // -------------------------------------------------------------
+  // Clean Slate, Audience CRM & Quick Actions
+  // -------------------------------------------------------------
+  async clearAllData() {
+    if (!confirm('Are you sure you want to clear all sample rules, messages, and contacts to start 100% empty?')) return;
+    try {
+      const res = await fetch('/api/reset/empty', { method: 'POST' }).then(r => r.json());
+      if (res.success) {
+        this.showToast('Workspace reset to 100% clean empty canvas! 🗑️', 'success');
+        await this.refreshAllData(false);
+      }
+    } catch (e) {
+      this.showToast('Failed to clear workspace: ' + e.message, 'error');
+    }
+  }
+
+  async loadSampleTemplates() {
+    try {
+      const res = await fetch('/api/reset/samples', { method: 'POST' }).then(r => r.json());
+      if (res.success) {
+        this.showToast('Sample automation templates loaded! ✨', 'success');
+        await this.refreshAllData(false);
+      }
+    } catch (e) {
+      this.showToast('Failed to restore samples: ' + e.message, 'error');
+    }
+  }
+
+  copyText(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    const text = el.innerText || el.value || '';
+    navigator.clipboard.writeText(text).then(() => {
+      this.showToast('Copied to clipboard! 📋', 'success');
+    }).catch(() => {
+      this.showToast('Copied: ' + text, 'info');
+    });
+  }
+
+  async deleteCampaign(id) {
+    if (!confirm('Are you sure you want to delete this automation rule?')) return;
+    try {
+      const res = await fetch(`/api/campaigns/${id}`, { method: 'DELETE' }).then(r => r.json());
+      if (res.success) {
+        this.showToast('Automation rule deleted.', 'success');
+        this.refreshAllData(true);
+      }
+    } catch (e) {
+      this.showToast('Failed to delete rule', 'error');
+    }
+  }
+
+  openInSimulator(campaignId) {
+    this.switchView('simulator');
+    const select = document.getElementById('simActiveRuleSelect');
+    if (select) {
+      select.value = campaignId;
+      select.dispatchEvent(new Event('change'));
+    }
+  }
+
+  async renderContacts() {
+    const container = document.getElementById('contactsTableContainer');
+    if (!container) return;
+
+    try {
+      const res = await fetch('/api/contacts').then(r => r.json());
+      const contacts = res.contacts || [];
+
+      if (contacts.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state-card">
+            <div class="empty-state-icon">👥</div>
+            <h3 class="empty-state-title">No Captured Contacts Yet</h3>
+            <p class="empty-state-desc">When users comment with your trigger words on Instagram and Facebook, their profile and lead information will appear here automatically.</p>
+            <button class="apple-btn-primary" onclick="doraApp.openCampaignModal()">+ Create Comment Trigger</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="crm-table">
+          <thead>
+            <tr>
+              <th>Contact Profile</th>
+              <th>Platform</th>
+              <th>Trigger Rule</th>
+              <th>Interactions</th>
+              <th>Last Message Snippet</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${contacts.map(c => `
+              <tr>
+                <td>
+                  <div class="crm-user-cell">
+                    <img src="${c.userAvatar}" alt="${c.userName}">
+                    <div>
+                      <div style="font-weight: 700; color: var(--text-primary);">${this.escapeHtml(c.userName)}</div>
+                      <div style="font-size: 0.72rem; color: var(--text-tertiary);">${this.escapeHtml(c.userHandle)}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span style="font-weight: 700; text-transform: uppercase; font-size: 0.72rem; color: var(--apple-blue);">${c.platform}</span>
+                </td>
+                <td>
+                  <span style="font-size: 0.75rem; color: var(--text-primary); font-weight: 600;">${this.escapeHtml(c.sourceRule)}</span>
+                </td>
+                <td>
+                  <span style="font-weight: 700; font-family: var(--font-mono);">${c.totalInteractions}</span>
+                </td>
+                <td style="max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: var(--text-secondary);">
+                  "${this.escapeHtml(c.lastMessage)}"
+                </td>
+                <td>
+                  <span class="pill-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--apple-green); font-size: 0.7rem; font-weight: 700;">Active Lead</span>
+                </td>
+                <td>
+                  <button class="apple-btn-glass" style="font-size: 0.72rem; padding: 4px 10px;" onclick="doraApp.chatWithContact('${c.userHandle}')">
+                    💬 Live Chat
+                  </button>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    } catch (err) {
+      container.innerHTML = `<div style="padding: 24px; text-align: center; color: var(--apple-red);">Failed to load contacts: ${err.message}</div>`;
+    }
+  }
+
+  chatWithContact(userHandle) {
+    this.switchView('inbox');
+    const thread = this.storedInbox.find(t => t.userHandle === userHandle);
+    if (thread) {
+      this.selectThread(thread.id);
+    }
   }
 
   // -------------------------------------------------------------

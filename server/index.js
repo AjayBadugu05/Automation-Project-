@@ -563,6 +563,27 @@ app.post('/api/inbox/:id/notes', (req, res) => {
 });
 
 // -------------------------------------------------------------
+// 4.1 AUDIENCE & CONTACTS CRM API (ManyChat Style)
+// -------------------------------------------------------------
+app.get('/api/contacts', (req, res) => {
+  const contacts = db.getContacts();
+  res.json({ success: true, count: contacts.length, contacts });
+});
+
+// -------------------------------------------------------------
+// 4.2 CLEAN SLATE & RESET API (Clear Bullshit / Restore Samples)
+// -------------------------------------------------------------
+app.post('/api/reset/empty', (req, res) => {
+  const result = db.resetToEmpty();
+  res.json(result);
+});
+
+app.post('/api/reset/samples', (req, res) => {
+  const result = db.restoreSamples();
+  res.json(result);
+});
+
+// -------------------------------------------------------------
 // 4. ACTIVITY LOGS API
 // -------------------------------------------------------------
 app.get('/api/logs', (req, res) => {

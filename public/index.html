@@ -16,82 +16,44 @@
     <div class="ambient-light-3"></div>
   </div>
 
-  <!-- Left Floating Spatial Vertical Dock (Apple VisionOS Style) -->
+  <!-- Left Floating Spatial Vertical Dock (Apple VisionOS / ManyChat Style) -->
   <aside class="spatial-dock-wrapper">
     <nav class="spatial-dock">
-      <!-- 1. Spatial Overview -->
-      <button class="dock-item active" data-view="overview">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-        <span class="dock-tooltip">Spatial Overview</span>
+      <!-- 1. Automations (Flows & Rules) -->
+      <button class="dock-item active" data-view="overview" title="Automations & Flows">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <span class="dock-tooltip">Automations & Flows</span>
       </button>
 
-      <!-- 2. Instagram Hub -->
-      <button class="dock-item" data-view="instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        <span class="dock-tooltip">Instagram Hub</span>
-        <span class="dock-badge"></span>
-      </button>
-
-      <!-- 3. Facebook Pages Hub -->
-      <button class="dock-item" data-view="facebook">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-        <span class="dock-tooltip">Facebook Pages</span>
-      </button>
-
-      <!-- 4. Threads Hub -->
-      <button class="dock-item" data-view="threads">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>
-        <span class="dock-tooltip">Threads Hub</span>
-      </button>
-
-      <!-- 5. YouTube Studio -->
-      <button class="dock-item" data-view="youtube">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000"></polygon></svg>
-        <span class="dock-tooltip">YouTube Studio</span>
-      </button>
-
-      <!-- 6. X (Twitter) -->
-      <button class="dock-item" data-view="twitter">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-        <span class="dock-tooltip">X (Twitter)</span>
-      </button>
-
-      <!-- 7. LinkedIn Hub -->
-      <button class="dock-item" data-view="linkedin">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        <span class="dock-tooltip">LinkedIn Hub</span>
-      </button>
-
-      <!-- 8. Shared Inbox & Human Takeover -->
-      <button class="dock-item" data-view="inbox">
+      <!-- 2. Shared Inbox & Live Chat -->
+      <button class="dock-item" data-view="inbox" title="Live Chat & Inbox">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        <span class="dock-tooltip">Shared Inbox & Archive</span>
+        <span class="dock-tooltip">Live Chat & Inbox</span>
         <span class="dock-badge"></span>
       </button>
 
-      <!-- 9. Precedence Simulator -->
-      <button class="dock-item" data-view="simulator">
+      <!-- 3. Audience & Contacts CRM -->
+      <button class="dock-item" data-view="contacts" title="Audience & Contacts CRM">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span class="dock-tooltip">Audience & Contacts</span>
+      </button>
+
+      <!-- 4. Interactive Flow Simulator -->
+      <button class="dock-item" data-view="simulator" title="Live Flow Simulator">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-        <span class="dock-tooltip">Rule Precedence Simulator</span>
+        <span class="dock-tooltip">Live Flow Simulator</span>
       </button>
 
-      <!-- 10. Enterprise Test Suite Runner -->
-      <button class="dock-item" data-view="tests">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-        <span class="dock-tooltip">Enterprise Test Suite (10 Tests)</span>
-        <span class="dock-badge" style="background: var(--apple-blue); box-shadow: 0 0 8px var(--apple-blue);"></span>
+      <!-- 5. 100% Free Meta Setup Guide -->
+      <button class="dock-item" data-view="setup" title="Meta API & Free Setup Guide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span class="dock-tooltip">Meta API & Free Setup</span>
       </button>
 
-      <!-- 11. Anti-Ban Safety Shield -->
-      <button class="dock-item" data-view="shield">
+      <!-- 6. Anti-Ban Safety Shield -->
+      <button class="dock-item" data-view="shield" title="Zero-Ban Anti-Suspension Shield">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        <span class="dock-tooltip">Zero-Ban Safety Shield</span>
-      </button>
-
-      <!-- 12. Telemetry & Analytics -->
-      <button class="dock-item" data-view="analytics">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-        <span class="dock-tooltip">Analytics & Funnel</span>
+        <span class="dock-tooltip">Zero-Ban Shield</span>
       </button>
     </nav>
   </aside>
@@ -134,47 +96,27 @@
       <!-- Center Current View Breadcrumb Pill -->
       <div class="top-center-pill">
         <div class="spatial-status-dot"></div>
-        <span class="spatial-status-text" id="topViewTitlePill">Spatial Overview</span>
+        <span class="spatial-status-text" id="topViewTitlePill">Automations & Flows</span>
         <span style="font-size: 0.72rem; color: var(--text-tertiary);">•</span>
-        <span style="font-size: 0.72rem; font-weight: 700; color: var(--apple-cyan);" id="topShieldScoreBadge">100% Safe</span>
+        <span style="font-size: 0.72rem; font-weight: 700; color: var(--apple-green);" id="topShieldScoreBadge">100% Free Self-Hosted</span>
       </div>
 
       <!-- Actions & Dual-Theme Switch -->
       <div class="top-actions-cluster">
-        <!-- Interactive Demo Tour Button -->
-        <button class="apple-btn-glass" id="btnLaunchDemoTour" title="Interactive Guided Walkthrough & Demo" style="color: var(--apple-blue); border-color: rgba(0,113,227,0.3); font-weight: 700; gap: 6px;">
-          ▶️ Guided Demo
+        <!-- Clear Data / Start Empty Button -->
+        <button class="apple-btn-glass" id="btnClearWorkspace" title="Clear all data to start with 100% clean empty slate" style="color: var(--apple-red); border-color: rgba(239, 68, 68, 0.3); font-weight: 700; gap: 6px;">
+          🗑️ Clear (Start Empty)
         </button>
 
-        <!-- User Profile & Google Sign-In Capsule -->
-        <div class="user-profile-capsule">
-          <div class="user-profile-btn" id="userProfileBtn" title="Current Authenticated User & Google Sign-In">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" id="userAvatarImg" class="user-avatar-sm" alt="User">
-            <span class="user-name-text" id="userNameLabel">Sarah Jenkins</span>
-            <span style="font-size: 0.65rem; color: var(--apple-green);">✓</span>
-          </div>
+        <!-- Load Sample Rules Button -->
+        <button class="apple-btn-glass" id="btnLoadSamples" title="Restore sample automation templates" style="color: var(--apple-blue); border-color: rgba(0, 113, 227, 0.3); font-weight: 700; gap: 6px;">
+          ✨ Load Samples
+        </button>
 
-          <!-- Dropdown Popover -->
-          <div class="user-profile-dropdown" id="userProfileDropdown">
-            <div class="user-dropdown-header">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" id="dropdownUserAvatar" alt="User">
-              <div class="user-dropdown-meta">
-                <h4 id="dropdownUserName">Sarah Jenkins</h4>
-                <p id="dropdownUserEmail">sarah.jenkins@growthagency.io</p>
-                <span class="role-pill-badge" id="dropdownUserRole" style="margin-top: 4px; display: inline-block;">Owner</span>
-              </div>
-            </div>
-            <div class="user-dropdown-actions">
-              <button class="user-dropdown-item" id="btnOpenAuthModal">
-                <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                <span>Google Sign-In / Switch Account</span>
-              </button>
-              <button class="user-dropdown-item" id="btnSignOutUser" style="color: var(--apple-red);">
-                <span>🚪 Sign Out</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        <!-- Free Setup Guide Button -->
+        <button class="apple-btn-glass" id="btnOpenSetupGuide" title="Step-by-step 100% Free Meta Setup Guide" style="color: var(--apple-green); border-color: rgba(16, 185, 129, 0.3); font-weight: 700; gap: 6px;">
+          📘 Free Setup Guide
+        </button>
 
         <!-- Dual Theme Toggle (Apple Light / Apple Dark Mode) -->
         <button class="theme-toggle-btn" id="btnToggleTheme" title="Toggle Apple Light / Dark Mode">
@@ -193,15 +135,6 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-
-        <!-- Master Engine Switch -->
-        <div class="master-pill-switch" title="Global Emergency Master Switch">
-          <span>Master Engine</span>
-          <label class="ios-switch">
-            <input type="checkbox" id="masterIosSwitch" checked>
-            <span class="ios-slider"></span>
-          </label>
-        </div>
 
         <button class="apple-btn-primary" id="btnNewCampaignTop">
           + Create Automation
@@ -274,117 +207,119 @@
       </div>
     </div>
 
-    <!-- VIEW 2: INSTAGRAM HUB (PAGE, STATS, POSTS & REELS GRID) -->
-    <div class="spatial-view" id="view-instagram">
+    <!-- VIEW 3: AUDIENCE & CONTACTS CRM (MANYCHAT STYLE) -->
+    <div class="spatial-view" id="view-contacts">
       <div class="glass-window">
         <div class="glass-window-header">
           <div class="window-title-group">
-            <h2>📸 Instagram Creator & Reels Hub</h2>
-            <p>Manage Instagram Reels, feed carousels, comment auto-replies, and direct messages.</p>
+            <h2>
+              <svg style="width: 26px; height: 26px; color: var(--apple-blue); vertical-align: middle; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Audience & Captured Contacts CRM
+            </h2>
+            <p>Every lead and follower captured automatically across your comment automations and DMs.</p>
           </div>
-          <span class="apple-btn-glass" style="font-size: 0.75rem;">Meta Graph API v21.0</span>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="text" id="contactsSearchInput" class="composer-input" style="width: 220px;" placeholder="Search handles or names...">
+            <button class="apple-btn-glass" onclick="doraApp.renderContacts()">🔄 Refresh Contacts</button>
+          </div>
         </div>
 
-        <div class="platform-profile-hero" id="instagramHeroProfile"></div>
-        <div class="platform-oauth-bar" id="instagramOAuthBar"></div>
-
-        <div style="margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Connected Posts & Reels (Active Comment Triggers)</h3>
-          <span style="font-size: 0.78rem; color: var(--text-tertiary);">Click any post to configure up to 10 trigger words</span>
+        <div id="contactsTableContainer" style="overflow-x: auto;">
+          <!-- Rendered dynamically -->
         </div>
-
-        <div class="posts-spatial-grid" id="instagramPostsGrid"></div>
       </div>
     </div>
 
-    <!-- VIEW 3: FACEBOOK PAGES HUB -->
-    <div class="spatial-view" id="view-facebook">
-      <div class="glass-window">
+    <!-- VIEW 5: 100% FREE META GRAPH API SETUP & CREDENTIALS GUIDE -->
+    <div class="spatial-view" id="view-setup">
+      <div class="glass-window" style="margin-bottom: 20px;">
         <div class="glass-window-header">
           <div class="window-title-group">
-            <h2>📘 Facebook Pages & Messenger Hub</h2>
-            <p>Monitor Facebook Page posts, ad feed comments, and automated Messenger DMs.</p>
+            <h2>
+              <svg style="width: 26px; height: 26px; color: var(--apple-blue); vertical-align: middle; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              How to Use 100% Free (Official Meta Developer Setup)
+            </h2>
+            <p>Why pay ManyChat $15–$200/month? This self-hosted software communicates directly with Meta's official Cloud Graph API for $0.00/month.</p>
           </div>
-          <span class="apple-btn-glass" style="font-size: 0.75rem;">Facebook Pages API</span>
-        </div>
-
-        <div class="platform-profile-hero" id="facebookHeroProfile"></div>
-        <div class="platform-oauth-bar" id="facebookOAuthBar"></div>
-
-        <div style="margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Live Page Posts & Messenger Triggers</h3>
-          <span style="font-size: 0.78rem; color: var(--text-tertiary);">Automatic Messenger delivery enabled</span>
-        </div>
-
-        <div class="posts-spatial-grid" id="facebookPostsGrid"></div>
-      </div>
-    </div>
-
-    <!-- VIEW 4: THREADS HUB -->
-    <div class="spatial-view" id="view-threads">
-      <div class="glass-window">
-        <div class="glass-window-header">
-          <div class="window-title-group">
-            <h2>🧵 Threads Community Hub</h2>
-            <p>Meta Threads post replies, conversational triggers, and direct delivery.</p>
+          <div class="pill-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--apple-green); border: 1px solid rgba(16, 185, 129, 0.3); font-weight: 700;">
+            ✓ 100% Free & Unlimited
           </div>
-          <span class="apple-btn-glass" style="font-size: 0.75rem;">Meta Threads API v1.0</span>
         </div>
 
-        <div class="platform-profile-hero" id="threadsHeroProfile"></div>
-        <div class="platform-oauth-bar" id="threadsOAuthBar"></div>
-        <div class="posts-spatial-grid" id="threadsPostsGrid"></div>
-      </div>
-    </div>
-
-    <!-- VIEW 5: YOUTUBE STUDIO HUB -->
-    <div class="spatial-view" id="view-youtube">
-      <div class="glass-window">
-        <div class="glass-window-header">
-          <div class="window-title-group">
-            <h2>🎥 YouTube Studio & Comment Threads</h2>
-            <p>Video comment auto-replies, resource link dispatch, and subscriber nurturing.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+          <!-- Copy Webhook URL Box -->
+          <div class="glass-window" style="padding: 18px;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;">1. Meta Webhook Callback URL:</div>
+            <div class="guide-copy-box">
+              <span id="txtWebhookUrl">http://localhost:3000/api/webhooks/meta</span>
+              <button class="guide-copy-btn" onclick="doraApp.copyText('txtWebhookUrl')">Copy URL</button>
+            </div>
+            <p style="font-size: 0.74rem; color: var(--text-tertiary); margin: 0;">For production, expose via your domain or free ngrok tunnel: <code>ngrok http 3000</code>.</p>
           </div>
-          <span class="apple-btn-glass" style="font-size: 0.75rem;">YouTube Data API v3</span>
-        </div>
 
-        <div class="platform-profile-hero" id="youtubeHeroProfile"></div>
-        <div class="platform-oauth-bar" id="youtubeOAuthBar"></div>
-        <div class="posts-spatial-grid" id="youtubePostsGrid"></div>
-      </div>
-    </div>
-
-    <!-- VIEW 6: X / TWITTER HUB -->
-    <div class="spatial-view" id="view-twitter">
-      <div class="glass-window">
-        <div class="glass-window-header">
-          <div class="window-title-group">
-            <h2>🐦 X (Twitter) Mentions & DMs Hub</h2>
-            <p>Tweet mention auto-replies and automated direct message delivery.</p>
+          <!-- Copy Verify Token Box -->
+          <div class="glass-window" style="padding: 18px;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;">2. Meta Webhook Verify Token:</div>
+            <div class="guide-copy-box">
+              <span id="txtVerifyToken">doraflow_meta_token_2026</span>
+              <button class="guide-copy-btn" onclick="doraApp.copyText('txtVerifyToken')">Copy Token</button>
+            </div>
+            <p style="font-size: 0.74rem; color: var(--text-tertiary); margin: 0;">Paste this into the Meta Developer Webhook "Verify Token" field during setup.</p>
           </div>
-          <span class="apple-btn-glass" style="font-size: 0.75rem;">Twitter API v2</span>
         </div>
 
-        <div class="platform-profile-hero" id="twitterHeroProfile"></div>
-        <div class="platform-oauth-bar" id="twitterOAuthBar"></div>
-        <div class="posts-spatial-grid" id="twitterPostsGrid"></div>
-      </div>
-    </div>
+        <!-- 5-Step Practical Walkthrough -->
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px;">Step-by-Step Meta Setup Walkthrough</h3>
 
-    <!-- VIEW 7: LINKEDIN HUB -->
-    <div class="spatial-view" id="view-linkedin">
-      <div class="glass-window">
-        <div class="glass-window-header">
-          <div class="window-title-group">
-            <h2>💼 LinkedIn Company & InMail Hub</h2>
-            <p>Company page comment automation and lead generation workflows.</p>
+        <div class="guide-step-card">
+          <div class="guide-step-header">
+            <div class="guide-step-number">1</div>
+            <div class="guide-step-title">Create Free Meta Developer Account</div>
           </div>
-          <span class="apple-btn-glass" style="font-size: 0.75rem;">LinkedIn Community API</span>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 10px 44px;">
+            Navigate to <strong>developers.facebook.com</strong> and click "Log In" with your normal Facebook account. Click "Get Started" to verify your free developer account.
+          </p>
         </div>
 
-        <div class="platform-profile-hero" id="linkedinHeroProfile"></div>
-        <div class="platform-oauth-bar" id="linkedinOAuthBar"></div>
-        <div class="posts-spatial-grid" id="linkedinPostsGrid"></div>
+        <div class="guide-step-card">
+          <div class="guide-step-header">
+            <div class="guide-step-number">2</div>
+            <div class="guide-step-title">Create a Meta App (Type: Business)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 10px 44px;">
+            In the developer dashboard, click <strong>"Create App"</strong>. Select <strong>"Other"</strong> or <strong>"Business"</strong> as the use case. Enter any App Name (e.g. <em>"My Social Automation"</em>) and click Create.
+          </p>
+        </div>
+
+        <div class="guide-step-card">
+          <div class="guide-step-header">
+            <div class="guide-step-number">3</div>
+            <div class="guide-step-title">Add "Instagram Graph API" and "Messenger" Products</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 10px 44px;">
+            In the App Dashboard left sidebar, click <strong>"Add Product"</strong>. Add <strong>"Instagram Graph API"</strong> (for Reels & post comments) and <strong>"Messenger"</strong> (for private DMs and conversations).
+          </p>
+        </div>
+
+        <div class="guide-step-card">
+          <div class="guide-step-header">
+            <div class="guide-step-number">4</div>
+            <div class="guide-step-title">Configure Webhooks (Subscribe to comments & messages)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 10px 44px;">
+            Under <strong>Webhooks</strong> in your Meta App, select <strong>Instagram</strong>. Paste the Callback URL and Verify Token from above. Click "Verify and Save". Then click <strong>"Subscribe"</strong> to the <code>comments</code> and <code>messages</code> fields.
+          </p>
+        </div>
+
+        <div class="guide-step-card">
+          <div class="guide-step-header">
+            <div class="guide-step-number">5</div>
+            <div class="guide-step-title">Local Testing Mode (Zero-Setup Instant Simulator)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 10px 44px;">
+            You don't even have to wait for Meta approval! You can immediately click <strong>🧪 Live Simulator</strong> in the left dock to test all your triggers, comment auto-replies, and private DM deliveries inside the built-in interactive phone playground.
+          </p>
+        </div>
       </div>
     </div>
 

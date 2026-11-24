@@ -987,6 +987,65 @@ class EnterpriseDatabase {
       checkedAt: new Date().toISOString()
     };
   }
+
+  // -------------------------------------------------------------
+  // ManyChat-Style Shared Inbox & Contacts Aggregator
+  // -------------------------------------------------------------
+  getInbox(filter = {}) {
+    return this.getStoredArchive(filter);
+  }
+
+  getContacts() {
+    const list = this.getStoredArchive();
+    const map = new Map();
+
+    list.forEach(item => {
+      const handle = item.userHandle || '@user';
+      if (!map.has(handle)) {
+        map.set(handle, {
+          id: 'contact_' + handle.replace(/[^a-zA-Z0-9_]/g, ''),
+          userHandle: handle,
+          userName: item.userName || handle,
+          userAvatar: item.userAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100',
+          platform: item.platform || 'instagram',
+          firstSeen: item.timestamp,
+          lastSeen: item.timestamp,
+          totalInteractions: 1,
+          sourceRule: item.winningRuleName || 'General Comment Automation',
+          tags: item.tags || ['Lead'],
+          humanTakeoverActive: Boolean(item.humanTakeoverActive),
+          lastMessage: item.commentText || item.dmMessage || ''
+        });
+      } else {
+        const existing = map.get(handle);
+        existing.totalInteractions += 1;
+        if (new Date(item.timestamp) > new Date(existing.lastSeen)) {
+          existing.lastSeen = item.timestamp;
+          existing.lastMessage = item.commentText || item.dmMessage || existing.lastMessage;
+        }
+      }
+    });
+
+    return Array.from(map.values());
+  }
+
+  resetToEmpty() {
+    this.data.campaigns = [];
+    this.data.storedArchive = [];
+    this.data.logs = [];
+    this.data.auditLogs = [];
+    this.addAuditLog(this.data.currentUser?.name || 'Admin', 'Workspace Cleared', 'Workspace reset to 100% clean empty state');
+    this.save();
+    return { success: true, message: 'All automations, contacts, and logs cleared. Workspace is now 100% empty.' };
+  }
+
+  restoreSamples() {
+    this.data.campaigns = JSON.parse(JSON.stringify(initialEnterpriseData.campaigns));
+    this.data.storedArchive = JSON.parse(JSON.stringify(initialEnterpriseData.storedArchive));
+    this.addAuditLog(this.data.currentUser?.name || 'Admin', 'Sample Templates Restored', 'Restored verified production automation templates');
+    this.save();
+    return { success: true, message: 'Verified sample automation templates restored successfully.' };
+  }
 }
 
 module.exports = new EnterpriseDatabase();
