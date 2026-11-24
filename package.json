@@ -1,16 +1,25 @@
 {
-  "name": "nexusflow-dm-automation",
-  "version": "1.0.0",
-  "description": "Zero-Ban Omnichannel DM & Comment Automation Studio for Instagram, Facebook, and Beyond",
+  "name": "doraflow-enterprise",
+  "version": "2.4.0",
+  "description": "DoraFlow Enterprise Spatial OS • Apple Liquid Glass Omnichannel DM & Comment Automation Studio with Zero-Ban Anti-Suspension Architecture",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
     "dev": "node server/index.js",
-    "test": "echo \"Ready\" && exit 0"
+    "test": "node scratch/verify_suite.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "instagram-automation",
+    "meta-graph-api",
+    "facebook-automation",
+    "dm-automation",
+    "comment-reply",
+    "apple-liquid-glass",
+    "enterprise-saas",
+    "omnichannel"
+  ],
+  "author": "AJAYBADUGU",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
