@@ -16,53 +16,76 @@
     <div class="ambient-light-3"></div>
   </div>
 
-  <!-- Left Floating Spatial Vertical Dock (Apple VisionOS / ManyChat Style) -->
+  <!-- Left Floating Spatial Vertical Dock (Apple VisionOS / ReplyKaro Style) -->
   <aside class="spatial-dock-wrapper">
     <nav class="spatial-dock">
       <!-- 1. Automations (Flows & Rules) -->
-      <button class="dock-item active" data-view="overview" title="Automations & Flows">
+      <button class="dock-item active" data-view="overview" title="Automations & Rules">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-        <span class="dock-tooltip">Automations & Flows</span>
+        <span class="dock-tooltip">Automations & Rules</span>
       </button>
 
-      <!-- 2. Connected Social Accounts Hub -->
-      <button class="dock-item" data-view="channels" title="Connected Social Accounts">
+      <!-- 2. Visual Canvas Flow Builder -->
+      <button class="dock-item" data-view="canvas" title="Visual Canvas Flow Builder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span class="dock-tooltip">Visual Canvas Builder</span>
+      </button>
+
+      <!-- 3. Ref URLs & Short Link Generator -->
+      <button class="dock-item" data-view="reflinks" title="Ref URLs & Link Tracker">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-        <span class="dock-tooltip">Connected Channels</span>
-        <span class="dock-badge"></span>
+        <span class="dock-tooltip">Ref URLs & Link Tracker</span>
       </button>
 
-      <!-- 3. Shared Inbox & Live Chat -->
-      <button class="dock-item" data-view="inbox" title="Live Chat & Inbox">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        <span class="dock-tooltip">Live Chat & Inbox</span>
+      <!-- 4. Broadcasts & Audience Tags -->
+      <button class="dock-item" data-view="broadcasts" title="Audience Broadcasts">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        <span class="dock-tooltip">Broadcasts & Segments</span>
       </button>
 
-      <!-- 4. Audience & Contacts CRM -->
+      <!-- 5. Fan Loyalty & Gamification -->
+      <button class="dock-item" data-view="loyalty" title="Fan Loyalty & Gamification">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        <span class="dock-tooltip">Fan Loyalty & Points</span>
+      </button>
+
+      <!-- 6. Audience & Contacts CRM -->
       <button class="dock-item" data-view="contacts" title="Audience & Contacts CRM">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
         <span class="dock-tooltip">Audience & Contacts</span>
       </button>
 
-      <!-- 5. Interactive Flow Simulator -->
+      <!-- 7. Shared Inbox & Live Chat -->
+      <button class="dock-item" data-view="inbox" title="Live Chat & Inbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span class="dock-tooltip">Live Chat & Inbox</span>
+      </button>
+
+      <!-- 8. Interactive Flow Simulator -->
       <button class="dock-item" data-view="simulator" title="Live Flow Simulator">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
         <span class="dock-tooltip">Live Flow Simulator</span>
       </button>
 
-      <!-- 6. 100% Free Meta Setup Guide -->
+      <!-- 9. Connected Social Accounts Hub -->
+      <button class="dock-item" data-view="channels" title="Connected Social Accounts">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span class="dock-tooltip">Connected Channels</span>
+      </button>
+
+      <!-- 10. 100% Free Meta Setup Guide -->
       <button class="dock-item" data-view="setup" title="Meta API & Free Setup Guide">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
         <span class="dock-tooltip">Meta API & Free Setup</span>
       </button>
 
-      <!-- 7. Anti-Ban Safety Shield -->
+      <!-- 11. Anti-Ban Safety Shield -->
       <button class="dock-item" data-view="shield" title="Zero-Ban Anti-Suspension Shield">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
         <span class="dock-tooltip">Zero-Ban Shield</span>
       </button>
 
-      <!-- 8. Enterprise Test Suite -->
+      <!-- 12. Enterprise Test Suite -->
       <button class="dock-item" data-view="tests" title="Enterprise Test Suite">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
         <span class="dock-tooltip">Enterprise Tests</span>
@@ -134,6 +157,11 @@
         <!-- Connected Channels Shortcut Button -->
         <button class="apple-btn-glass apple-btn-channels" id="btnTopChannels" onclick="doraApp.switchView('channels')" title="Connect Social Accounts (Instagram, Facebook, Threads, YouTube, X)">
           <span>🔗</span> Channels
+        </button>
+
+        <!-- Visual Canvas Flow Builder Button -->
+        <button class="apple-btn-glass" id="btnTopCanvas" onclick="doraApp.switchView('canvas')" title="Visual Node Flow Canvas Builder">
+          <span>🎨</span> Canvas
         </button>
 
         <!-- Dual Theme Toggle (Apple Light / Apple Dark Mode) -->
@@ -314,6 +342,165 @@
 
         <div class="channels-grid-layout" id="channelsGridContainer">
           <!-- Rendered dynamically by doraApp.renderChannels() -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: VISUAL CANVAS FLOW BUILDER -->
+    <div class="spatial-view" id="view-canvas">
+      <div class="canvas-wrapper">
+        <div class="canvas-toolbar">
+          <div class="canvas-toolbar-group">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-right: 12px; display: flex; align-items: center; gap: 6px;">
+              <span>🎨</span> Visual Flow Canvas
+            </h3>
+            <button class="apple-btn-glass" onclick="doraApp.addCanvasNode('trigger')" style="font-size: 0.75rem;">+ Trigger</button>
+            <button class="apple-btn-glass" onclick="doraApp.addCanvasNode('follow_gate')" style="font-size: 0.75rem;">+ Follow-Gate</button>
+            <button class="apple-btn-glass" onclick="doraApp.addCanvasNode('public_reply')" style="font-size: 0.75rem;">+ Public Reply</button>
+            <button class="apple-btn-glass" onclick="doraApp.addCanvasNode('dm_card')" style="font-size: 0.75rem;">+ Rich DM Card</button>
+            <button class="apple-btn-glass" onclick="doraApp.addCanvasNode('lead_capture')" style="font-size: 0.75rem;">+ Lead Capture</button>
+          </div>
+          <div class="canvas-toolbar-group">
+            <button class="apple-btn-primary" onclick="doraApp.simulateCanvasSignal()" style="font-size: 0.78rem; gap: 6px;">
+              <span>⚡</span> Simulate Flow Signal
+            </button>
+            <button class="apple-btn-glass" onclick="doraApp.resetCanvasFlow()" style="font-size: 0.75rem;">Reset Canvas</button>
+          </div>
+        </div>
+
+        <div class="canvas-graph-area" id="canvasGraphArea">
+          <!-- Rendered dynamically by doraApp.renderCanvasFlows() -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: REF URLS & SHORT LINK TRACKER -->
+    <div class="spatial-view" id="view-reflinks">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>
+              <span style="font-size: 1.4rem; vertical-align: middle; margin-right: 6px;">🔗</span>
+              ReplyKaro Ref URLs & Short Link Click Tracker
+            </h2>
+            <p>Generate short URLs for your Instagram bio, Reels, and YouTube descriptions with prefilled DM triggers and click attribution.</p>
+          </div>
+        </div>
+
+        <!-- Ref Link Creator Box -->
+        <div class="reflink-creator-box">
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary);">+ Create New Ref Tracking Link</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1.5fr auto; gap: 12px; align-items: end;">
+            <div class="apple-form-group" style="margin: 0;">
+              <label class="apple-form-label">Link Slug (e.g. "free-guide")</label>
+              <input type="text" id="inputRefSlug" class="apple-form-control" placeholder="slug">
+            </div>
+            <div class="apple-form-group" style="margin: 0;">
+              <label class="apple-form-label">Title / Asset Name</label>
+              <input type="text" id="inputRefTitle" class="apple-form-control" placeholder="Viral Blueprint PDF">
+            </div>
+            <div class="apple-form-group" style="margin: 0;">
+              <label class="apple-form-label">Target Destination URL</label>
+              <input type="url" id="inputRefTargetUrl" class="apple-form-control" placeholder="https://growthblueprint.io/free-access">
+            </div>
+            <button class="apple-btn-primary" onclick="doraApp.createRefLinkAction()" style="height: 38px;">Generate Link</button>
+          </div>
+        </div>
+
+        <div id="refLinksTableContainer" style="overflow-x: auto;">
+          <!-- Rendered dynamically by doraApp.renderRefLinks() -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: AUDIENCE BROADCASTS -->
+    <div class="spatial-view" id="view-broadcasts">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>
+              <span style="font-size: 1.4rem; vertical-align: middle; margin-right: 6px;">📢</span>
+              Audience Broadcasts & Tag Segmentation
+            </h2>
+            <p>Send targeted broadcasts and special announcements to captured subscriber segments strictly within Meta 24-hr messaging window.</p>
+          </div>
+        </div>
+
+        <!-- Broadcast Composer -->
+        <div class="reflink-creator-box">
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary);">+ New Targeted Broadcast</h4>
+          <div style="display: grid; grid-template-columns: 1fr 2fr 1fr auto; gap: 12px; align-items: end;">
+            <div class="apple-form-group" style="margin: 0;">
+              <label class="apple-form-label">Target Subscriber Tag</label>
+              <select id="selectBroadcastTag" class="apple-form-control">
+                <option value="All">All Contacts (1,534)</option>
+                <option value="Lead">Automated Leads (1,280)</option>
+                <option value="Verified Follower">Verified Followers (840)</option>
+                <option value="Masterclass Attendee">Masterclass Attendees (494)</option>
+              </select>
+            </div>
+            <div class="apple-form-group" style="margin: 0;">
+              <label class="apple-form-label">Broadcast Message (Spintax & {{name}} supported)</label>
+              <input type="text" id="inputBroadcastMessage" class="apple-form-control" placeholder="Hey {{name}}! 👋 VIP surprise: {{link}}">
+            </div>
+            <div class="apple-form-group" style="margin: 0;">
+              <label class="apple-form-label">Action CTA Button Text</label>
+              <input type="text" id="inputBroadcastBtnText" class="apple-form-control" placeholder="Claim Free Access ↗">
+            </div>
+            <button class="apple-btn-primary" onclick="doraApp.createBroadcastAction()" style="height: 38px;">Dispatch Broadcast</button>
+          </div>
+        </div>
+
+        <div id="broadcastsTableContainer" style="overflow-x: auto;">
+          <!-- Rendered dynamically by doraApp.renderBroadcasts() -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FAN LOYALTY & GAMIFICATION REWARDS -->
+    <div class="spatial-view" id="view-loyalty">
+      <div class="glass-window">
+        <div class="glass-window-header">
+          <div class="window-title-group">
+            <h2>
+              <span style="font-size: 1.4rem; vertical-align: middle; margin-right: 6px;">🏆</span>
+              Fan Loyalty & Gamification Rewards
+            </h2>
+            <p>Automatically award points for comments (+10), story mentions (+25), and ref link clicks (+50) to unlock tiered discount codes.</p>
+          </div>
+        </div>
+
+        <!-- 4 Tier Cards -->
+        <div class="loyalty-tiers-grid">
+          <div class="tier-card bronze">
+            <div class="tier-badge-title">🥉 Bronze Creator</div>
+            <div class="tier-points-req">0 – 99 Points</div>
+            <div class="tier-perks-desc">Automated DMs, comment engagement, and verified resource downloads.</div>
+            <div class="tier-code-pill">Status: Active Tier</div>
+          </div>
+          <div class="tier-card silver">
+            <div class="tier-badge-title">🥈 Silver VIP</div>
+            <div class="tier-points-req">100 – 249 Points</div>
+            <div class="tier-perks-desc">Unlocks 15% discount code + fast-track customer support response.</div>
+            <div class="tier-code-pill">Code: SILVER15</div>
+          </div>
+          <div class="tier-card gold">
+            <div class="tier-badge-title">🥇 Gold Insider</div>
+            <div class="tier-points-req">250 – 499 Points</div>
+            <div class="tier-perks-desc">Unlocks 25% discount code + free access to Thursday Live Masterclass.</div>
+            <div class="tier-code-pill">Code: GOLD25</div>
+          </div>
+          <div class="tier-card diamond">
+            <div class="tier-badge-title">💎 Diamond Ambassador</div>
+            <div class="tier-points-req">500+ Points</div>
+            <div class="tier-perks-desc">Unlocks 50% lifetime discount + private 1:1 strategy call with creator.</div>
+            <div class="tier-code-pill">Code: VIP50</div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">Top Engaged Followers Leaderboard</h3>
+        <div id="loyaltyLeaderboardContainer" style="overflow-x: auto;">
+          <!-- Rendered dynamically by doraApp.renderLoyalty() -->
         </div>
       </div>
     </div>
@@ -512,7 +699,7 @@
           <!-- Center: Simulator Controls & Precedence Winner Evaluation -->
           <div class="sim-controls-panel">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-              <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">Test Comment Simulator</h3>
+              <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary);">Test Automation Simulator</h3>
               <span class="status-badge success">Live Engine Ready</span>
             </div>
 
@@ -523,6 +710,26 @@
                 <option value="facebook">Facebook Page Post & Messenger</option>
                 <option value="threads">Threads Post & Replies</option>
               </select>
+            </div>
+
+            <div class="apple-form-group">
+              <label class="apple-form-label">Trigger Source Type</label>
+              <select class="apple-form-control" id="simSelectTriggerType">
+                <option value="comment">💬 Post / Reel Comment</option>
+                <option value="story_reply">📖 Story Reply</option>
+                <option value="story_mention">🏷️ Story Mention (@growth.creator)</option>
+                <option value="inbound_dm">📩 Inbound Direct Message</option>
+              </select>
+            </div>
+
+            <div class="apple-form-group" style="background: rgba(125, 125, 125, 0.08); padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border-subtle);">
+              <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; margin: 0;">
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-primary);">🛡️ User Follows Creator (Follow-Gate)</span>
+                <input type="checkbox" id="simCheckboxIsFollowing" checked style="width: 18px; height: 18px; accent-color: var(--apple-green); cursor: pointer;">
+              </label>
+              <div style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 4px;">
+                Uncheck to test Follow-Gate prompt asking user to follow & verify first.
+              </div>
             </div>
 
             <div class="apple-form-group">
@@ -540,7 +747,7 @@
             </div>
 
             <div class="apple-form-group">
-              <label class="apple-form-label">Test Comment (Try keywords: GUIDE, BLUEPRINT, SEND, VIP)</label>
+              <label class="apple-form-label">Test Trigger Text (Keywords: GUIDE, BLUEPRINT, SEND, VIP)</label>
               <input type="text" class="apple-form-control" id="simInputComment" value="Please send me the BLUEPRINT!">
             </div>
 

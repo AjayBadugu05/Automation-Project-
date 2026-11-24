@@ -1,25 +1,56 @@
-# <p align="center"><img src="public/assets/doraemon.svg" width="64" height="64" alt="DoraFlow Logo" /><br>DoraFlow Enterprise • Spatial Automation Studio</p>
+# <p align="center"><img src="public/assets/doraemon.svg" width="64" height="64" alt="DoraFlow Logo" /><br>DoraFlow Enterprise • 100% Free Omnichannel DM & Comment Automation Studio</p>
 
 <p align="center">
-  <strong>The Ultra-Premium, Zero-Suspension Omnichannel Social DM & Comment Automation Platform</strong><br>
-  Designed with Apple Liquid Glass Spatial OS (Dual-Theme Light & Dark), Hardware Token Encryption, and Meta Graph API v21.0 Private Replies Architecture.
+  <strong>The Ultra-Premium, 100% Free ReplyKaro & ManyChat Alternative for Instagram & Social Conversion</strong><br>
+  Built with Official Meta Graph API v21.0, Follow-Gate Growth Engine, Ref URLs, Visual Canvas Flow Builder, Fan Gamification, and Apple Liquid Glass Spatial UI.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Production%20Tests-10%2F10%20Passed-10b981?style=for-the-badge&logo=checkmarx" alt="10/10 Tests Passed" />
+  <img src="https://img.shields.io/badge/Cost-100%25%20Free%20Forever-059669?style=for-the-badge" alt="100% Free" />
   <img src="https://img.shields.io/badge/Security%20Grade-A%2B%20Enterprise-3b82f6?style=for-the-badge&logo=auth0" alt="Security Grade A+" />
-  <img src="https://img.shields.io/badge/Design-Apple%20Liquid%20Glass-0071e3?style=for-the-badge&logo=apple" alt="Apple Liquid Glass" />
   <img src="https://img.shields.io/badge/Meta%20API-v21.0%20Compliant-0668e1?style=for-the-badge&logo=meta" alt="Meta API v21.0" />
-  <img src="https://img.shields.io/badge/Networks-10%20Connected-8b5cf6?style=for-the-badge" alt="10 Networks" />
+  <img src="https://img.shields.io/badge/Design-Apple%20VisionOS%20Glass-0071e3?style=for-the-badge&logo=apple" alt="Apple Liquid Glass" />
+  <img src="https://img.shields.io/badge/Zero%20Watermarks-100%25%20White--Label-8b5cf6?style=for-the-badge" alt="Zero Watermarks" />
 </p>
 
 ---
 
-## 💎 Overview
+## 💎 Overview & Core Value Proposition
 
-**DoraFlow Enterprise** is an industry-grade, self-hosted social media conversion platform built from the ground up for agencies, creator brands, and enterprise teams. It completely replaces fragile bot scrapers and suspicious headless automations with **100% official Meta Graph API v21.0 webhooks**, **cryptographic token security**, and **humanized delivery pacing**.
+**DoraFlow Enterprise** is an industry-grade, self-hosted social media conversion platform inspired by **ReplyKaro** and **ManyChat**, but designed to be **100% free forever** with **zero monthly subscription paywalls** and **zero vendor watermarks**.
 
-Designed following the visual aesthetics of **Apple Liquid Glass** and spatial interfaces, DoraFlow delivers seamless transitions between **Apple Spatial Dark Mode** and **Apple Studio Light Mode**, featuring full multi-tenant workspace isolation, granular 1-click version rollbacks, and interactive live feed simulators.
+Unlike bloated enterprise tools that trap creators behind recurring fee tiers, DoraFlow delivers a sleek, lightning-fast dashboard with official Meta Graph API v21.0 compliance. It transforms Instagram comments, story replies, story mentions, and inbound DMs into high-converting automated funnels, lead captures, and loyalty rewards.
+
+### 🌟 Why DoraFlow Over Commercial SaaS?
+* **100% Free & Self-Hosted:** No ₹99/mo or $49/mo subscriptions. Run unlimited automations, unlimited DMs, and unlimited contacts on your own hardware or free cloud hosting.
+* **Anti-Ban Compliance First:** Uses official Meta Graph & Messaging API via OAuth login—never browser scrapers or password bots—ensuring zero risk of account bans.
+* **Apple Liquid Glass / VisionOS UI:** Modern, dual-theme (Spatial Dark & Studio Light) interface with real-time responsive navigation and interactive iPhone simulators.
+* **100% White-Label:** No forced "Sent via DoraFlow" watermarks or tracking redirects that damage your brand credibility.
+
+---
+
+## ⚡ Complete Feature Blueprint
+
+### 🎯 1. Core Automation Triggers
+* **Comment-to-DM:** Instantly sends a private DM when a user comments a keyword (or any comment) on a Reel, Post, or Carousel. Supports single-post rules, account-wide fallbacks, or pre-publishing "Next Post" rules.
+* **Public Comment Auto-Reply with Spintax:** Replies publicly underneath the commenter's post with randomized text variations (`{Awesome|Thanks|Appreciate it}! Check your DMs 📩`) and auto-likes comments ❤️ to boost algorithmic reach and bypass spam filters.
+* **Story Reply & Mention Automation:** Sends an automatic personalized DM when a follower replies to a Story or tags `@yourhandle` in their own Story.
+* **Inbound DM Keyword Triggers:** Detects trigger words (`PRICE`, `COURSE`, `LINK`, `GUIDE`, `VIP`) in direct messages and initiates automated conversational branches.
+* **DM Ref URLs (`/r/:slug` & `ig.me` Links):** Generates short URLs for your bio, YouTube descriptions, or emails that open Instagram DM with a pre-filled trigger keyword and track click attribution in real-time.
+
+### 🚀 2. Growth & Conversion Mechanics
+* **Follow-Gate Verification Engine:** Checks if the commenter follows your profile before unlocking the final download link. Non-followers receive a polite Follow-Gate prompt asking them to follow and tap "I Have Followed 🚀" to unlock instant access.
+* **Rich Product Cards & Quick Replies:** Sends interactive visual cards featuring banner images, title, subtitle, and clickable CTA buttons, accompanied by quick reply chips for 1-tap engagement.
+* **Automated Follow-Up Nudges:** Automatically queues a friendly reminder DM after 2 hours if the user hasn't opened the link (strictly respecting Meta's 24-hour messaging window).
+* **Visual Canvas Flow Builder:** Interactive node editor allowing creators to design multi-step funnels (Trigger ➔ Follow-Gate ➔ Private DM ➔ Product Card ➔ Lead Capture).
+* **Fan Loyalty & Gamification Points:** Automatically rewards active fans (+10 points for comments, +25 for story mentions, +50 for follow verification, +100 for lead submissions) unlocking tiered VIP perks (Bronze, Silver, Gold, Diamond discount codes).
+
+### 🏢 3. Platform, Analytics & Agency Suite
+* **CRM & Audience Segmentation:** Logs all commenters and subscribers with their trigger history, loyalty points, and follow status.
+* **Targeted DM Broadcasts:** Send targeted broadcast campaigns to segmented lists within approved Meta 24-hour messaging windows.
+* **Multi-Tenant Workspaces:** Manage multiple client or brand accounts (e.g., Apex Agency, Velocity Media) with strict data isolation.
+* **Human Takeover Silencing:** When a human agent responds manually in the unified inbox, automated bot responses are muted instantly to prevent collisions.
 
 ---
 

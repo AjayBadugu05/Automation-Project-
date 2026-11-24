@@ -709,7 +709,7 @@ app.get('/api/analytics', (req, res) => {
 });
 
 // -------------------------------------------------------------
-// 6. INTERACTIVE LIVE SIMULATOR ENDPOINT (TESTING FROM SCRATCH)
+// 6. INTERACTIVE LIVE SIMULATOR ENDPOINT (REPLYKARO ENGINE)
 // -------------------------------------------------------------
 app.post('/api/simulate', async (req, res) => {
   const {
@@ -718,7 +718,9 @@ app.post('/api/simulate', async (req, res) => {
     postTitle = 'Reel: 7 Secrets to 100k Followers in 90 Days',
     userName = 'Sarah Taylor',
     userHandle = '@sarahtaylor',
-    commentText = 'GUIDE please!'
+    commentText = 'GUIDE please!',
+    isFollowing = false,
+    triggerType = 'comment'
   } = req.body;
 
   try {
@@ -730,13 +732,173 @@ app.post('/api/simulate', async (req, res) => {
       commentText,
       userId: 'sim_usr_' + userHandle.replace(/[^a-zA-Z0-9]/g, ''),
       userName,
-      userHandle
+      userHandle,
+      isFollowing: Boolean(isFollowing),
+      triggerType
     });
 
     res.json(result);
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
+});
+
+// -------------------------------------------------------------
+// 6.1 REPLYKARO REF URLS & SHORT LINK REDIRECT ENGINE
+// -------------------------------------------------------------
+app.get('/r/:slug', (req, res) => {
+  const { slug } = req.params;
+  const userHandle = req.query.u || req.query.ref || null;
+  const link = db.recordRefClick(slug, {
+    userHandle,
+    ip: req.ip,
+    userAgent: req.get('User-Agent')
+  });
+
+  if (!link || !link.targetUrl) {
+    return res.redirect('/#overview');
+  }
+
+  // 302 Redirect to destination asset
+  res.redirect(link.targetUrl);
+});
+
+app.get('/api/ref-links', (req, res) => {
+  res.json({ success: true, refLinks: db.getRefLinks() });
+});
+
+app.post('/api/ref-links', (req, res) => {
+  const result = db.createRefLink(req.body);
+  res.json(result);
+});
+
+app.delete('/api/ref-links/:id', (req, res) => {
+  const ok = db.deleteRefLink(req.params.id);
+  res.json({ success: ok });
+});
+
+// -------------------------------------------------------------
+// 6.2 REPLYKARO FOLLOW-GATE VERIFICATION ENDPOINT
+// -------------------------------------------------------------
+app.all('/api/verify-follow', (req, res) => {
+  const campaignId = req.body?.campaignId || req.query?.campaignId;
+  const userHandle = req.body?.userHandle || req.query?.userHandle || '@user';
+  const result = db.verifyFollowGate(campaignId, userHandle);
+
+  // If POST request or explicit JSON accept / format=json, return JSON
+  if (req.method === 'POST' || req.query.format === 'json' || req.headers.accept === 'application/json') {
+    return res.json({
+      success: true,
+      message: 'Follow verified! Resource unlocked.',
+      unlockedUrl: result.unlockedCard?.buttonUrl || 'https://growthblueprint.io/free-access',
+      newPoints: result.unlockedCard?.totalPoints || 50,
+      tier: result.unlockedCard?.tier || 'Bronze',
+      result
+    });
+  }
+
+  // If accessed directly from browser or Instagram in-app browser
+  const card = result.unlockedCard;
+  return res.send(`
+    <!DOCTYPE html>
+    <html lang="en" data-theme="dark">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Follower Status Verified! • DoraFlow Studio</title>
+      <link rel="stylesheet" href="/css/style.css">
+      <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; background: #0b0f19; color: #fff; }
+        .verify-card { max-width: 480px; width: 100%; text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); padding: 36px 28px; border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(35px); }
+        .celebrate-badge { width: 72px; height: 72px; border-radius: 50%; background: rgba(52, 199, 89, 0.15); color: #34c759; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 18px; border: 1.5px solid rgba(52, 199, 89, 0.3); }
+      </style>
+    </head>
+    <body>
+      <div class="verify-card">
+        <div class="celebrate-badge">🎉</div>
+        <div style="background: rgba(52, 199, 89, 0.15); color: #34c759; font-weight: 700; margin-bottom: 12px; display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem;">
+          ✓ Follower Verified • +${card.pointsAwarded} Fan Loyalty Points
+        </div>
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 8px;">${card.title}</h2>
+        <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5; margin-bottom: 24px;">${card.subtitle}</p>
+        <a href="${card.buttonUrl}" style="display: inline-flex; justify-content: center; width: 100%; padding: 14px; font-size: 1rem; text-decoration: none; background: #0071e3; color: white; border-radius: 12px; font-weight: 600;">
+          ${card.buttonText} ↗
+        </a>
+        <div style="font-size: 0.75rem; color: #64748b; margin-top: 18px;">
+          Current Tier: <strong style="color: #38bdf8;">${card.tier}</strong> (${card.totalPoints} points) • 100% Free Self-Hosted
+        </div>
+      </div>
+    </body>
+    </html>
+  `);
+});
+
+// -------------------------------------------------------------
+// 6.3 REPLYKARO FAN LOYALTY & GAMIFICATION LEADERBOARD API
+// -------------------------------------------------------------
+app.get('/api/loyalty', (req, res) => {
+  const members = db.getLoyaltyMembers();
+  const handle = req.query.userHandle || '@sarahtaylor';
+  const profile = db.getLoyaltyProfile(handle);
+  res.json({
+    success: true,
+    members,
+    currentUser: profile,
+    tiers: [
+      { name: 'Bronze Creator', minPoints: 0, perks: 'Standard Auto-DMs & Comment Engagement' },
+      { name: 'Silver VIP', minPoints: 100, perks: '15% Discount Code (SILVER15) + Fast-Track Access' },
+      { name: 'Gold Insider', minPoints: 250, perks: '25% Discount Code (GOLD25) + Free Masterclass Pass' },
+      { name: 'Diamond Ambassador', minPoints: 500, perks: 'VIP Strategy Call + 50% Off Lifetime Bundle' }
+    ]
+  });
+});
+
+app.post('/api/loyalty/points', (req, res) => {
+  const { userHandle, actionType, points = 10 } = req.body;
+  if (!userHandle) return res.status(400).json({ success: false, error: 'userHandle required' });
+  const updated = db.addLoyaltyPoints(userHandle, actionType, points);
+  res.json({ success: true, profile: updated });
+});
+
+// -------------------------------------------------------------
+// 6.4 REPLYKARO BROADCASTS & SEGMENTATION API
+// -------------------------------------------------------------
+app.get('/api/broadcasts', (req, res) => {
+  res.json({ success: true, broadcasts: db.getBroadcasts() });
+});
+
+app.post('/api/broadcasts', (req, res) => {
+  const newBc = db.createBroadcast(req.body);
+  res.status(201).json({ success: true, broadcast: newBc });
+});
+
+app.post('/api/broadcasts/:id/send', (req, res) => {
+  const result = db.sendBroadcast(req.params.id);
+  res.json(result);
+});
+
+// -------------------------------------------------------------
+// 6.5 REPLYKARO VISUAL CANVAS MULTI-STEP FLOWS API
+// -------------------------------------------------------------
+app.get('/api/canvas/flows', (req, res) => {
+  res.json({ success: true, flows: db.getCanvasFlows() });
+});
+
+app.post('/api/canvas/flows', (req, res) => {
+  const saved = db.saveCanvasFlow(req.body);
+  res.json({ success: true, flow: saved });
+});
+
+app.delete('/api/canvas/flows/:id', (req, res) => {
+  const ok = db.deleteCanvasFlow(req.params.id);
+  res.json({ success: ok });
+});
+
+// -------------------------------------------------------------
+// 6.6 REPLYKARO AUTOMATED FOLLOW-UP NUDGES API
+// -------------------------------------------------------------
+app.get('/api/nudges', (req, res) => {
+  res.json({ success: true, nudges: db.getNudges() });
 });
 
 // -------------------------------------------------------------

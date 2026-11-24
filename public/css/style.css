@@ -2465,3 +2465,305 @@ input:checked + .ios-slider:before {
   background: var(--apple-blue);
   color: #fff;
 }
+
+/* -------------------------------------------------------------
+   ReplyKaro Suite: Visual Canvas Flow Builder (#view-canvas)
+   ------------------------------------------------------------- */
+.canvas-wrapper {
+  background: var(--glass-panel);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-window);
+  box-shadow: var(--shadow-spatial);
+  backdrop-filter: blur(35px) saturate(190%);
+  overflow: hidden;
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-toolbar {
+  padding: 12px 20px;
+  background: rgba(125, 125, 125, 0.05);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.canvas-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.canvas-graph-area {
+  flex: 1;
+  min-height: 540px;
+  background-color: transparent;
+  background-image: radial-gradient(circle, rgba(125, 125, 125, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+  padding: 30px;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.canvas-node-card {
+  width: 250px;
+  background: var(--glass-card);
+  border: 1px solid var(--border-main);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow-card), var(--specular-highlight);
+  backdrop-filter: blur(20px);
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+.canvas-node-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--apple-blue);
+  box-shadow: 0 12px 30px rgba(0, 113, 227, 0.2);
+}
+
+.canvas-node-card.pulse-active {
+  border-color: var(--apple-green) !important;
+  box-shadow: 0 0 24px rgba(52, 199, 89, 0.5) !important;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.canvas-node-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.canvas-node-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.canvas-node-badge.trigger { background: rgba(0, 113, 227, 0.15); color: var(--apple-blue); }
+.canvas-node-badge.follow_gate { background: rgba(175, 82, 222, 0.15); color: var(--apple-purple); }
+.canvas-node-badge.public_reply { background: rgba(90, 200, 250, 0.15); color: var(--apple-cyan); }
+.canvas-node-badge.dm_card { background: rgba(52, 199, 89, 0.15); color: var(--apple-green); }
+.canvas-node-badge.lead_capture { background: rgba(255, 159, 10, 0.15); color: var(--apple-orange); }
+
+.canvas-node-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.canvas-node-desc {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.canvas-node-footer {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* -------------------------------------------------------------
+   ReplyKaro Suite: Ref URLs & Short Link Generator (#view-reflinks)
+   ------------------------------------------------------------- */
+.reflink-creator-box {
+  background: rgba(125, 125, 125, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.reflink-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reflink-table th, .reflink-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+}
+
+.reflink-table th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.reflink-badge {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--apple-blue);
+  background: rgba(0, 113, 227, 0.12);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+/* -------------------------------------------------------------
+   ReplyKaro Suite: Fan Loyalty & Gamification (#view-loyalty)
+   ------------------------------------------------------------- */
+.loyalty-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tier-card {
+  background: var(--glass-card);
+  border: 1px solid var(--border-main);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tier-card.bronze { border-top: 3px solid #cd7f32; }
+.tier-card.silver { border-top: 3px solid #c0c0c0; }
+.tier-card.gold { border-top: 3px solid #ffd700; }
+.tier-card.diamond { border-top: 3px solid #00f0ff; }
+
+.tier-badge-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tier-points-req {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--apple-blue);
+  font-family: var(--font-mono);
+}
+
+.tier-perks-desc {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.tier-code-pill {
+  margin-top: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background: rgba(125, 125, 125, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  color: var(--text-primary);
+}
+
+/* -------------------------------------------------------------
+   Simulator Rich Product Card & Quick Reply Styling
+   ------------------------------------------------------------- */
+.sim-rich-product-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.sim-rich-product-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.sim-rich-body {
+  padding: 10px 12px;
+}
+
+.sim-rich-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.sim-rich-subtitle {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.sim-rich-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--apple-blue);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: opacity 0.2s;
+}
+
+.sim-rich-btn:hover {
+  opacity: 0.9;
+}
+
+.sim-quick-replies-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.sim-quick-reply-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sim-quick-reply-pill:hover {
+  background: var(--apple-blue);
+  border-color: var(--apple-blue);
+}

@@ -157,11 +157,15 @@ class DoraEnterpriseApp {
     const labelEl = document.getElementById('topViewTitlePill');
     if (labelEl) {
       const names = {
-        overview: 'Automations & Flows',
-        channels: 'Connected Social Accounts',
-        inbox: 'Live Chat & Shared Inbox',
+        overview: 'Automations & Rules',
+        canvas: 'Visual Canvas Flow Builder',
+        reflinks: 'Ref URLs & Link Tracker',
+        broadcasts: 'Audience Broadcasts & Segments',
+        loyalty: 'Fan Loyalty & Gamification',
         contacts: 'Audience & Contacts CRM',
+        inbox: 'Live Chat & Shared Inbox',
         simulator: 'Interactive Flow Simulator',
+        channels: 'Connected Social Accounts',
         setup: 'Meta API & Free Setup Guide',
         shield: 'Zero-Ban Safety Shield & Audit',
         tests: 'Enterprise Test Suite Runner'
@@ -176,6 +180,18 @@ class DoraEnterpriseApp {
     switch (this.currentView) {
       case 'overview':
         this.renderOverview();
+        break;
+      case 'canvas':
+        this.renderCanvasFlows();
+        break;
+      case 'reflinks':
+        this.renderRefLinks();
+        break;
+      case 'broadcasts':
+        this.renderBroadcasts();
+        break;
+      case 'loyalty':
+        this.renderLoyalty();
         break;
       case 'channels':
         this.renderChannels();
@@ -1363,6 +1379,362 @@ class DoraEnterpriseApp {
   }
 
   // -------------------------------------------------------------
+  // ReplyKaro Visual Canvas Flow Builder (#view-canvas)
+  // -------------------------------------------------------------
+  async renderCanvasFlows() {
+    const container = document.getElementById('canvasGraphArea');
+    if (!container) return;
+
+    try {
+      const res = await fetch('/api/canvas/flows').then(r => r.json());
+      const flows = res.flows || [];
+      const currentFlow = flows[0] || { nodes: [] };
+
+      if (!currentFlow.nodes || currentFlow.nodes.length === 0) {
+        container.innerHTML = `<div style="text-align: center; color: var(--text-tertiary); margin: auto;">No nodes in canvas. Click "+ Trigger" above to start building.</div>`;
+        return;
+      }
+
+      container.innerHTML = currentFlow.nodes.map((node, i) => `
+        <div class="canvas-node-card" id="cNode_${node.id}" title="Click to inspect node configuration">
+          <div class="canvas-node-header">
+            <span class="canvas-node-badge ${node.type}">${node.type.replace('_', ' ')}</span>
+            <span style="font-size: 0.72rem; color: var(--text-tertiary);">Step ${i + 1}</span>
+          </div>
+          <div class="canvas-node-title">${this.escapeHtml(node.title)}</div>
+          <div class="canvas-node-desc">${this.escapeHtml(node.desc)}</div>
+          <div class="canvas-node-footer">
+            <span>Meta v21.0 OK</span>
+            <span style="color: var(--apple-blue); cursor: pointer;" onclick="doraApp.deleteCanvasNode('${node.id}')">Delete ✕</span>
+          </div>
+        </div>
+      `).join('');
+    } catch (e) {
+      container.innerHTML = `<div style="color: var(--apple-red); text-align: center; margin: auto;">Error loading canvas: ${e.message}</div>`;
+    }
+  }
+
+  async addCanvasNode(type) {
+    const titles = {
+      trigger: { title: 'Custom Trigger Event', desc: 'Ingests keyword or event trigger from Reel/Story' },
+      follow_gate: { title: 'Follower Verification Gate', desc: 'Validates user follows creator before unlocking link' },
+      public_reply: { title: 'Dynamic Public Reply', desc: 'Spins rotating public comment responses' },
+      dm_card: { title: 'Rich DM Product Card', desc: 'Delivers image banner, title & CTA action buttons' },
+      lead_capture: { title: 'Email / Phone Capture', desc: 'Asks for contact details to qualify lead' }
+    };
+    const nodeDef = titles[type] || { title: 'New Custom Node', desc: 'Custom pipeline action' };
+    const newNode = {
+      id: 'node_' + Date.now(),
+      type,
+      title: nodeDef.title,
+      desc: nodeDef.desc,
+      x: 100,
+      y: 100,
+      config: {}
+    };
+
+    try {
+      const res = await fetch('/api/canvas/flows').then(r => r.json());
+      const flows = res.flows || [];
+      const current = flows[0] || { id: 'flow_custom', title: 'Custom Automation Funnel', nodes: [] };
+      current.nodes.push(newNode);
+      await fetch('/api/canvas/flows', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(current)
+      });
+      this.showToast(`Added ${nodeDef.title} to canvas! 🎨`, 'success');
+      this.renderCanvasFlows();
+    } catch (e) {
+      this.showToast('Failed to add node: ' + e.message, 'error');
+    }
+  }
+
+  async deleteCanvasNode(nodeId) {
+    try {
+      const res = await fetch('/api/canvas/flows').then(r => r.json());
+      const flows = res.flows || [];
+      const current = flows[0];
+      if (current) {
+        current.nodes = current.nodes.filter(n => n.id !== nodeId);
+        await fetch('/api/canvas/flows', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(current)
+        });
+        this.renderCanvasFlows();
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  simulateCanvasSignal() {
+    const cards = document.querySelectorAll('.canvas-node-card');
+    cards.forEach((card, idx) => {
+      setTimeout(() => {
+        card.classList.add('pulse-active');
+        setTimeout(() => card.classList.remove('pulse-active'), 700);
+      }, idx * 300);
+    });
+    this.showToast('Signal Traversal Pulse executing through all canvas nodes! ⚡', 'info');
+  }
+
+  async resetCanvasFlow() {
+    this.loadSampleTemplates();
+  }
+
+  // -------------------------------------------------------------
+  // ReplyKaro Ref URLs & Short Link Tracker (#view-reflinks)
+  // -------------------------------------------------------------
+  async renderRefLinks() {
+    const container = document.getElementById('refLinksTableContainer');
+    if (!container) return;
+
+    try {
+      const res = await fetch('/api/ref-links').then(r => r.json());
+      const links = res.refLinks || [];
+
+      if (links.length === 0) {
+        container.innerHTML = `<div style="text-align: center; color: var(--text-tertiary); padding: 30px;">No Ref Links created yet. Create one above!</div>`;
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="reflink-table">
+          <thead>
+            <tr>
+              <th>Slug</th>
+              <th>Asset / Title</th>
+              <th>Direct Tracking URL</th>
+              <th>Instagram Direct Ref Link</th>
+              <th>Clicks</th>
+              <th>Unique</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${links.map(l => `
+              <tr>
+                <td><span class="reflink-badge">/r/${this.escapeHtml(l.slug)}</span></td>
+                <td><strong style="color: var(--text-primary);">${this.escapeHtml(l.title)}</strong></td>
+                <td>
+                  <a href="/r/${l.slug}" target="_blank" style="color: var(--apple-blue); font-size: 0.76rem;">http://localhost:3000/r/${l.slug}</a>
+                </td>
+                <td>
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary);">${l.igRefUrl}</span>
+                </td>
+                <td><span style="font-weight: 700; font-family: var(--font-mono);">${l.totalClicks || 0}</span></td>
+                <td><span style="font-weight: 700; font-family: var(--font-mono); color: var(--apple-green);">${l.uniqueClicks || 0}</span></td>
+                <td>
+                  <div style="display: flex; gap: 6px;">
+                    <button class="guide-copy-btn" onclick="doraApp.copyDirectUrl('${l.slug}')">Copy Web</button>
+                    <button class="guide-copy-btn" onclick="doraApp.copyIgUrl('${l.igRefUrl}')">Copy IG</button>
+                  </div>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    } catch (e) {
+      container.innerHTML = `<div style="color: var(--apple-red); text-align: center; padding: 20px;">Error: ${e.message}</div>`;
+    }
+  }
+
+  async createRefLinkAction() {
+    const slug = document.getElementById('inputRefSlug')?.value?.trim();
+    const title = document.getElementById('inputRefTitle')?.value?.trim();
+    const targetUrl = document.getElementById('inputRefTargetUrl')?.value?.trim();
+
+    if (!slug || !targetUrl) {
+      this.showToast('Please provide both slug and target URL', 'error');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/ref-links', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, title, targetUrl })
+      }).then(r => r.json());
+
+      if (res.success) {
+        this.showToast(`Ref link /r/${slug} created successfully! 🔗`, 'success');
+        document.getElementById('inputRefSlug').value = '';
+        document.getElementById('inputRefTitle').value = '';
+        document.getElementById('inputRefTargetUrl').value = '';
+        this.renderRefLinks();
+      }
+    } catch (e) {
+      this.showToast('Failed to create link: ' + e.message, 'error');
+    }
+  }
+
+  copyDirectUrl(slug) {
+    const url = `http://localhost:3000/r/${slug}`;
+    navigator.clipboard.writeText(url);
+    this.showToast(`Copied short link: ${url} 📋`, 'success');
+  }
+
+  copyIgUrl(igUrl) {
+    navigator.clipboard.writeText(igUrl);
+    this.showToast(`Copied Instagram Ref URL: ${igUrl} 📋`, 'success');
+  }
+
+  // -------------------------------------------------------------
+  // ReplyKaro Audience Broadcasts (#view-broadcasts)
+  // -------------------------------------------------------------
+  async renderBroadcasts() {
+    const container = document.getElementById('broadcastsTableContainer');
+    if (!container) return;
+
+    try {
+      const res = await fetch('/api/broadcasts').then(r => r.json());
+      const broadcasts = res.broadcasts || [];
+
+      if (broadcasts.length === 0) {
+        container.innerHTML = `<div style="text-align: center; color: var(--text-tertiary); padding: 30px;">No broadcast announcements yet.</div>`;
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="crm-table">
+          <thead>
+            <tr>
+              <th>Broadcast Title</th>
+              <th>Target Audience</th>
+              <th>Sent</th>
+              <th>Delivered</th>
+              <th>Open Rate</th>
+              <th>Click CTR</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${broadcasts.map(b => `
+              <tr>
+                <td><strong style="color: var(--text-primary); font-size: 0.85rem;">${this.escapeHtml(b.title)}</strong></td>
+                <td><span class="pill-badge" style="background: rgba(175,82,222,0.14); color: var(--apple-purple); font-weight: 700;">${this.escapeHtml(b.targetTag)}</span></td>
+                <td><span style="font-family: var(--font-mono); font-weight: 700;">${b.sentCount}</span></td>
+                <td><span style="font-family: var(--font-mono); font-weight: 700; color: var(--apple-green);">${b.deliveredCount}</span></td>
+                <td><span style="font-family: var(--font-mono); font-weight: 700; color: var(--apple-blue);">${b.openRate}</span></td>
+                <td><span style="font-family: var(--font-mono); font-weight: 700; color: var(--apple-cyan);">${b.clickRate}</span></td>
+                <td><span class="status-badge success">${b.status}</span></td>
+                <td>
+                  <button class="apple-btn-glass" style="font-size: 0.72rem; padding: 4px 10px;" onclick="doraApp.sendBroadcastAction('${b.id}')">
+                    🚀 Dispatch Again
+                  </button>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    } catch (e) {
+      container.innerHTML = `<div style="color: var(--apple-red); text-align: center; padding: 20px;">Error: ${e.message}</div>`;
+    }
+  }
+
+  async createBroadcastAction() {
+    const targetTag = document.getElementById('selectBroadcastTag')?.value || 'All';
+    const message = document.getElementById('inputBroadcastMessage')?.value?.trim();
+    const buttonText = document.getElementById('inputBroadcastBtnText')?.value?.trim() || 'Claim Free Access ↗';
+
+    if (!message) {
+      this.showToast('Please type a broadcast message', 'error');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/broadcasts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: `Announcement to ${targetTag}`, targetTag, message, buttonText })
+      }).then(r => r.json());
+
+      if (res.success) {
+        await fetch(`/api/broadcasts/${res.broadcast.id}/send`, { method: 'POST' });
+        this.showToast(`Broadcast dispatched to ${targetTag} audience! 📢`, 'success');
+        document.getElementById('inputBroadcastMessage').value = '';
+        this.renderBroadcasts();
+      }
+    } catch (e) {
+      this.showToast('Broadcast error: ' + e.message, 'error');
+    }
+  }
+
+  async sendBroadcastAction(id) {
+    this.showToast('Dispatching broadcast to recipient threads...', 'info');
+    try {
+      const res = await fetch(`/api/broadcasts/${id}/send`, { method: 'POST' }).then(r => r.json());
+      if (res.success) {
+        this.showToast(`Dispatched to ${res.broadcast.sentCount} contacts with 92% open rate! 🚀`, 'success');
+        this.renderBroadcasts();
+      }
+    } catch (e) {
+      this.showToast('Dispatch failed: ' + e.message, 'error');
+    }
+  }
+
+  // -------------------------------------------------------------
+  // ReplyKaro Fan Loyalty & Gamification (#view-loyalty)
+  // -------------------------------------------------------------
+  async renderLoyalty() {
+    const container = document.getElementById('loyaltyLeaderboardContainer');
+    if (!container) return;
+
+    try {
+      const res = await fetch('/api/loyalty').then(r => r.json());
+      const members = res.members || [];
+
+      container.innerHTML = `
+        <table class="crm-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Follower Profile</th>
+              <th>Points Earned</th>
+              <th>Loyalty Tier</th>
+              <th>Unlocked Badges</th>
+              <th>Personalized Promo Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${members.map((m, i) => `
+              <tr>
+                <td><strong style="color: var(--apple-blue); font-size: 0.95rem;">#${i + 1}</strong></td>
+                <td>
+                  <div class="crm-user-cell">
+                    <div class="avatar-ring" style="width: 32px; height: 32px;">
+                      <div class="avatar-inner" style="font-size: 0.75rem;">${m.userName.slice(0, 2).toUpperCase()}</div>
+                    </div>
+                    <div>
+                      <div style="font-weight: 700; color: var(--text-primary);">${this.escapeHtml(m.userName)}</div>
+                      <div style="font-size: 0.72rem; color: var(--text-tertiary);">${this.escapeHtml(m.userHandle)}</div>
+                    </div>
+                  </div>
+                </td>
+                <td><strong style="font-family: var(--font-mono); font-size: 1rem; color: var(--apple-green);">${m.points} pts</strong></td>
+                <td><span class="pill-badge" style="background: rgba(255,149,0,0.15); color: var(--apple-orange); font-weight: 700;">${m.tier}</span></td>
+                <td>
+                  <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                    ${(m.badges || []).map(b => `<span style="font-size: 0.68rem; background: rgba(125,125,125,0.12); padding: 2px 6px; border-radius: var(--radius-pill); color: var(--text-secondary);">${b}</span>`).join('')}
+                  </div>
+                </td>
+                <td><span class="reflink-badge" style="color: var(--apple-purple); background: rgba(175,82,222,0.12);">${m.discountCode}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    } catch (e) {
+      container.innerHTML = `<div style="color: var(--apple-red); text-align: center; padding: 20px;">Error: ${e.message}</div>`;
+    }
+  }
+
+  // -------------------------------------------------------------
   // Dedicated Platform Pages (Instagram, Facebook, etc.)
   // -------------------------------------------------------------
   renderPlatformPage(platformId) {
@@ -1748,6 +2120,195 @@ class DoraEnterpriseApp {
     const btnSimCheck = document.getElementById('btnSimulatePrecedenceCheck');
     if (btnSimCheck) {
       btnSimCheck.addEventListener('click', () => this.runPrecedenceCheck());
+    }
+
+    const btnSimRun = document.getElementById('btnRunSimulation');
+    if (btnSimRun) {
+      btnSimRun.addEventListener('click', () => this.runSimulation());
+    }
+  }
+
+  async runSimulation() {
+    const btn = document.getElementById('btnRunSimulation');
+    const plat = document.getElementById('simSelectPlatform')?.value || 'instagram';
+    const triggerType = document.getElementById('simSelectTriggerType')?.value || 'comment';
+    const isFollowing = document.getElementById('simCheckboxIsFollowing') ? document.getElementById('simCheckboxIsFollowing').checked : true;
+    const post = document.getElementById('simSelectPost')?.value || 'reel_984710293';
+    let handle = document.getElementById('simInputUsername')?.value || '@sarahtaylor';
+    if (!handle.startsWith('@')) handle = '@' + handle;
+    const cleanUsername = handle.replace('@', '');
+    const comment = document.getElementById('simInputComment')?.value || 'Please send me the BLUEPRINT!';
+
+    const countdownEl = document.getElementById('simJitterCountdown');
+    const commentsList = document.getElementById('simPostCommentsList');
+    const dmMessages = document.getElementById('simDmMessagesContainer');
+
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = '⏳ Simulating Dispatch...';
+    }
+
+    try {
+      const res = await fetch('/api/simulate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          platform: plat,
+          triggerType: triggerType,
+          postId: post,
+          userName: cleanUsername,
+          userHandle: handle,
+          commentText: comment,
+          isFollowing: isFollowing
+        })
+      }).then(r => r.json());
+
+      if (res.success) {
+        // Animate Jitter Countdown
+        let jitter = parseFloat(res.jitterSeconds || '1.8');
+        const interval = setInterval(() => {
+          jitter -= 0.1;
+          if (countdownEl) countdownEl.innerText = `${Math.max(0, jitter).toFixed(1)}s`;
+          if (jitter <= 0) {
+            clearInterval(interval);
+            if (countdownEl) countdownEl.innerText = '0.0s (Dispatched)';
+          }
+        }, 100);
+
+        // Append to simulated post feed comments
+        if (commentsList && triggerType === 'comment') {
+          const newComment = document.createElement('div');
+          newComment.className = 'mock-comment-bubble';
+          newComment.innerHTML = `
+            <strong>${this.escapeHtml(cleanUsername)}</strong> ${this.escapeHtml(comment)}
+            ${res.publicReply ? `
+              <div class="mock-reply-bubble">
+                <span style="color: var(--apple-blue); font-weight: 700;">@growth.creator</span> ${this.escapeHtml(res.publicReply)}
+              </div>
+            ` : ''}
+          `;
+          commentsList.appendChild(newComment);
+          commentsList.scrollTop = commentsList.scrollHeight;
+        }
+
+        // Render in iPhone DM Screen
+        if (dmMessages) {
+          const newDm = document.createElement('div');
+          newDm.className = 'dm-bubble-sent';
+
+          if (res.followGatePassed === false) {
+            // User did not pass Follow-Gate
+            newDm.innerHTML = `
+              <div style="font-weight: 700; margin-bottom: 6px; color: #fbbf24; display: flex; align-items: center; gap: 6px;">
+                <span>🔒</span> Follow Required to Unlock Resource
+              </div>
+              <div style="font-size: 0.82rem; line-height: 1.4;">${this.escapeHtml(res.fullDm)}</div>
+              <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
+                <a href="https://instagram.com/growth.creator" target="_blank" class="dm-card-button" style="background: rgba(255,255,255,0.18); text-align: center;">
+                  1. Follow @growth.creator ↗
+                </a>
+                <button class="dm-card-button" onclick="doraApp.verifyFollowInSimulator('${handle}', '${post}')" style="background: linear-gradient(135deg, #10b981, #059669); border: none; cursor: pointer; color: white; font-weight: 700;">
+                  2. I Have Followed (Unlock Access 🚀)
+                </button>
+              </div>
+              <div style="font-size: 0.65rem; text-align: right; opacity: 0.7; margin-top: 6px;">Follow-Gate Engine Active</div>
+            `;
+          } else {
+            // Direct / Unlocked DM
+            const rich = res.richCard;
+            const qrs = res.quickReplies || [];
+            newDm.innerHTML = `
+              <div style="font-size: 0.82rem; line-height: 1.4;">${this.escapeHtml(res.fullDm)}</div>
+              ${rich ? `
+                <div class="sim-rich-product-card" style="margin-top: 10px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15);">
+                  ${rich.image ? `<img src="${rich.image}" style="width: 100%; height: 90px; object-fit: cover;">` : ''}
+                  <div style="padding: 8px 10px;">
+                    <div style="font-weight: 700; font-size: 0.82rem; color: #fff;">${this.escapeHtml(rich.title)}</div>
+                    ${rich.subtitle ? `<div style="font-size: 0.72rem; color: #cbd5e1; margin-top: 2px;">${this.escapeHtml(rich.subtitle)}</div>` : ''}
+                    <a href="${rich.buttonUrl}" target="_blank" class="dm-card-button" style="margin-top: 8px; display: block; text-align: center;">
+                      ${this.escapeHtml(rich.buttonText || 'Access Now')} ↗
+                    </a>
+                  </div>
+                </div>
+              ` : ''}
+              ${qrs.length ? `
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;">
+                  ${qrs.map(q => `<button class="sim-quick-reply-pill" onclick="doraApp.clickQuickReply('${this.escapeHtml(q)}')" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; padding: 4px 8px; border-radius: 14px; font-size: 0.7rem; cursor: pointer;">${this.escapeHtml(q)}</button>`).join('')}
+                </div>
+              ` : ''}
+              ${res.loyalty ? `
+                <div style="margin-top: 8px; font-size: 0.68rem; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 5px 8px; border-radius: 6px; border: 1px solid rgba(245,158,11,0.25);">
+                  ⭐ +10 Points! Member total: ${res.loyalty.totalPoints} pts (${res.loyalty.tier.toUpperCase()})
+                </div>
+              ` : ''}
+              <div style="font-size: 0.65rem; text-align: right; opacity: 0.7; margin-top: 6px;">Delivered • 100% Anti-Ban Safe</div>
+            `;
+          }
+
+          dmMessages.appendChild(newDm);
+          dmMessages.scrollTop = dmMessages.scrollHeight;
+        }
+
+        this.showToast(`Test trigger simulated successfully! (Jitter: ${res.jitterSeconds}s)`, 'success');
+        this.refreshAllData(true);
+      } else {
+        this.showToast('Simulation returned notice: ' + (res.message || 'No winning rule matched'), 'info');
+      }
+    } catch (e) {
+      this.showToast('Simulation error: ' + e.message, 'error');
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerText = '⚡ Fire Test Trigger';
+      }
+    }
+  }
+
+  async verifyFollowInSimulator(userHandle, postId) {
+    try {
+      const res = await fetch('/api/verify-follow', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userHandle, postId })
+      }).then(r => r.json());
+
+      if (res.success) {
+        this.showToast('Follow verified! Resource unlocked and +50 points awarded! 🎉', 'success');
+        const dmMessages = document.getElementById('simDmMessagesContainer');
+        if (dmMessages) {
+          const unlockedDm = document.createElement('div');
+          unlockedDm.className = 'dm-bubble-sent';
+          unlockedDm.innerHTML = `
+            <div style="color: #34d399; font-weight: 700; margin-bottom: 4px;">🎉 Follow Verified! Access Granted</div>
+            <div style="font-size: 0.82rem;">${this.escapeHtml(res.message || 'Thank you for following! Here is your download link:')}</div>
+            <a href="${res.unlockedUrl || '#'}" target="_blank" class="dm-card-button" style="margin-top: 8px; display: block; text-align: center; background: linear-gradient(135deg, #10b981, #059669);">
+              Download Resource Now 🚀
+            </a>
+            <div style="margin-top: 6px; font-size: 0.68rem; color: #f59e0b;">
+              ⭐ +50 Fan Loyalty Points Added! New Total: ${res.newPoints || 50} pts
+            </div>
+            <div style="font-size: 0.65rem; text-align: right; opacity: 0.7; margin-top: 4px;">Follow-Gate Passed</div>
+          `;
+          dmMessages.appendChild(unlockedDm);
+          dmMessages.scrollTop = dmMessages.scrollHeight;
+        }
+
+        // Also update the Follow checkbox so subsequent tests pass
+        const followCheckbox = document.getElementById('simCheckboxIsFollowing');
+        if (followCheckbox) followCheckbox.checked = true;
+
+        this.refreshAllData(true);
+      }
+    } catch (e) {
+      this.showToast('Verification failed: ' + e.message, 'error');
+    }
+  }
+
+  clickQuickReply(text) {
+    const input = document.getElementById('simInputComment');
+    if (input) {
+      input.value = text;
+      this.runSimulation();
     }
   }
 

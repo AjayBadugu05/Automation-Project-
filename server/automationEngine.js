@@ -174,6 +174,7 @@ class EnterpriseAutomationEngine {
 
   /**
    * Main Process Entry with 7-Day Meta Private Replies Window & Human Takeover Guards
+   * Full Support for ReplyKaro Follow-Gate, Story Automation, Inbound DMs, Rich Cards & Loyalty
    */
   async processIncomingComment({
     platform = 'instagram',
@@ -185,6 +186,8 @@ class EnterpriseAutomationEngine {
     userId = 'user_' + Date.now(),
     userName = 'Valued User',
     userHandle = '@user',
+    isFollowing = false,
+    triggerType = 'comment', // comment, story_reply, story_mention, inbound_dm
     workspaceId = null
   }) {
     const settings = db.getSettings();
@@ -268,15 +271,34 @@ class EnterpriseAutomationEngine {
     // 8. Human Jitter Pacing
     const jitterSec = safetyShield.calculateJitter(shieldCfg.minJitterSeconds, shieldCfg.maxJitterSeconds);
 
-    // 9. Format Outgoing DM
+    // 9. Follow-Gate Verification Mechanic
+    const followGateActive = matchedCampaign.followGate?.enabled && isFollowing === false;
+    let isFollowGatePrompt = false;
     let rawDm = matchedCampaign.dmMessage || 'Hey {{username}}! Thanks for commenting! Here is your link: {{link}}';
+
+    if (followGateActive) {
+      isFollowGatePrompt = true;
+      rawDm = matchedCampaign.followGate.promptMessage ||
+        "Hey {{username}}! 👋 To access the VIP Blueprint, you need to follow @growth.creator! Tap follow on our profile and hit 'Verify Follow' below! 👇";
+    }
+
+    // 10. Format Outgoing DM
     let formattedDm = safetyShield.resolveSpintax(rawDm)
       .replace(/\{{1,2}username\}{1,2}/gi, userHandle)
       .replace(/\{{1,2}name\}{1,2}/gi, userName)
       .replace(/\{{1,2}post_title\}{1,2}/gi, postTitle)
       .replace(/\{{1,2}link\}{1,2}/gi, matchedCampaign.actionButtonUrl || '');
 
-    // 10. Format Public Comment Reply (Only if allowed & accepted)
+    // Button labels & verification URLs
+    let finalButtonText = matchedCampaign.actionButtonText || 'Open Resource ↗';
+    let finalButtonUrl = matchedCampaign.actionButtonUrl || 'https://growthblueprint.io/free-access';
+
+    if (isFollowGatePrompt) {
+      finalButtonText = matchedCampaign.followGate.verifyButtonText || 'Verify Follow 🚀';
+      finalButtonUrl = `http://localhost:3000/api/verify-follow?campaignId=${matchedCampaign.id}&userHandle=${encodeURIComponent(userHandle)}`;
+    }
+
+    // 11. Format Public Comment Reply (Only if allowed & accepted)
     let chosenPublicReply = '';
     if (matchedCampaign.actionType !== 'dm_only' && matchedCampaign.commentReplies?.length > 0) {
       const idx = Math.floor(Math.random() * matchedCampaign.commentReplies.length);
@@ -285,9 +307,22 @@ class EnterpriseAutomationEngine {
         .replace(/\{{1,2}name\}{1,2}/gi, userName);
     }
 
-    // 11. Record Action & Store in Archive
+    // 12. Record Action & Store in Archive
     safetyShield.recordAction();
     db.recordUserSent(userId);
+
+    // Award loyalty points
+    db.addLoyaltyPoints(userHandle, triggerType === 'story_mention' ? 'Story Mention' : (triggerType === 'story_reply' ? 'Story Reply' : 'Comment'), 10);
+
+    // Queue follow-up nudge if enabled
+    if (matchedCampaign.followUpNudge?.enabled && !isFollowGatePrompt) {
+      db.addNudge({
+        userHandle,
+        campaignId: matchedCampaign.id,
+        delayHours: matchedCampaign.followUpNudge.delayHours || 2,
+        message: matchedCampaign.followUpNudge.message.replace(/\{{1,2}username\}{1,2}/gi, userHandle).replace(/\{{1,2}link\}{1,2}/gi, finalButtonUrl)
+      });
+    }
 
     // Update campaign metrics
     matchedCampaign.stats = matchedCampaign.stats || {};
@@ -312,20 +347,20 @@ class EnterpriseAutomationEngine {
       jitterSeconds: jitterSec,
       publicReply: chosenPublicReply,
       dmMessage: formattedDm,
-      buttonText: matchedCampaign.actionButtonText,
-      buttonUrl: matchedCampaign.actionButtonUrl,
+      buttonText: finalButtonText,
+      buttonUrl: finalButtonUrl,
       timestamp: new Date().toISOString(),
-      status: 'accepted_by_meta',
+      status: isFollowGatePrompt ? 'follow_gate_prompt_sent' : 'accepted_by_meta',
       assignedAgent: 'Unassigned',
       humanTakeoverActive: false,
-      tags: ['Automated Lead'],
+      tags: isFollowGatePrompt ? ['Pending Follow-Gate'] : ['Verified Lead'],
       internalNotes: []
     };
     db.addStoredMessage(archiveRecord);
 
     return {
       success: true,
-      status: 'accepted_by_meta',
+      status: isFollowGatePrompt ? 'follow_gate_required' : 'accepted_by_meta',
       jitterSeconds: jitterSec,
       campaign: matchedCampaign.name,
       scope: matchedCampaign.scope,
@@ -333,8 +368,17 @@ class EnterpriseAutomationEngine {
       matchedKeyword,
       publicReply: chosenPublicReply,
       fullDm: formattedDm,
-      buttonText: matchedCampaign.actionButtonText,
-      buttonUrl: matchedCampaign.actionButtonUrl,
+      buttonText: finalButtonText,
+      buttonUrl: finalButtonUrl,
+      followGateActive: isFollowGatePrompt,
+      richCard: matchedCampaign.richCard || {
+        enabled: true,
+        title: matchedCampaign.name,
+        subtitle: 'Official Meta Graph API v21.0 resource delivered automatically.',
+        imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80',
+        buttons: [{ text: finalButtonText, url: finalButtonUrl }]
+      },
+      quickReplies: matchedCampaign.quickReplies || ['Download Free PDF 📄', 'Watch Video 🎥', 'Pricing 💰', 'Ask a Question 💬'],
       metaConfirmed: true,
       log: archiveRecord
     };

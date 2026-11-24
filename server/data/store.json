@@ -432,7 +432,7 @@
   "campaigns": [
     {
       "id": "camp_ig_reel_blueprint",
-      "workspaceId": "ws_apex",
+      "workspaceId": "ws_main",
       "name": "Viral Blueprint Free Guide 🚀",
       "platform": "instagram",
       "status": "active",
@@ -491,16 +491,47 @@
         }
       ],
       "stats": {
-        "commentsReceived": 1420,
-        "dmsSent": 1385,
-        "acceptedByMeta": 1385,
-        "clicks": 1042,
-        "conversionRate": "97.5%"
+        "commentsReceived": 1450,
+        "dmsSent": 1415,
+        "acceptedByMeta": 1415,
+        "clicks": 1045,
+        "conversionRate": "97.5%",
+        "newFollowersGained": 3
+      },
+      "triggerType": "comment",
+      "followGate": {
+        "enabled": true,
+        "requiredHandle": "@growth.creator",
+        "promptMessage": "Hey {{username}}! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+        "verifyButtonText": "Verify Follow 🚀",
+        "unlockedMessage": "Verified! 🎉 Thank you for following @growth.creator. Here is your unrestricted VIP Blueprint download:"
+      },
+      "richCard": {
+        "enabled": true,
+        "title": "Viral Blueprint Free Guide 🚀",
+        "subtitle": "Direct access VIP resource delivered instantly via official Meta Graph API v21.0.",
+        "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+        "buttons": [
+          {
+            "text": "Download Blueprint",
+            "url": "https://growthblueprint.io/free-access"
+          }
+        ]
+      },
+      "quickReplies": [
+        "Download Free PDF 📄",
+        "Watch Video Breakdown 🎥",
+        "Ask a Question 💬"
+      ],
+      "followUpNudge": {
+        "enabled": true,
+        "delayHours": 2,
+        "message": "Hey {{username}}! 👋 Quick reminder: your free download link is waiting in our chat: {{link}} ⏳"
       }
     },
     {
       "id": "camp_fb_masterclass",
-      "workspaceId": "ws_apex",
+      "workspaceId": "ws_main",
       "name": "Facebook AI Automation Masterclass VIP",
       "platform": "facebook",
       "status": "active",
@@ -548,16 +579,46 @@
         }
       ],
       "stats": {
-        "commentsReceived": 512,
-        "dmsSent": 494,
-        "acceptedByMeta": 494,
+        "commentsReceived": 514,
+        "dmsSent": 496,
+        "acceptedByMeta": 496,
         "clicks": 379,
         "conversionRate": "96.5%"
+      },
+      "triggerType": "comment",
+      "followGate": {
+        "enabled": true,
+        "requiredHandle": "@growth.creator",
+        "promptMessage": "Hey {{username}}! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+        "verifyButtonText": "Verify Follow 🚀",
+        "unlockedMessage": "Verified! 🎉 Thank you for following @growth.creator. Here is your unrestricted VIP Blueprint download:"
+      },
+      "richCard": {
+        "enabled": true,
+        "title": "Facebook AI Automation Masterclass VIP",
+        "subtitle": "Direct access VIP resource delivered instantly via official Meta Graph API v21.0.",
+        "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+        "buttons": [
+          {
+            "text": "Claim Free Ticket",
+            "url": "https://masterclass.nexus.io/vip-access"
+          }
+        ]
+      },
+      "quickReplies": [
+        "Download Free PDF 📄",
+        "Watch Video Breakdown 🎥",
+        "Ask a Question 💬"
+      ],
+      "followUpNudge": {
+        "enabled": true,
+        "delayHours": 2,
+        "message": "Hey {{username}}! 👋 Quick reminder: your free download link is waiting in our chat: {{link}} ⏳"
       }
     },
     {
       "id": "camp_ig_account_fallback",
-      "workspaceId": "ws_apex",
+      "workspaceId": "ws_main",
       "name": "Account-Wide General Comment Assistant",
       "platform": "instagram",
       "status": "active",
@@ -605,6 +666,36 @@
         "acceptedByMeta": 198,
         "clicks": 120,
         "conversionRate": "94.3%"
+      },
+      "triggerType": "comment",
+      "followGate": {
+        "enabled": true,
+        "requiredHandle": "@growth.creator",
+        "promptMessage": "Hey {{username}}! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+        "verifyButtonText": "Verify Follow 🚀",
+        "unlockedMessage": "Verified! 🎉 Thank you for following @growth.creator. Here is your unrestricted VIP Blueprint download:"
+      },
+      "richCard": {
+        "enabled": true,
+        "title": "Account-Wide General Comment Assistant",
+        "subtitle": "Direct access VIP resource delivered instantly via official Meta Graph API v21.0.",
+        "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+        "buttons": [
+          {
+            "text": "Support Portal",
+            "url": "https://support.growthcreator.io"
+          }
+        ]
+      },
+      "quickReplies": [
+        "Download Free PDF 📄",
+        "Watch Video Breakdown 🎥",
+        "Ask a Question 💬"
+      ],
+      "followUpNudge": {
+        "enabled": true,
+        "delayHours": 2,
+        "message": "Hey {{username}}! 👋 Quick reminder: your free download link is waiting in our chat: {{link}} ⏳"
       }
     }
   ],
@@ -749,9 +840,920 @@
     "burst_u_6_1795507056763": "2026-11-24T07:57:36.763Z",
     "burst_u_7_1795507056782": "2026-11-24T07:57:36.783Z",
     "burst_u_8_1795507056790": "2026-11-24T07:57:36.790Z",
-    "burst_u_9_1795507056798": "2026-11-24T07:57:36.798Z"
+    "burst_u_9_1795507056798": "2026-11-24T07:57:36.798Z",
+    "route_test_user_1_1795534284443": "2026-11-24T15:31:24.471Z",
+    "route_test_user_2_1795534284497": "2026-11-24T15:31:24.500Z",
+    "route_test_user_3_1795534284516": "2026-11-24T15:31:24.517Z",
+    "fixed_dup_user_1795534284579": "2026-11-24T15:31:24.580Z",
+    "burst_u_0_1795534284597": "2026-11-24T15:31:24.597Z",
+    "burst_u_1_1795534284704": "2026-11-24T15:31:24.704Z",
+    "burst_u_2_1795534284723": "2026-11-24T15:31:24.723Z",
+    "burst_u_3_1795534284768": "2026-11-24T15:31:24.769Z",
+    "burst_u_4_1795534284784": "2026-11-24T15:31:24.784Z",
+    "burst_u_5_1795534284809": "2026-11-24T15:31:24.809Z",
+    "burst_u_6_1795534284832": "2026-11-24T15:31:24.832Z",
+    "burst_u_7_1795534284850": "2026-11-24T15:31:24.850Z",
+    "burst_u_8_1795534284879": "2026-11-24T15:31:24.879Z",
+    "burst_u_9_1795534284909": "2026-11-24T15:31:24.909Z",
+    "sim_usr_sarahtaylor": "2026-11-24T15:31:25.068Z",
+    "route_test_user_1_1795539382289": "2026-11-24T16:56:22.309Z",
+    "route_test_user_2_1795539382347": "2026-11-24T16:56:22.348Z",
+    "route_test_user_3_1795539382378": "2026-11-24T16:56:22.380Z",
+    "fixed_dup_user_1795539382432": "2026-11-24T16:56:22.432Z",
+    "burst_u_0_1795539382462": "2026-11-24T16:56:22.463Z",
+    "burst_u_1_1795539382485": "2026-11-24T16:56:22.486Z",
+    "burst_u_2_1795539382512": "2026-11-24T16:56:22.513Z",
+    "burst_u_3_1795539382529": "2026-11-24T16:56:22.530Z",
+    "burst_u_4_1795539382549": "2026-11-24T16:56:22.550Z",
+    "burst_u_5_1795539382575": "2026-11-24T16:56:22.576Z",
+    "burst_u_6_1795539382596": "2026-11-24T16:56:22.596Z",
+    "burst_u_7_1795539382616": "2026-11-24T16:56:22.616Z",
+    "burst_u_8_1795539382649": "2026-11-24T16:56:22.649Z",
+    "burst_u_9_1795539382665": "2026-11-24T16:56:22.666Z",
+    "sim_usr_freshcreatoruser": "2026-11-24T16:57:56.017Z",
+    "sim_usr_anotheruser": "2026-11-24T16:57:56.111Z",
+    "sim_usr_newuser10": "2026-11-24T17:04:28.821Z"
   },
   "storedArchive": [
+    {
+      "id": "msg_1795539868837",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "userHandle": "@new_user_10",
+      "userName": "new_user_10",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "Please send me the BLUEPRINT!",
+      "commentCreatedAt": "2026-11-24T17:04:28.819Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 9.54,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @new_user_10! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40new_user_10",
+      "timestamp": "2026-11-24T17:04:28.838Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate",
+        "Verified Follower"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539476148",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "userHandle": "@another_user",
+      "userName": "another_user",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "Please send me the BLUEPRINT!",
+      "commentCreatedAt": "2026-11-24T16:57:56.110Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 6.38,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @another_user! 👋\n\nThanks for commenting on our Reel! As promised, here is your 100% free Viral Growth Blueprint:\n\n🔗 https://growthblueprint.io/free-access?ref=@another_user\n\nDrop a reply if you have any questions!",
+      "buttonText": "Download Blueprint",
+      "buttonUrl": "https://growthblueprint.io/free-access",
+      "timestamp": "2026-11-24T16:57:56.148Z",
+      "status": "accepted_by_meta",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Verified Lead"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539476038",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "userHandle": "@fresh_creator_user",
+      "userName": "fresh_creator_user",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "Please send me the BLUEPRINT!",
+      "commentCreatedAt": "2026-11-24T16:57:56.011Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 10.9,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @fresh_creator_user! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40fresh_creator_user",
+      "timestamp": "2026-11-24T16:57:56.038Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate",
+        "Verified Follower"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382682",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_9",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 9",
+      "commentCreatedAt": "2026-11-24T16:56:22.665Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 5.58,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_9! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_9",
+      "timestamp": "2026-11-24T16:56:22.683Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382662",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_8",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 8",
+      "commentCreatedAt": "2026-11-24T16:56:22.649Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 13.34,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_8! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_8",
+      "timestamp": "2026-11-24T16:56:22.662Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382645",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_7",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 7",
+      "commentCreatedAt": "2026-11-24T16:56:22.616Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 11.27,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_7! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_7",
+      "timestamp": "2026-11-24T16:56:22.645Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382611",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_6",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 6",
+      "commentCreatedAt": "2026-11-24T16:56:22.596Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 6.94,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_6! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_6",
+      "timestamp": "2026-11-24T16:56:22.611Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382592",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_5",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 5",
+      "commentCreatedAt": "2026-11-24T16:56:22.575Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 7.33,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_5! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_5",
+      "timestamp": "2026-11-24T16:56:22.592Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382568",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_4",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 4",
+      "commentCreatedAt": "2026-11-24T16:56:22.549Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 5.76,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_4! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_4",
+      "timestamp": "2026-11-24T16:56:22.568Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382545",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_3",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 3",
+      "commentCreatedAt": "2026-11-24T16:56:22.529Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 7.12,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_3! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_3",
+      "timestamp": "2026-11-24T16:56:22.545Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382526",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_2",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 2",
+      "commentCreatedAt": "2026-11-24T16:56:22.512Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 8.92,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_2! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_2",
+      "timestamp": "2026-11-24T16:56:22.526Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382506",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_1",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 1",
+      "commentCreatedAt": "2026-11-24T16:56:22.485Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 7.36,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_1! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_1",
+      "timestamp": "2026-11-24T16:56:22.506Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382481",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_0",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 0",
+      "commentCreatedAt": "2026-11-24T16:56:22.462Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 5.46,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_0! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_0",
+      "timestamp": "2026-11-24T16:56:22.481Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_takeover_test_1795539382455",
+      "workspaceId": "ws_apex",
+      "userHandle": "@agent_client_1795539382455",
+      "humanTakeoverActive": true
+    },
+    {
+      "id": "msg_1795539382447",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@fixed_dup_user",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT",
+      "commentCreatedAt": "2026-11-24T16:56:22.432Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 11.4,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @fixed_dup_user! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40fixed_dup_user",
+      "timestamp": "2026-11-24T16:56:22.447Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382395",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_3",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "GUIDE and BLUEPRINT and SEND all together!",
+      "commentCreatedAt": "2026-11-24T16:56:22.378Z",
+      "matchedTrigger": "GUIDE",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 9.65,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @router_user_3! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40router_user_3",
+      "timestamp": "2026-11-24T16:56:22.395Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382369",
+      "workspaceId": "ws_main",
+      "platform": "facebook",
+      "postId": "post_fb_552199",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_2",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "VIP ticket please",
+      "commentCreatedAt": "2026-11-24T16:56:22.347Z",
+      "matchedTrigger": "VIP",
+      "winningRuleName": "Facebook AI Automation Masterclass VIP (post_specific • Priority 15)",
+      "jitterSeconds": 12.27,
+      "publicReply": "Check your Messenger inbox! Your VIP ticket has been delivered 🎟️",
+      "dmMessage": "Hey @router_user_2! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_fb_masterclass&userHandle=%40router_user_2",
+      "timestamp": "2026-11-24T16:56:22.369Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795539382336",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_1",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "SEND me the guide",
+      "commentCreatedAt": "2026-11-24T16:56:22.293Z",
+      "matchedTrigger": "GUIDE",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 4.05,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @router_user_1! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40router_user_1",
+      "timestamp": "2026-11-24T16:56:22.336Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534285077",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Reel: 7 Secrets to 100k Followers in 90 Days",
+      "userHandle": "@sarahtaylor",
+      "userName": "sarahtaylor",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "Please send me the BLUEPRINT!",
+      "commentCreatedAt": "2026-11-24T15:31:25.067Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 13.57,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @sarahtaylor! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40sarahtaylor",
+      "timestamp": "2026-11-24T15:31:25.077Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate",
+        "Verified Follower"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284923",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_9",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 9",
+      "commentCreatedAt": "2026-11-24T15:31:24.909Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 8.25,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_9! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_9",
+      "timestamp": "2026-11-24T15:31:24.923Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284905",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_8",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 8",
+      "commentCreatedAt": "2026-11-24T15:31:24.879Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 4.21,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_8! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_8",
+      "timestamp": "2026-11-24T15:31:24.905Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284875",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_7",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 7",
+      "commentCreatedAt": "2026-11-24T15:31:24.850Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 5.19,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_7! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_7",
+      "timestamp": "2026-11-24T15:31:24.875Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284844",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_6",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 6",
+      "commentCreatedAt": "2026-11-24T15:31:24.832Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 10.21,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_6! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_6",
+      "timestamp": "2026-11-24T15:31:24.844Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284828",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_5",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 5",
+      "commentCreatedAt": "2026-11-24T15:31:24.809Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 9.47,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_5! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_5",
+      "timestamp": "2026-11-24T15:31:24.828Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284805",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_4",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 4",
+      "commentCreatedAt": "2026-11-24T15:31:24.784Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 10.51,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_4! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_4",
+      "timestamp": "2026-11-24T15:31:24.805Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284779",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_3",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 3",
+      "commentCreatedAt": "2026-11-24T15:31:24.768Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 9.05,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_3! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_3",
+      "timestamp": "2026-11-24T15:31:24.779Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284764",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_2",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 2",
+      "commentCreatedAt": "2026-11-24T15:31:24.723Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 11.83,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_2! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_2",
+      "timestamp": "2026-11-24T15:31:24.764Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284719",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_1",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 1",
+      "commentCreatedAt": "2026-11-24T15:31:24.704Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 7.03,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @burst_usr_1! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_1",
+      "timestamp": "2026-11-24T15:31:24.719Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284702",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@burst_usr_0",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT 0",
+      "commentCreatedAt": "2026-11-24T15:31:24.597Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 13.1,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @burst_usr_0! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40burst_usr_0",
+      "timestamp": "2026-11-24T15:31:24.702Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_takeover_test_1795534284593",
+      "workspaceId": "ws_apex",
+      "userHandle": "@agent_client_1795534284593",
+      "humanTakeoverActive": true
+    },
+    {
+      "id": "msg_1795534284588",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@fixed_dup_user",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "BLUEPRINT",
+      "commentCreatedAt": "2026-11-24T15:31:24.579Z",
+      "matchedTrigger": "BLUEPRINT",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 4.93,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @fixed_dup_user! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40fixed_dup_user",
+      "timestamp": "2026-11-24T15:31:24.588Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284525",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_3",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "GUIDE and BLUEPRINT and SEND all together!",
+      "commentCreatedAt": "2026-11-24T15:31:24.516Z",
+      "matchedTrigger": "GUIDE",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 7.97,
+      "publicReply": "Just sent the full guide straight to your DM! Check your inbox 🚀✨",
+      "dmMessage": "Hey @router_user_3! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40router_user_3",
+      "timestamp": "2026-11-24T15:31:24.525Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284509",
+      "workspaceId": "ws_main",
+      "platform": "facebook",
+      "postId": "post_fb_552199",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_2",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "VIP ticket please",
+      "commentCreatedAt": "2026-11-24T15:31:24.497Z",
+      "matchedTrigger": "VIP",
+      "winningRuleName": "Facebook AI Automation Masterclass VIP (post_specific • Priority 15)",
+      "jitterSeconds": 10.39,
+      "publicReply": "Check your Messenger inbox! Your VIP ticket has been delivered 🎟️",
+      "dmMessage": "Hey @router_user_2! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_fb_masterclass&userHandle=%40router_user_2",
+      "timestamp": "2026-11-24T15:31:24.509Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
+    {
+      "id": "msg_1795534284493",
+      "workspaceId": "ws_main",
+      "platform": "instagram",
+      "postId": "reel_984710293",
+      "postTitle": "Social Media Post",
+      "userHandle": "@router_user_1",
+      "userName": "Valued User",
+      "userAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
+      "commentText": "SEND me the guide",
+      "commentCreatedAt": "2026-11-24T15:31:24.445Z",
+      "matchedTrigger": "GUIDE",
+      "winningRuleName": "Viral Blueprint Free Guide 🚀 (post_specific • Priority 10)",
+      "jitterSeconds": 4.74,
+      "publicReply": "Check your DMs! Your free Blueprint is waiting for you 📩🔥",
+      "dmMessage": "Hey @router_user_1! 👋 To access the VIP Blueprint, please tap Follow on @growth.creator and then click 'Verify Follow' below! 👇",
+      "buttonText": "Verify Follow 🚀",
+      "buttonUrl": "http://localhost:3000/api/verify-follow?campaignId=camp_ig_reel_blueprint&userHandle=%40router_user_1",
+      "timestamp": "2026-11-24T15:31:24.493Z",
+      "status": "follow_gate_prompt_sent",
+      "assignedAgent": "Unassigned",
+      "humanTakeoverActive": false,
+      "tags": [
+        "Pending Follow-Gate"
+      ],
+      "internalNotes": []
+    },
     {
       "id": "msg_001",
       "workspaceId": "ws_apex",
@@ -844,75 +1846,93 @@
   ],
   "workspaces": [
     {
-      "id": "ws_apex",
-      "name": "Apex Growth Agency (Client A)",
-      "tier": "Enterprise Agency Tier",
+      "id": "ws_main",
+      "name": "My Instagram Workspace",
+      "tier": "Unlimited Free Self-Hosted",
       "activeAccount": "@growth.creator",
       "team": [
         {
-          "id": "usr_sarah",
-          "name": "Sarah Jenkins",
+          "id": "usr_admin",
+          "name": "Ajay Badugu",
           "role": "Owner",
-          "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
-        },
-        {
-          "id": "usr_marcus",
-          "name": "Marcus Vance",
-          "role": "Approver",
-          "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100"
-        },
-        {
-          "id": "usr_elena",
-          "name": "Elena Rostova",
-          "role": "Editor",
-          "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100"
-        },
-        {
-          "id": "usr_alex",
-          "name": "Alex Rivera",
-          "role": "Inbox-Agent",
-          "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100"
-        }
-      ]
-    },
-    {
-      "id": "ws_velocity",
-      "name": "Velocity Media (Client B)",
-      "tier": "Agency Pro Tier",
-      "activeAccount": "@velocity.marketing",
-      "team": [
-        {
-          "id": "usr_david",
-          "name": "David Kim",
-          "role": "Owner",
-          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100"
-        },
-        {
-          "id": "usr_sophie",
-          "name": "Sophie Lin",
-          "role": "Editor",
           "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"
         }
       ]
     },
     {
       "id": "ws_creator",
-      "name": "Creator Studio HQ (Personal)",
-      "tier": "Unlimited Self-Hosted",
+      "name": "Personal Creator Studio",
+      "tier": "Unlimited Free Self-Hosted",
       "activeAccount": "@apex.creator",
       "team": [
         {
-          "id": "usr_self",
-          "name": "Admin User",
+          "id": "usr_admin",
+          "name": "Ajay Badugu",
           "role": "Owner",
-          "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100"
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"
         }
       ]
     }
   ],
-  "currentWorkspaceId": "ws_apex",
+  "currentWorkspaceId": "ws_main",
   "currentUserRole": "Owner",
   "auditLogs": [
+    {
+      "id": "aud_1795539939471",
+      "timestamp": "2026-11-24T17:05:39.471Z",
+      "author": "Admin",
+      "action": "Switched Workspace",
+      "details": "Active workspace set to My Instagram Workspace"
+    },
+    {
+      "id": "aud_1795539937686",
+      "timestamp": "2026-11-24T17:05:37.686Z",
+      "author": "Admin",
+      "action": "Switched Workspace",
+      "details": "Active workspace set to Personal Creator Studio"
+    },
+    {
+      "id": "aud_1795539920424",
+      "timestamp": "2026-11-24T17:05:20.424Z",
+      "author": "@new_user_10",
+      "action": "Follow-Gate Verified",
+      "details": "User verified follower status for Viral Blueprint Free Guide 🚀"
+    },
+    {
+      "id": "aud_1795539476092",
+      "timestamp": "2026-11-24T16:57:56.093Z",
+      "author": "@fresh_creator_user",
+      "action": "Follow-Gate Verified",
+      "details": "User verified follower status for Viral Blueprint Free Guide 🚀"
+    },
+    {
+      "id": "aud_1795539382906",
+      "timestamp": "2026-11-24T16:56:22.906Z",
+      "author": "@sarahtaylor",
+      "action": "Follow-Gate Verified",
+      "details": "User verified follower status for Viral Blueprint Free Guide 🚀"
+    },
+    {
+      "id": "aud_1795539382414",
+      "timestamp": "2026-11-24T16:56:22.414Z",
+      "author": "Marcus (Approver)",
+      "action": "Rollback Rule: Viral Blueprint Free Guide 🚀",
+      "details": "Rolled back to Version 1"
+    },
+    {
+      "id": "aud_1795534284535",
+      "timestamp": "2026-11-24T15:31:24.535Z",
+      "author": "Marcus (Approver)",
+      "action": "Rollback Rule: Viral Blueprint Free Guide 🚀",
+      "details": "Rolled back to Version 1"
+    },
+    {
+      "id": "aud_1795529710104",
+      "timestamp": "2026-11-24T14:15:10.104Z",
+      "author": "Ajay Badugu",
+      "action": "Created Ref Link",
+      "details": "Generated http://localhost:3000/r/blueprint for trigger BLUEPRINT"
+    },
     {
       "id": "aud_1795512953056",
       "timestamp": "2026-11-24T09:35:53.056Z",
@@ -930,14 +1950,16 @@
   ],
   "outboundQueue": [],
   "currentUser": {
-    "id": "usr_sarah",
-    "name": "Sarah Jenkins",
-    "email": "sarah.jenkins@growthagency.io",
-    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100",
+    "id": "usr_admin",
+    "name": "Ajay Badugu",
+    "email": "ajay@automationstudio.io",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
     "provider": "google",
     "role": "Owner",
-    "workspaceId": "ws_apex",
-    "lastLogin": "2026-11-23T17:26:43.357Z"
+    "workspaceId": "ws_main",
+    "verified": true,
+    "twoFactorEnabled": true,
+    "lastLogin": "2026-11-24T13:41:01.920Z"
   },
   "connectedAccounts": {
     "instagram": {
@@ -1158,32 +2180,13 @@
   ],
   "users": [
     {
-      "id": "usr_sarah",
-      "name": "Sarah Jenkins",
-      "email": "sarah.jenkins@growthagency.io",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100",
+      "id": "usr_admin",
+      "name": "Ajay Badugu",
+      "email": "ajay@automationstudio.io",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
       "provider": "google",
       "role": "Owner",
-      "workspaceId": "ws_apex",
-      "lastLogin": "2026-11-23T17:26:43.357Z"
-    },
-    {
-      "id": "usr_marcus",
-      "name": "Marcus Vance",
-      "email": "marcus.vance@growthagency.io",
-      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100",
-      "provider": "google",
-      "role": "Approver",
-      "workspaceId": "ws_apex"
-    },
-    {
-      "id": "usr_alex",
-      "name": "Alex Rivera",
-      "email": "alex.rivera@gmail.com",
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100",
-      "provider": "google",
-      "role": "Inbox-Agent",
-      "workspaceId": "ws_apex"
+      "workspaceId": "ws_main"
     }
   ],
   "platformConnections": {
@@ -1290,5 +2293,550 @@
       "webhookActive": true,
       "lastPingStatus": "200 OK (45ms)"
     }
-  }
+  },
+  "refLinks": [
+    {
+      "id": "ref_1795529710093",
+      "slug": "blueprint",
+      "title": "Free Masterclass Blueprint 🚀",
+      "targetUrl": "https://growthblueprint.io/download",
+      "triggerKeyword": "BLUEPRINT",
+      "creatorHandle": "@growth.creator",
+      "clicks": 1,
+      "uniqueVisitors": 1,
+      "conversions": 0,
+      "shortUrl": "http://localhost:3000/r/blueprint",
+      "igDirectUrl": "https://ig.me/m/growth.creator?ref=blueprint",
+      "createdAt": "2026-11-24T14:15:10.096Z"
+    },
+    {
+      "id": "ref_blueprint",
+      "slug": "blueprint",
+      "title": "Free Viral Growth Blueprint PDF 🚀",
+      "targetUrl": "https://growthblueprint.io/free-access",
+      "triggerKeyword": "BLUEPRINT",
+      "creatorHandle": "@growth.creator",
+      "clicks": 1420,
+      "uniqueVisitors": 1184,
+      "conversions": 890,
+      "shortUrl": "http://localhost:3000/r/blueprint",
+      "igDirectUrl": "https://ig.me/m/growth.creator?ref=blueprint",
+      "createdAt": "2026-11-21T13:41:01.923Z"
+    },
+    {
+      "id": "ref_vip",
+      "slug": "vip",
+      "title": "AI Automation Masterclass VIP Ticket 🎟️",
+      "targetUrl": "https://masterclass.nexus.io/vip-access",
+      "triggerKeyword": "VIP",
+      "creatorHandle": "@growth.creator",
+      "clicks": 864,
+      "uniqueVisitors": 720,
+      "conversions": 540,
+      "shortUrl": "http://localhost:3000/r/vip",
+      "igDirectUrl": "https://ig.me/m/growth.creator?ref=vip",
+      "createdAt": "2026-11-22T13:41:01.923Z"
+    },
+    {
+      "id": "ref_templates",
+      "slug": "templates",
+      "title": "Content-to-Client Figma Templates 🎨",
+      "targetUrl": "https://growthblueprint.io/figma-pack",
+      "triggerKeyword": "FUNNEL",
+      "creatorHandle": "@growth.creator",
+      "clicks": 530,
+      "uniqueVisitors": 480,
+      "conversions": 320,
+      "shortUrl": "http://localhost:3000/r/templates",
+      "igDirectUrl": "https://ig.me/m/growth.creator?ref=templates",
+      "createdAt": "2026-11-23T13:41:01.923Z"
+    }
+  ],
+  "loyalty": {
+    "leaderboard": [
+      {
+        "userHandle": "@alex_rivera",
+        "userName": "Alex Rivera",
+        "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100",
+        "points": 420,
+        "tier": "Gold Creator",
+        "comments": 18,
+        "clicks": 12,
+        "storyTags": 3,
+        "lastEarned": "1 hour ago"
+      },
+      {
+        "userHandle": "@elena_art",
+        "userName": "Elena Rostova",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100",
+        "points": 350,
+        "tier": "Silver Fan",
+        "comments": 14,
+        "clicks": 8,
+        "storyTags": 2,
+        "lastEarned": "3 hours ago"
+      },
+      {
+        "userHandle": "@sarahtaylor",
+        "userName": "Sarah Taylor",
+        "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100",
+        "points": 280,
+        "tier": "Silver Fan",
+        "comments": 10,
+        "clicks": 6,
+        "storyTags": 2,
+        "lastEarned": "5 hours ago"
+      },
+      {
+        "userHandle": "@david_growth",
+        "userName": "David Growth",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+        "points": 190,
+        "tier": "Bronze Member",
+        "comments": 7,
+        "clicks": 4,
+        "storyTags": 1,
+        "lastEarned": "1 day ago"
+      },
+      {
+        "userHandle": "@rohit_sharma_ig",
+        "userName": "Rohit Sharma",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
+        "points": 140,
+        "tier": "Bronze Member",
+        "comments": 5,
+        "clicks": 3,
+        "storyTags": 1,
+        "lastEarned": "2 days ago"
+      }
+    ],
+    "rules": {
+      "commentPoints": 10,
+      "clickPoints": 25,
+      "storyTagPoints": 50,
+      "followGatePoints": 30
+    }
+  },
+  "broadcasts": [
+    {
+      "id": "bc_001",
+      "workspaceId": "ws_apex",
+      "title": "Black Friday 50% Off VIP Blueprint Pass",
+      "targetTag": "VIP Lead",
+      "message": "Hey {{name}}! 🔥 Exclusive 24-hr VIP pass: Use code CREATOR50 to get our full agency OS for 50% off! Link: http://localhost:3000/r/vip",
+      "recipientsCount": 420,
+      "sentCount": 420,
+      "deliveredCount": 418,
+      "openedCount": 382,
+      "clicksCount": 294,
+      "status": "completed",
+      "policyCompliance": "Meta 24-Hour Active Window Compliant",
+      "sentAt": "2026-11-23T01:41:01.923Z"
+    }
+  ],
+  "flows": [
+    {
+      "id": "flow_lead_qualifier",
+      "workspaceId": "ws_apex",
+      "name": "Reel Comment to Lead Qualifying Funnel",
+      "status": "active",
+      "trigger": {
+        "type": "comment",
+        "keyword": "BLUEPRINT"
+      },
+      "nodes": [
+        {
+          "id": "node_trigger",
+          "type": "trigger",
+          "title": "Comment: BLUEPRINT",
+          "icon": "💬",
+          "x": 50,
+          "y": 150
+        },
+        {
+          "id": "node_followgate",
+          "type": "follow_gate",
+          "title": "Follow-Gate Check",
+          "icon": "🛡️",
+          "x": 280,
+          "y": 150
+        },
+        {
+          "id": "node_ask_email",
+          "type": "question",
+          "title": "Ask for Best Email",
+          "icon": "✉️",
+          "x": 510,
+          "y": 150
+        },
+        {
+          "id": "node_product_card",
+          "type": "card",
+          "title": "Deliver Blueprint Card",
+          "icon": "🎁",
+          "x": 740,
+          "y": 150
+        },
+        {
+          "id": "node_nudge",
+          "type": "nudge",
+          "title": "2-Hour Follow-Up Nudge",
+          "icon": "⏳",
+          "x": 970,
+          "y": 150
+        }
+      ],
+      "connections": [
+        {
+          "from": "node_trigger",
+          "to": "node_followgate"
+        },
+        {
+          "from": "node_followgate",
+          "to": "node_ask_email"
+        },
+        {
+          "from": "node_ask_email",
+          "to": "node_product_card"
+        },
+        {
+          "from": "node_product_card",
+          "to": "node_nudge"
+        }
+      ]
+    }
+  ],
+  "canvasFlows": [
+    {
+      "id": "flow_viral_blueprint",
+      "title": "Viral Reel Follow-Gate Lead Funnel",
+      "description": "Automates Reel comments with follow-gate verification, public reply rotation, rich product card, and email capture.",
+      "status": "active",
+      "nodes": [
+        {
+          "id": "node_1",
+          "type": "trigger",
+          "title": "1. Ingest Trigger",
+          "desc": "Keyword: \"GUIDE\", \"BLUEPRINT\"",
+          "x": 50,
+          "y": 120,
+          "config": {
+            "keywords": [
+              "GUIDE",
+              "BLUEPRINT"
+            ]
+          }
+        },
+        {
+          "id": "node_2",
+          "type": "follow_gate",
+          "title": "2. Follow-Gate Check",
+          "desc": "Verifies if commenter follows @growth.creator",
+          "x": 280,
+          "y": 120,
+          "config": {
+            "requiredHandle": "@growth.creator"
+          }
+        },
+        {
+          "id": "node_3",
+          "type": "public_reply",
+          "title": "3. Public Comment Reply",
+          "desc": "Rotates 5 dynamic reply variations with @mention",
+          "x": 520,
+          "y": 40,
+          "config": {
+            "spintax": true
+          }
+        },
+        {
+          "id": "node_4",
+          "type": "dm_card",
+          "title": "4. Rich DM Card",
+          "desc": "Dispatches interactive product card + buttons",
+          "x": 520,
+          "y": 200,
+          "config": {
+            "cta": "Download Blueprint"
+          }
+        },
+        {
+          "id": "node_5",
+          "type": "lead_capture",
+          "title": "5. VIP Lead Capture",
+          "desc": "Captures email address to unlock bonus training",
+          "x": 760,
+          "y": 200,
+          "config": {
+            "tag": "Lead Magnet"
+          }
+        }
+      ],
+      "connections": [
+        {
+          "from": "node_1",
+          "to": "node_2"
+        },
+        {
+          "from": "node_2",
+          "to": "node_3"
+        },
+        {
+          "from": "node_2",
+          "to": "node_4"
+        },
+        {
+          "from": "node_4",
+          "to": "node_5"
+        }
+      ]
+    }
+  ],
+  "loyaltyMembers": {
+    "@elena_art": {
+      "userHandle": "@elena_art",
+      "userName": "Elena Rostova",
+      "points": 340,
+      "tier": "Gold Insider",
+      "badges": [
+        "Top Fan",
+        "VIP Commenter",
+        "Resource Clicker"
+      ],
+      "discountCode": "GOLD340"
+    },
+    "@sarahtaylor": {
+      "userHandle": "@sarahtaylor",
+      "userName": "Sarah Taylor",
+      "points": 240,
+      "tier": "Silver VIP",
+      "badges": [
+        "Reel Sharer",
+        "Verified Follower",
+        "Silver VIP",
+        "Comment",
+        "Followed Creator"
+      ],
+      "discountCode": "SILVER15"
+    },
+    "@marcus.vance.94": {
+      "userHandle": "@marcus.vance.94",
+      "userName": "Marcus Vance",
+      "points": 520,
+      "tier": "Diamond Ambassador",
+      "badges": [
+        "Super Fan",
+        "VIP Masterclass",
+        "Affiliate"
+      ],
+      "discountCode": "VIP520"
+    },
+    "@router_user_1": {
+      "userHandle": "@router_user_1",
+      "userName": "router_user_1",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME639"
+    },
+    "@router_user_2": {
+      "userHandle": "@router_user_2",
+      "userName": "router_user_2",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME775"
+    },
+    "@router_user_3": {
+      "userHandle": "@router_user_3",
+      "userName": "router_user_3",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME850"
+    },
+    "@fixed_dup_user": {
+      "userHandle": "@fixed_dup_user",
+      "userName": "fixed_dup_user",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME999"
+    },
+    "@burst_usr_0": {
+      "userHandle": "@burst_usr_0",
+      "userName": "burst_usr_0",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME690"
+    },
+    "@burst_usr_1": {
+      "userHandle": "@burst_usr_1",
+      "userName": "burst_usr_1",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME153"
+    },
+    "@burst_usr_2": {
+      "userHandle": "@burst_usr_2",
+      "userName": "burst_usr_2",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME512"
+    },
+    "@burst_usr_3": {
+      "userHandle": "@burst_usr_3",
+      "userName": "burst_usr_3",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME458"
+    },
+    "@burst_usr_4": {
+      "userHandle": "@burst_usr_4",
+      "userName": "burst_usr_4",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME809"
+    },
+    "@burst_usr_5": {
+      "userHandle": "@burst_usr_5",
+      "userName": "burst_usr_5",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME295"
+    },
+    "@burst_usr_6": {
+      "userHandle": "@burst_usr_6",
+      "userName": "burst_usr_6",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME836"
+    },
+    "@burst_usr_7": {
+      "userHandle": "@burst_usr_7",
+      "userName": "burst_usr_7",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME946"
+    },
+    "@burst_usr_8": {
+      "userHandle": "@burst_usr_8",
+      "userName": "burst_usr_8",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME680"
+    },
+    "@burst_usr_9": {
+      "userHandle": "@burst_usr_9",
+      "userName": "burst_usr_9",
+      "points": 20,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME879"
+    },
+    "@fresh_creator_user": {
+      "userHandle": "@fresh_creator_user",
+      "userName": "fresh_creator_user",
+      "points": 60,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment",
+        "Followed Creator"
+      ],
+      "discountCode": "WELCOME181"
+    },
+    "@another_user": {
+      "userHandle": "@another_user",
+      "userName": "another_user",
+      "points": 10,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment"
+      ],
+      "discountCode": "WELCOME766"
+    },
+    "@new_user_10": {
+      "userHandle": "@new_user_10",
+      "userName": "new_user_10",
+      "points": 60,
+      "tier": "Bronze Creator",
+      "badges": [
+        "New Joiner",
+        "Comment",
+        "Followed Creator"
+      ],
+      "discountCode": "WELCOME930"
+    }
+  },
+  "nudges": [
+    {
+      "id": "nudge_1795539476138",
+      "userHandle": "@another_user",
+      "campaignId": "camp_ig_reel_blueprint",
+      "scheduledFor": "2026-11-24T18:57:56.138Z",
+      "message": "Hey @another_user! 👋 Quick reminder: your free download link is waiting in our chat: https://growthblueprint.io/free-access ⏳",
+      "status": "pending"
+    },
+    {
+      "id": "nudge_001",
+      "userHandle": "@sarahtaylor",
+      "campaignId": "camp_ig_reel_blueprint",
+      "scheduledFor": "2026-11-24T16:58:05.531Z",
+      "message": "Hey @sarahtaylor! 👋 Just dropping a quick reminder — your free Blueprint download link is waiting in our chat: https://growthblueprint.io/free-access ⏳",
+      "status": "pending"
+    }
+  ]
 }
